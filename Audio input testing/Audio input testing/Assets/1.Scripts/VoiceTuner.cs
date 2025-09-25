@@ -300,8 +300,6 @@ namespace ACInstrumentTools.GuitarTuner
             { standardTuning = voiceStandardTuningSharp; }
             else if (flatToggle.isOn)
             { standardTuning = voiceStandardTuningFlat; }
-
-            
         }
     }
 }
