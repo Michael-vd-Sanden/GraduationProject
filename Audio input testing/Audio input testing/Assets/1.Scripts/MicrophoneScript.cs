@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -37,6 +39,11 @@ public class MicrophoneScript : MonoBehaviour
 
     float timeSinceRestart = 0;
 
+    //microphone
+    [Header("Inputs")]
+    [SerializeField] protected TMP_Dropdown microphoneDropdown;
+    private int microphoneIndex;
+
     void Start()
     {
         //start the microphone listener
@@ -45,6 +52,7 @@ public class MicrophoneScript : MonoBehaviour
             RestartMicrophoneListener();
             StartMicrophoneListener();
         }
+        initDropdown();
     }
 
     void Update()
@@ -66,7 +74,7 @@ public class MicrophoneScript : MonoBehaviour
         MicrophoneIntoAudioSource(microphoneListenerOn);
 
         //can choose to unmute sound from inspector if desired
-        DisableSound(!disableOutputSound);
+        //DisableSound(!disableOutputSound);
     }
 
 
@@ -127,15 +135,41 @@ public class MicrophoneScript : MonoBehaviour
         timeSinceRestart = Time.time;
     }
 
+    void OnMicrophoneDropdownChanged(int micId)
+    {
+        microphoneIndex = micId;
+    }
+
+    void initDropdown()
+    {
+        // Initializes the dropdown
+        List<TMP_Dropdown.OptionData> options = new List<TMP_Dropdown.OptionData>();
+        foreach (string mic in Microphone.devices)
+        {
+            options.Add(new TMP_Dropdown.OptionData(mic));
+        }
+        microphoneDropdown.AddOptions(options);
+
+        microphoneDropdown.onValueChanged.AddListener(OnMicrophoneDropdownChanged);
+    }
+
     //puts the mic into the audiosource
     void MicrophoneIntoAudioSource(bool MicrophoneListenerOn)
     {
+        string deviceChosen = Microphone.devices[microphoneIndex];
         if (MicrophoneListenerOn)
         {
+           /* if (!Microphone.IsRecording(null))
+            {
+                src.clip = Microphone.Start(deviceChosen, false, 1, 44100);
+                src.Play(); // Play the audio source
+                Debug.Log("Should play");
+            }*/
+            
             //pause a little before setting clip to avoid lag and bugginess
             if (Time.time - timeSinceRestart > 0.5f && !Microphone.IsRecording(null))
             {
-                src.clip = Microphone.Start(null, true, 10, 44100);
+                src.clip = Microphone.Start(deviceChosen, false, 10, 88200);
 
                 //wait until microphone position is found (?)
                 while (!(Microphone.GetPosition(null) > 0))

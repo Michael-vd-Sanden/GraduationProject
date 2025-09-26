@@ -29,6 +29,8 @@ namespace ACInstrumentTools.GuitarTuner
         [Header("Outputs")]
         [SerializeField] protected TMP_Text textFrequency;
         [SerializeField] protected TMP_Text textString;
+        [SerializeField] protected TMP_Text textVolume;
+        [SerializeField] protected TMP_Text textMinVolume;
 
 
         [Header("Inputs")]
@@ -82,6 +84,8 @@ namespace ACInstrumentTools.GuitarTuner
             micIsSwitchedOn = true;
             textFrequency.enabled = true;
             textString.enabled = true;
+            textVolume.enabled = true;
+            textMinVolume.enabled = true;
             analyser.StartMicrophoneAnalyser(samplesPerSecond);
         }
 
@@ -90,6 +94,8 @@ namespace ACInstrumentTools.GuitarTuner
             analyser.StopMicrophoneAnalyser();
             textFrequency.enabled = false;
             textString.enabled = false;
+            textVolume.enabled = false;
+            textMinVolume.enabled = false;
         }
 
         public void OnToggle()
@@ -107,6 +113,13 @@ namespace ACInstrumentTools.GuitarTuner
             currentNote = null;
         }
 
+        public void changeMinVolume(float vol)
+        {
+            minVolume = vol;
+            textMinVolume.text = minVolume.ToString("#.00");
+        }
+
+
         /// <summary>
         /// callback that recieves an event when an analyse is done. Will be called every (1 / samplesPerSecond) seconds.
         /// it will average the frequency with the last recieved, in an effort to smooth results
@@ -119,6 +132,8 @@ namespace ACInstrumentTools.GuitarTuner
                 ResetCurrentNote();
                 return;
             }
+
+            textVolume.text = analyse.sampleVolume.ToString("#.00") + " db";
 
             float freq = analyse.fundamentalFrequency;
 

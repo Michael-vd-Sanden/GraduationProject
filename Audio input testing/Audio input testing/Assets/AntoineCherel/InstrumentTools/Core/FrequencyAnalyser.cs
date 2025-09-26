@@ -97,15 +97,16 @@ namespace ACInstrumentTools.Core
             Debug.Log("[ACInstrumentTools.Core] Recording on " + deviceChoosen);
 
             //testing
-            AudioSource a = GetComponent<AudioSource>();
+           // AudioSource a = GetComponent<AudioSource>();
 
             while (recording)
             {
                 AudioClip c = Microphone.Start(deviceChoosen, false, 1, samplingRate);
                 //testing
-                a.clip = c;
+               /* a.clip = c;
                 a.Play();
                 if(a.isPlaying) { Debug.Log("I'm playing!"); }
+                */
                 for (int i = 0; i < samplesPerSec; i++)
                 {
                     yield return new WaitForSecondsRealtime(1.0f/samplesPerSec);

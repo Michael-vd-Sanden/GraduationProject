@@ -288,8 +288,6 @@ namespace ACInstrumentTools.GuitarTuner
         {
             if(micIsSwitchedOn)
             {
-                
-
                 micIsSwitchedOn = false;
             }
         }
