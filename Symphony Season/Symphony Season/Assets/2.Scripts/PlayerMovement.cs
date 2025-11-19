@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,16 +12,55 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public InputActionReference move;
     [SerializeField] public InputActionReference interact;
 
+    public bool isGridBased;
+
+    private bool isMoving;
+    private Vector3 origPos, targetPos;
+    [SerializeField] private float timeToMove;
+
     private void Update()
     {
-        moveDirection = move.action.ReadValue<Vector2>();
+        if(isGridBased) 
+        { 
+            if(!isMoving) 
+            {
+                moveDirection = move.action.ReadValue<Vector3>();
+                StartCoroutine(MovePlayer(moveDirection));
+            }
+        }
+        if (!isGridBased)
+        {
+            moveDirection = move.action.ReadValue<Vector2>();
+        }
+    }
 
+    private IEnumerator MovePlayer(Vector3 direction)
+    {
+        isMoving = true;
+
+        float elapsedTime = 0;
+
+        origPos = transform.position;
+        targetPos = origPos + direction;
+
+        while(elapsedTime < timeToMove) 
+        { 
+            transform.position = Vector3.Lerp(origPos, targetPos, (elapsedTime/timeToMove));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPos;
+
+        isMoving = false;
     }
 
     private void FixedUpdate()
     {
-        rb.AddForce(new Vector3(moveDirection.x * moveSpeed, 0f, moveDirection.y * moveSpeed));
-        //rb.linearVelocity = new Vector3(moveDirection.x * moveSpeed, 0f, moveDirection.y * moveSpeed);
+        if (!isGridBased)
+        {
+            rb.AddForce(new Vector3(moveDirection.x * moveSpeed, 0f, moveDirection.y * moveSpeed));
+        }
     }
 
     private void OnEnable()
