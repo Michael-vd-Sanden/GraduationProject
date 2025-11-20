@@ -7,7 +7,7 @@
             "id": "072acf4a-6e9d-4899-98df-8d2d8b95e018",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "MoveWASD",
                     "type": "PassThrough",
                     "id": "48a7f350-e268-43d4-a75b-7b66eac0a04a",
                     "expectedControlType": "Vector3",
@@ -23,6 +23,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MoveMouse",
+                    "type": "Button",
+                    "id": "b5ccc8e3-5cf8-4ed7-b024-c4e7ea5ef781",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -33,7 +42,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveWASD",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -44,7 +53,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveWASD",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -55,7 +64,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveWASD",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -66,7 +75,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveWASD",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -77,7 +86,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveWASD",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -89,6 +98,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bff307af-f811-4220-9303-f3260e2f7395",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveMouse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

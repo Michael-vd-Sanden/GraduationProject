@@ -4,33 +4,23 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private Rigidbody rb;
-    [SerializeField] private Rigidbody2D rb2;
-    [SerializeField] private float moveSpeed;
-    private Vector3 moveDirection;
-
-    [SerializeField] public InputActionReference move;
-    [SerializeField] public InputActionReference interact;
-
-    public bool isGridBased;
-
+    //WASD move
+    [SerializeField] private float timeToMove;
     private bool isMoving;
     private Vector3 origPos, targetPos;
-    [SerializeField] private float timeToMove;
+    private Vector3 moveDirection;
+
+    [SerializeField] public InputActionReference moveWASD;
+    [SerializeField] public InputActionReference interact;
+    [SerializeField] public InputActionReference mouseMove;
+
 
     private void Update()
     {
-        if(isGridBased) 
-        { 
-            if(!isMoving) 
-            {
-                moveDirection = move.action.ReadValue<Vector3>();
-                StartCoroutine(MovePlayer(moveDirection));
-            }
-        }
-        if (!isGridBased)
+        if(!isMoving) 
         {
-            moveDirection = move.action.ReadValue<Vector2>();
+            moveDirection = moveWASD.action.ReadValue<Vector3>();
+            StartCoroutine(MovePlayer(moveDirection));
         }
     }
 
@@ -55,25 +45,26 @@ public class PlayerMovement : MonoBehaviour
         isMoving = false;
     }
 
-    private void FixedUpdate()
-    {
-        if (!isGridBased)
-        {
-            rb.AddForce(new Vector3(moveDirection.x * moveSpeed, 0f, moveDirection.y * moveSpeed));
-        }
-    }
 
+    //interact button
     private void OnEnable()
     {
         interact.action.started += Interact;
+        mouseMove.action.started += MouseMove;
     }
     private void OnDisable()
     { //belangrijk omdat het anders 2 keer initialised
         interact.action.started -= Interact;
+        mouseMove.action.started -= MouseMove;
     }
 
     private void Interact(InputAction.CallbackContext obj) 
     {
         Debug.Log("Interacted");
+    }
+
+    private void MouseMove(InputAction.CallbackContext obj)
+    {
+        Debug.Log("Supposed to move");
     }
 }
