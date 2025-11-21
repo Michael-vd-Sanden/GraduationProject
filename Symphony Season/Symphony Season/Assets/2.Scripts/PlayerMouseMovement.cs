@@ -1,24 +1,22 @@
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.Tilemaps;
 
 public class PlayerMouseMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float sampleDistance = 0.5f;
-   // [SerializeField] private Tilemap tilemap;
     [SerializeField] private Vector3 offset = new Vector3(0.5f, 0f, 0.5f);
-    //[SerializeField] private Vector2 gridSize = new Vector2(1f, 1f);
-    //[SerializeField] public InputActionReference moveMouse;
     [SerializeField] private NavMeshAgent agent;
-    //private Vector3 origPos, targetPos;
-    //private Vector3 moveDirection;
+
+    [SerializeField] public InputActionReference moveAction;
 
     private Vector3 screenPos, worldPos, gridPos;
     public GameObject testObj;
     public LayerMask layersToHit;
+
+    [SerializeField] private bool isMobile;
+    public bool allowedToMove;
 
     private void Start()
     {
@@ -27,17 +25,28 @@ public class PlayerMouseMovement : MonoBehaviour
 
     private void Update()
     {
-        if(Mouse.current.leftButton.isPressed) 
+        if (!isMobile)
         {
-            screenPos = Mouse.current.position.ReadValue();
-            Ray ray = Camera.main.ScreenPointToRay(screenPos);
-            if(Physics.Raycast(ray, out RaycastHit hitData, 100, layersToHit))
+            if (Mouse.current.leftButton.isPressed)
+            {
+                screenPos = Mouse.current.position.ReadValue();
+                if(allowedToMove) { castRay(); }
+            }
+        }
+    }
+
+    private void castRay()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(screenPos);
+        if (Physics.Raycast(ray, out RaycastHit hitData, 100, layersToHit))
+        {
+            //check if ray hits the UI layer, otherwise move as normal
+            if (hitData.transform.gameObject.layer == 3) //3 is int of Floor layer
             {
                 if (NavMesh.SamplePosition(hitData.point, out NavMeshHit navMeshHit, sampleDistance, NavMesh.AllAreas))
                 {
                     worldPos = navMeshHit.position + offset;
                     gridPos = new Vector3(Mathf.FloorToInt(worldPos.x), Mathf.FloorToInt(worldPos.y), Mathf.FloorToInt(worldPos.z));
-                    //testObj.transform.position = gridPos;
                     agent.SetDestination(gridPos);
                     Debug.Log(gridPos.ToString());
                 }
@@ -45,34 +54,27 @@ public class PlayerMouseMovement : MonoBehaviour
                 {
                     Debug.Log("not on navmesh");
                 }
-            }      
+            }
+            else
+            {
+                Debug.Log(hitData.transform.gameObject.layer.ToString());
+            }    
         }
-        /*
-        moveDirection = moveMouse.action.ReadValue<Vector3>();
-        if(moveDirection != Vector3.zero ) 
-        {
-            Debug.Log(moveDirection.ToString());
-            move(); 
-        }*/
     }
 
-    private void move(Vector3 direction)
+    private void OnEnable()
     {
-        agent.destination = direction;
-        agent.Move(offset);
+        moveAction.action.performed += Move;
     }
 
-    /*private void OnEnable()
-    {
-        moveMouse.action.started += MoveMouse;
-    }
     private void OnDisable()
-    { //belangrijk omdat het anders 2 keer initialised
-        moveMouse.action.started -= MoveMouse;
+    {
+        moveAction.action.performed -= Move;
     }
 
-    private void MoveMouse(InputAction.CallbackContext obj)
+    private void Move(InputAction.CallbackContext obj)
     {
-        Debug.Log("Supposed to move");
-    }*/
+        screenPos = obj.ReadValue<Vector2>();
+        if (allowedToMove) { castRay(); }
+    }
 }
