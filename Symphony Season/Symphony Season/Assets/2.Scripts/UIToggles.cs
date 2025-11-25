@@ -44,5 +44,6 @@ public class UIToggles : MonoBehaviour
         pushLeftControl.SetActive(false);
         pushRightControl.SetActive(false);
         holdControl.SetActive(true);
+        currentSelectedBlock.LetGoOfBlock();
     }
 }
