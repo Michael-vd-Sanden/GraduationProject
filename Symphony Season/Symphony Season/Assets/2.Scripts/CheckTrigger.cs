@@ -3,6 +3,8 @@ using UnityEngine;
 public class CheckTrigger : MonoBehaviour
 {
     private MoveBlockScript mScript;
+    [SerializeField] private bool isFront;
+
     private void OnEnable()
     {
         mScript= GetComponentInParent<MoveBlockScript>();
@@ -11,7 +13,7 @@ public class CheckTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            mScript.EnteredTriggerInChild(other);
+            mScript.EnteredTriggerInChild(other, isFront);
         }
     }
     private void OnTriggerExit(Collider other)

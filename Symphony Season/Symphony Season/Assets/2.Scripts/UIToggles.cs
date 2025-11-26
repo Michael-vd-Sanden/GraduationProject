@@ -36,7 +36,7 @@ public class UIToggles : MonoBehaviour
 
     public void PressedPushBtn(string direction) //miss geen button, maar een drag?
     {
-        currentSelectedBlock.MoveBlock(direction);
+        currentSelectedBlock.CheckIfAllowedToMove(direction);
     }
 
     public void PressedReleaseBtn()

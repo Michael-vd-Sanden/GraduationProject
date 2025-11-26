@@ -64,7 +64,7 @@ public class PlayerMouseMovement : MonoBehaviour
                 worldPos = navMeshHit.position + offset;
                 gridPos = new Vector3(Mathf.FloorToInt(worldPos.x), Mathf.FloorToInt(worldPos.y), Mathf.FloorToInt(worldPos.z));
                 agent.SetDestination(gridPos);
-                Debug.Log(gridPos.ToString());
+                //Debug.Log(gridPos.ToString());
             }
             else
             {

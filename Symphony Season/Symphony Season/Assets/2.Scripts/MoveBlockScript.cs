@@ -8,6 +8,8 @@ public class MoveBlockScript : MonoBehaviour
     [SerializeField] private PlayerMouseMovement playerMovement;
     [SerializeField] private bool objectAbleToMove;
     public bool isRightDirection; //set for every object
+    public int layer;
+    private int layerAsLayerMask;
 
     [SerializeField] AnimationCurve stepEase = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(1f, 1f));
     [SerializeField] AnimationCurve stepHeightShape = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(0.5f, 1f), new Keyframe(1f, 0f));
@@ -17,12 +19,14 @@ public class MoveBlockScript : MonoBehaviour
 
     private Vector3 objectCurrentPos, objectTargetPos, playerTargetPos, playerCurrentPos;
     [SerializeField] private bool isMoving;
+    [SerializeField] private bool playerIsFront; //on which side the player is (true = front, false = back)
 
     private void Awake()
     {
         uiToggle = FindFirstObjectByType(typeof(UIToggles)) as UIToggles;
         playerMovement = FindFirstObjectByType(typeof(PlayerMouseMovement)) as PlayerMouseMovement;
         isMoving = false;
+        layerAsLayerMask = (1 << layer);
     }
 
     private void Update()
@@ -33,11 +37,12 @@ public class MoveBlockScript : MonoBehaviour
         }
     }
 
-    public void EnteredTriggerInChild(Collider c)
+    public void EnteredTriggerInChild(Collider c, bool isFront)
     {
         //Debug.Log(c.name.ToString() + " detected");
         uiToggle.EnteredTrigger(this);
         playerMovement.canBeOverUI = true;
+        playerIsFront = isFront;
     }
 
     public void ExitedTriggerInChild(Collider c)
@@ -58,15 +63,67 @@ public class MoveBlockScript : MonoBehaviour
         playerMovement.allowedToMove = true;
     }
 
-    public void MoveBlock(string direction)
+    public void CheckIfAllowedToMove(string direction)
+    {
+        Vector3 rayDirect = new Vector3();
+        switch (direction)
+        {
+            case "RightUp":
+                rayDirect = transform.forward;
+                break;
+            case "LeftUp":
+                rayDirect = transform.forward;
+                break;
+            case "RightDown":
+                rayDirect = -transform.forward;
+                break;
+            case "LeftDown":
+                rayDirect = -transform.forward;
+                break;
+        }
+
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, rayDirect, out hit, 3f, layerAsLayerMask))
+        {
+            //Debug.DrawRay(transform.position, rayDirect * hit.distance, Color.green, 2f);
+            //Debug.Log("object hit: " + hit.transform.name.ToString());
+            
+            int allowedDistance;
+            if ((playerIsFront && rayDirect == transform.forward) || (!playerIsFront && rayDirect == -transform.forward))
+            {// player is in front and moving that direction
+                allowedDistance = 2;
+            }
+            else { allowedDistance = 1; }
+            //Debug.Log("allowedDistance: " + allowedDistance.ToString());
+
+            if (hit.distance <= allowedDistance)
+            {//too close
+                Debug.Log("too close to move");
+            }
+            else
+            {// able to move
+                MoveBlock(direction);
+            }
+        }
+        else
+        {
+            //Debug.DrawRay(transform.position, rayDirect * 3f, Color.red, 2f);
+            //Debug.Log("missed");
+            MoveBlock(direction);
+        }
+        
+        //if yes
+        //MoveBlock(direction);
+    }
+
+    private void MoveBlock(string direction)
     {//move 1 space
-        Debug.Log("pushed " + direction.ToString());
+        //Debug.Log("pushed " + direction.ToString());
         objectCurrentPos = this.gameObject.transform.position;
         playerCurrentPos = playerMovement.transform.position;
         if (objectAbleToMove && !isMoving)
         {
             stepTime = 0f;
-            isMoving = true;
             switch (direction)
             {
                 case "RightUp":
@@ -86,8 +143,8 @@ public class MoveBlockScript : MonoBehaviour
                     playerTargetPos = playerCurrentPos + new Vector3(-1f, 0f, 0f);
                     break;
             }
-
-            playerMovement.MoveOutsideScript(playerTargetPos);
+            isMoving = true;
+            //playerMovement.MoveOutsideScript(playerTargetPos);
             
         }
     }
@@ -100,8 +157,8 @@ public class MoveBlockScript : MonoBehaviour
         Vector3 newPos = Vector3.Lerp(objectCurrentPos, objectTargetPos, progress);
         newPos.y += stepHeight * stepHeightShape.Evaluate(progress);
 
-        Debug.Log("targetPos: " + newPos.ToString());
-
+        //Debug.Log("targetPos: " + newPos.ToString());
+        playerMovement.MoveOutsideScript(playerTargetPos);
         this.gameObject.transform.position = newPos;
         if (progress >= 1f)
         {
