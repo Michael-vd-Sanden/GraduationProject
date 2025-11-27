@@ -1,49 +1,88 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class UIToggles : MonoBehaviour
 {
-    [SerializeField] private GameObject holdControl, pushLeftControl, pushRightControl;
-    private bool isRightDirection;
-    private MoveBlockScript currentSelectedBlock;
+    [SerializeField] private GameObject holdControl, releaseControl, switchControl, leftUpControl, leftDownControl,rightUpControl, rightDownControl;
+    private List<bool> isRightDirection;
+    [SerializeField] private List<MoveBlockScript> enteredBlocks;
+    public MoveBlockScript selectedBlock;
+    private BlockPuzzleManager manager;
 
-    public void EnteredTrigger(MoveBlockScript block)
+    private void Awake()
     {
-        holdControl.SetActive(true);
-        currentSelectedBlock = block;
-        isRightDirection = currentSelectedBlock.isRightDirection;
+        manager = GetComponent<BlockPuzzleManager>();
     }
 
-    public void ExitedTrigger() 
+    public void EnteredTrigger(MoveBlockScript block) //entered trigger of this block
+    {
+        holdControl.SetActive(true);
+        enteredBlocks.Add(block);
+        isRightDirection.Add(block.isRightDirection);
+    }
+
+    public void ExitedTrigger(MoveBlockScript block) 
     { 
         holdControl.SetActive(false);
-        currentSelectedBlock = null;
+        enteredBlocks.Remove(block);
+        isRightDirection.Remove(block.isRightDirection);
     }
 
     public void PressedHoldBtn()
     {
         holdControl.SetActive(false);
-        currentSelectedBlock.HoldBlock();
+        releaseControl.SetActive(true);
+        selectedBlock.HoldBlock();
+        //check dist to walls
+        selectedBlock.CheckIfAllowedToMove();
 
-        if(isRightDirection) 
-        { //right up direction
-            pushRightControl.SetActive(true);
+        //check if doubles
+        if(manager.multipleActiveTriggers)
+        { switchControl.SetActive(true);}
+    }
+
+    public void ActivateDirection(bool[] allowed)
+    {
+        //reset
+        rightUpControl.SetActive(false);
+        leftDownControl.SetActive(false);
+        leftUpControl.SetActive(false);
+        rightDownControl.SetActive(false);
+
+        //set
+        if (selectedBlock.isRightDirection)
+        { //right up & left down
+            if (allowed[0])
+            { rightUpControl.SetActive(true); }
+            if (allowed[1])
+            { leftDownControl.SetActive(true); }
         }
         else
-        {//left up direction
-            pushLeftControl.SetActive(true);
+        {//left up & right down
+            if (allowed[0])
+            { leftUpControl.SetActive(true); }
+            if (allowed[1])
+            { rightDownControl.SetActive(true); }
         }
     }
 
     public void PressedPushBtn(string direction) //miss geen button, maar een drag?
     {
-        currentSelectedBlock.CheckIfAllowedToMove(direction);
+        if(enteredBlocks == null)
+        { Debug.Log("block is null"); }
+        selectedBlock.MoveBlock(direction);
     }
 
     public void PressedReleaseBtn()
     {
-        pushLeftControl.SetActive(false);
-        pushRightControl.SetActive(false);
+        rightUpControl.SetActive(false);
+        leftDownControl.SetActive(false);
+        leftUpControl.SetActive(false);
+        rightDownControl.SetActive(false);
+        releaseControl.SetActive(false);
+        switchControl.SetActive(false);
         holdControl.SetActive(true);
-        currentSelectedBlock.LetGoOfBlock();
+        if (enteredBlocks != null)
+        { selectedBlock.LetGoOfBlock(); }
     }
 }

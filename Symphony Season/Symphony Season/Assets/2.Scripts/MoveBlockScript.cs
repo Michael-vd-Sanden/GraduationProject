@@ -4,12 +4,16 @@ using UnityEngine.AI;
 
 public class MoveBlockScript : MonoBehaviour
 {
+    [SerializeField] private Material selectedMaterial, defaultMaterial;
     [SerializeField] private UIToggles uiToggle;
     [SerializeField] private PlayerMouseMovement playerMovement;
+    private BlockPuzzleManager manager;
     [SerializeField] private bool objectAbleToMove;
     public bool isRightDirection; //set for every object
+    public float wallDistance, playerDistance;
     public int layer;
     private int layerAsLayerMask;
+    private MeshRenderer meshRenderer;
 
     [SerializeField] AnimationCurve stepEase = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(1f, 1f));
     [SerializeField] AnimationCurve stepHeightShape = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(0.5f, 1f), new Keyframe(1f, 0f));
@@ -21,12 +25,14 @@ public class MoveBlockScript : MonoBehaviour
     [SerializeField] private bool isMoving;
     [SerializeField] private bool playerIsFront; //on which side the player is (true = front, false = back)
 
-    private void Awake()
+    private void Awake() //set values
     {
         uiToggle = FindFirstObjectByType(typeof(UIToggles)) as UIToggles;
         playerMovement = FindFirstObjectByType(typeof(PlayerMouseMovement)) as PlayerMouseMovement;
+        manager = FindFirstObjectByType<BlockPuzzleManager>();
         isMoving = false;
         layerAsLayerMask = (1 << layer);
+        meshRenderer = gameObject.GetComponent<MeshRenderer>();
     }
 
     private void Update()
@@ -48,7 +54,7 @@ public class MoveBlockScript : MonoBehaviour
     public void ExitedTriggerInChild(Collider c)
     {
         //Debug.Log(c.name.ToString() + " left");
-        uiToggle.ExitedTrigger();
+        uiToggle.ExitedTrigger(this);
         playerMovement.canBeOverUI = false;
     }
 
@@ -56,68 +62,62 @@ public class MoveBlockScript : MonoBehaviour
     {
         playerMovement.allowedToMove = false;
         objectAbleToMove = true;
+        meshRenderer.material = selectedMaterial;
     }
     public void LetGoOfBlock()
     {
         objectAbleToMove = false;
         playerMovement.allowedToMove = true;
+        meshRenderer.material = defaultMaterial;
     }
 
-    public void CheckIfAllowedToMove(string direction)
+    public void CheckIfAllowedToMove()
     {
         Vector3 rayDirect = new Vector3();
-        switch (direction)
-        {
-            case "RightUp":
-                rayDirect = transform.forward;
-                break;
-            case "LeftUp":
-                rayDirect = transform.forward;
-                break;
-            case "RightDown":
-                rayDirect = -transform.forward;
-                break;
-            case "LeftDown":
-                rayDirect = -transform.forward;
-                break;
-        }
-
+        int checkTimes = 2;
+        bool[] allowedMovement = new bool[checkTimes];
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, rayDirect, out hit, 3f, layerAsLayerMask))
+        //when close to walls
+        for (int i = 0; i <= checkTimes -1; i++)
         {
-            //Debug.DrawRay(transform.position, rayDirect * hit.distance, Color.green, 2f);
-            //Debug.Log("object hit: " + hit.transform.name.ToString());
-            
-            int allowedDistance;
-            if ((playerIsFront && rayDirect == transform.forward) || (!playerIsFront && rayDirect == -transform.forward))
-            {// player is in front and moving that direction
-                allowedDistance = 2;
+            switch(i)
+            {
+                case 0:     rayDirect = transform.forward;
+                    break;
+                case 1:     rayDirect = -transform.forward;
+                    break;
             }
-            else { allowedDistance = 1; }
-            //Debug.Log("allowedDistance: " + allowedDistance.ToString());
+            if (Physics.Raycast(transform.position, rayDirect, out hit, 3f, layerAsLayerMask))
+            {
+                Debug.DrawRay(transform.position, rayDirect * hit.distance, Color.green, 2f);
+                float allowedDistance;
+                if ((playerIsFront && rayDirect == transform.forward) || (!playerIsFront && rayDirect == -transform.forward))
+                {// player is in front and moving that direction
+                    allowedDistance = playerDistance;
+                }
+                else { allowedDistance = wallDistance; }
 
-            if (hit.distance <= allowedDistance)
-            {//too close
-                Debug.Log("too close to move");
+                if (hit.distance <= allowedDistance)
+                {//too close
+                    allowedMovement[i] = false;
+                }
+                else
+                {// able to move
+                    allowedMovement[i] = true;
+                }
             }
             else
-            {// able to move
-                MoveBlock(direction);
+            {//far from anything
+                Debug.DrawRay(transform.position, rayDirect * 3f, Color.red, 2f);
+                allowedMovement[i] = true;
             }
         }
-        else
-        {
-            //Debug.DrawRay(transform.position, rayDirect * 3f, Color.red, 2f);
-            //Debug.Log("missed");
-            MoveBlock(direction);
-        }
-        
-        //if yes
-        //MoveBlock(direction);
+        // set arrows
+        uiToggle.ActivateDirection(allowedMovement);
     }
 
-    private void MoveBlock(string direction)
-    {//move 1 space
+    public void MoveBlock(string direction) //move 1 space
+    {
         //Debug.Log("pushed " + direction.ToString());
         objectCurrentPos = this.gameObject.transform.position;
         playerCurrentPos = playerMovement.transform.position;
@@ -145,11 +145,10 @@ public class MoveBlockScript : MonoBehaviour
             }
             isMoving = true;
             //playerMovement.MoveOutsideScript(playerTargetPos);
-            
         }
     }
 
-    private void Move()
+    private void Move() //smooth move block
     {
         stepTime += Time.deltaTime;
         float progress = stepEase.Evaluate(stepTime / stepDuration);
@@ -163,6 +162,8 @@ public class MoveBlockScript : MonoBehaviour
         if (progress >= 1f)
         {
             isMoving = false;
+            CheckIfAllowedToMove();
+            manager.checkDoubleTriggers();
         }
     }
 }

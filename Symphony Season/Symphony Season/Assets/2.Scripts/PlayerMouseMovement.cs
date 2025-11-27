@@ -15,6 +15,8 @@ public class PlayerMouseMovement : MonoBehaviour
 
     [SerializeField] public InputActionReference moveAction;
 
+    public Rigidbody rb;
+
     private Vector3 screenPos, worldPos, gridPos;
     public GameObject testObj;
     public LayerMask layersToHit;
@@ -22,8 +24,13 @@ public class PlayerMouseMovement : MonoBehaviour
     [SerializeField] private Vector2[] UIMask;
 
     [SerializeField] private bool isMobile;
-    public bool allowedToMove;
+    public bool allowedToMove; //when holding a block
     public bool canBeOverUI;
+
+    //jitter fix
+    [SerializeField] private bool checkMove = false;
+    private Vector3 checkPos;
+    private Vector3 moveMargin = new Vector3(0.1f, 0f, 0.1f);
 
     private void Start()
     {
@@ -40,6 +47,21 @@ public class PlayerMouseMovement : MonoBehaviour
                 if(allowedToMove) { castRay(); }
             }
         }
+        if(checkMove)
+        {
+            if ((transform.position.x + moveMargin.x >= checkPos.x && transform.position.x - moveMargin.x <= checkPos.x)
+                && 
+                (transform.position.z + moveMargin.z >= checkPos.z && transform.position.z - moveMargin.z <= checkPos.z))
+            { AtDestination(); }
+        }
+        
+    }
+
+    private void AtDestination()
+    {// at destination
+        agent.isStopped = true;
+        checkMove = false;
+        //transform.position = new Vector3(checkPos.x, 1f, checkPos.z);
     }
 
     private void castRay()
@@ -51,7 +73,7 @@ public class PlayerMouseMovement : MonoBehaviour
             {
                 if (screenPos.x >= pos.x && screenPos.y <= pos.y)
                 { //inside UIMask
-                    Debug.Log("in UIMask");
+                    //Debug.Log("in UIMask");
                         return;
                 }
             }
@@ -63,8 +85,10 @@ public class PlayerMouseMovement : MonoBehaviour
             {
                 worldPos = navMeshHit.position + offset;
                 gridPos = new Vector3(Mathf.FloorToInt(worldPos.x), Mathf.FloorToInt(worldPos.y), Mathf.FloorToInt(worldPos.z));
+                agent.isStopped = false;
                 agent.SetDestination(gridPos);
-                //Debug.Log(gridPos.ToString());
+                checkPos = gridPos;
+                //checkMove = true;
             }
             else
             {
