@@ -110,7 +110,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 3, z: 3}
+  m_Size: {x: 1, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: -1}
 --- !u!114 &5493079927382128587
 MonoBehaviour:
@@ -125,7 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CheckTrigger
   isFront: 0
-  insideThis: 0
 --- !u!1 &4114902602454117863
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +196,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e94bd346addc06648ae83dc256136145, type: 2}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -269,14 +268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ddb74d52f2238439566418c3895bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveBlockScript
-  selectedMaterial: {fileID: 2100000, guid: 96e58c3e7eb86db479a9279e5d147bac, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: e94bd346addc06648ae83dc256136145, type: 2}
   uiToggle: {fileID: 0}
   playerMovement: {fileID: 0}
   objectAbleToMove: 0
   isRightDirection: 0
-  wallDistance: 1
-  playerDistance: 2
   layer: 6
   stepEase:
     serializedVersion: 2
@@ -449,7 +444,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 3, z: 3}
+  m_Size: {x: 1, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 1}
 --- !u!114 &4665283478958014811
 MonoBehaviour:
@@ -464,4 +459,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CheckTrigger
   isFront: 1
-  insideThis: 0
