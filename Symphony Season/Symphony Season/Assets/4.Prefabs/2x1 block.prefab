@@ -268,11 +268,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ddb74d52f2238439566418c3895bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveBlockScript
-  uiToggle: {fileID: 0}
   playerMovement: {fileID: 0}
   objectAbleToMove: 0
   isRightDirection: 0
-  layer: 6
+  upAllowed: 0
+  downAllowed: 0
   stepEase:
     serializedVersion: 2
     m_Curve:
@@ -334,6 +334,8 @@ MonoBehaviour:
   stepDuration: 0.45
   isMoving: 0
   playerIsFront: 0
+  playerDistance: 2
+  wallDistance: 1
 --- !u!1 &7387684139860629148
 GameObject:
   m_ObjectHideFlags: 0
