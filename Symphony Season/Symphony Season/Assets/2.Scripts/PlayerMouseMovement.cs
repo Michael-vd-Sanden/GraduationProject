@@ -11,7 +11,10 @@ public class PlayerMouseMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float sampleDistance = 0.5f;
     [SerializeField] private Vector3 offset = new Vector3(0.5f, 0f, 0.5f);
-    [SerializeField] private NavMeshAgent agent;
+    [SerializeField] private Vector3 targetMargin = new Vector3(0.1f, 0f, 0.1f);
+    [SerializeField] private bool isMoving = false;
+    private Vector3 currentPos, destination;
+    public NavMeshAgent agent;
 
     [SerializeField] public InputActionReference moveAction;
 
@@ -21,7 +24,6 @@ public class PlayerMouseMovement : MonoBehaviour
 
     [SerializeField] private Vector2[] UIMask;
 
-    [SerializeField] private bool isMobile;
     public bool allowedToMove;
     public bool canBeOverUI;
 
@@ -32,12 +34,14 @@ public class PlayerMouseMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!isMobile)
+        if(isMoving) 
         {
-            if (Mouse.current.leftButton.isPressed)
+            currentPos = transform.position;
+            if ((currentPos.x - targetMargin.x < destination.x && currentPos.x + targetMargin.x > destination.x)
+                && (currentPos.z - targetMargin.z < destination.z && currentPos.z + targetMargin.z > destination.z))
             {
-                screenPos = Mouse.current.position.ReadValue();
-                if(allowedToMove) { castRay(); }
+                transform.position = destination;
+                isMoving = false;
             }
         }
     }
@@ -51,7 +55,7 @@ public class PlayerMouseMovement : MonoBehaviour
             {
                 if (screenPos.x >= pos.x && screenPos.y <= pos.y)
                 { //inside UIMask
-                    Debug.Log("in UIMask");
+                   // Debug.Log("in UIMask");
                         return;
                 }
             }
@@ -63,12 +67,15 @@ public class PlayerMouseMovement : MonoBehaviour
             {
                 worldPos = navMeshHit.position + offset;
                 gridPos = new Vector3(Mathf.FloorToInt(worldPos.x), Mathf.FloorToInt(worldPos.y), Mathf.FloorToInt(worldPos.z));
+
+                destination = gridPos;
+                isMoving = true;
                 agent.SetDestination(gridPos);
                 //Debug.Log(gridPos.ToString());
             }
             else
             {
-                Debug.Log("not on navmesh");
+                //Debug.Log("not on navmesh");
             }
         }
     }
@@ -85,6 +92,8 @@ public class PlayerMouseMovement : MonoBehaviour
 
     public void MoveOutsideScript(Vector3 pos) 
     {
+        destination = pos;
+        isMoving = true;
         agent.SetDestination(pos);
     }
 

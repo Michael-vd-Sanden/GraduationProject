@@ -4,6 +4,8 @@ using UnityEngine.AI;
 
 public class MoveBlockScript : MonoBehaviour
 {
+    public MeshRenderer meshRenderer;
+
     [SerializeField] private PlayerMouseMovement playerMovement;
     private BlockPuzzleManager manager;
     public bool objectAbleToMove;
@@ -21,13 +23,14 @@ public class MoveBlockScript : MonoBehaviour
     private Vector3 objectCurrentPos, objectTargetPos, playerTargetPos, playerCurrentPos;
     [SerializeField] private bool isMoving;
     public bool playerIsFront; //on which side the player is (true = front, false = back)
-    public int playerDistance;
-    public int wallDistance;
+    public float playerDistance;
+    public float wallDistance;
 
     private void Awake()
     {
         manager = FindFirstObjectByType<BlockPuzzleManager>();
-        playerMovement = FindFirstObjectByType(typeof(PlayerMouseMovement)) as PlayerMouseMovement;
+        playerMovement = FindFirstObjectByType<PlayerMouseMovement>();
+        meshRenderer = GetComponent<MeshRenderer>();
         isMoving = false;
     }
 
@@ -97,6 +100,7 @@ public class MoveBlockScript : MonoBehaviour
         if (progress >= 1f)
         {
             isMoving = false;
+            //playerMovement.agent.isStopped = true;
             manager.CheckIfAllowedToMove();
         }
     }

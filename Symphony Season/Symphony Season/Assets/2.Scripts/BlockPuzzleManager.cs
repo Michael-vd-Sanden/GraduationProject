@@ -10,6 +10,8 @@ public class BlockPuzzleManager : MonoBehaviour
     [SerializeField] private int selectedBlockIndex = 0;
     public MoveBlockScript currentSelectedBlock;
 
+    public Material defaultMaterial, selectedMaterial;
+
     public int layer;
     private int layerAsLayerMask;
 
@@ -42,6 +44,7 @@ public class BlockPuzzleManager : MonoBehaviour
         if(enteredBlocks.Count > 0) 
         {
             currentSelectedBlock = enteredBlocks[selectedBlockIndex];
+            currentSelectedBlock.meshRenderer.material = selectedMaterial;
             playerMovement.allowedToMove = false;
             currentSelectedBlock.objectAbleToMove = true;
             CheckIfAllowedToMove();
@@ -65,6 +68,7 @@ public class BlockPuzzleManager : MonoBehaviour
     }
     public void LetGoOfBlock()
     {
+        currentSelectedBlock.meshRenderer.material = defaultMaterial;
         currentSelectedBlock.objectAbleToMove = false;
         currentSelectedBlock = null;
         playerMovement.allowedToMove = true;
@@ -87,14 +91,14 @@ public class BlockPuzzleManager : MonoBehaviour
                 Debug.DrawRay(b.position, rayDirect * hit.distance, Color.green, 2f);
                 //Debug.Log("object hit: " + hit.transform.name.ToString());
 
-                int allowedDistance;
+                float allowedDistance;
                 if ((currentSelectedBlock.playerIsFront && rayDirect == b.forward) || (!currentSelectedBlock.playerIsFront && rayDirect == -b.forward))
                 {// player is in front and moving that direction
                     allowedDistance = currentSelectedBlock.playerDistance;
                 }
                 else { allowedDistance = currentSelectedBlock.wallDistance; }
-                Debug.Log("allowed distance: " + allowedDistance.ToString());
-                Debug.Log("hit distance: " + hit.distance.ToString());
+                //Debug.Log("allowed distance: " + allowedDistance.ToString());
+                //Debug.Log("hit distance: " + hit.distance.ToString());
 
                 if (hit.distance <= allowedDistance)
                 {//too close

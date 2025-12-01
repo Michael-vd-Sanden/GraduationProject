@@ -58,7 +58,7 @@ public class UIToggles : MonoBehaviour
 
     public void PressedSwitchBtn()
     {
-        Debug.Log("pressed switch");
+        //Debug.Log("pressed switch");
         manager.SwitchBlock();
     }
 

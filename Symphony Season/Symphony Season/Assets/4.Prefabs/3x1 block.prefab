@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 1248423084302851538}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.55}
-  m_LocalScale: {x: 0.5, y: 0.2, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.5336}
+  m_LocalScale: {x: 0.5, y: 0.2, z: 0.066}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6034811686613585978}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 1437860135101871427}
   - component: {fileID: 8305375283168669803}
   m_Layer: 6
-  m_Name: 2x1 block
+  m_Name: 3x1 block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: -8.5}
-  m_LocalScale: {x: 1, y: 1, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6096379914178874822}
@@ -250,7 +250,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.25, y: 0.25, z: 0.375}
+  m_Extents: {x: 0.25, y: 0.25, z: 0.4175}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 0
@@ -335,8 +335,8 @@ MonoBehaviour:
   stepDuration: 0.45
   isMoving: 0
   playerIsFront: 0
-  playerDistance: 2
-  wallDistance: 1
+  playerDistance: 3
+  wallDistance: 1.5
 --- !u!1 &7387684139860629148
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,8 +366,8 @@ Transform:
   m_GameObject: {fileID: 7387684139860629148}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.55}
-  m_LocalScale: {x: 0.5, y: 0.2, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5336}
+  m_LocalScale: {x: 0.5, y: 0.2, z: 0.066}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6034811686613585978}
