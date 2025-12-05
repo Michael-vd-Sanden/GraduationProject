@@ -40,7 +40,7 @@ public class PlayerMouseMovement : MonoBehaviour
             if ((currentPos.x - targetMargin.x < destination.x && currentPos.x + targetMargin.x > destination.x)
                 && (currentPos.z - targetMargin.z < destination.z && currentPos.z + targetMargin.z > destination.z))
             {
-                transform.position = destination;
+                transform.position = new Vector3(destination.x, currentPos.y, destination.z);
                 isMoving = false;
             }
         }

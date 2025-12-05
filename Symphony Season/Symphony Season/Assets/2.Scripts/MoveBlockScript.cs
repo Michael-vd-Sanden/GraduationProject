@@ -10,6 +10,7 @@ public class MoveBlockScript : MonoBehaviour
     private BlockPuzzleManager manager;
     public bool objectAbleToMove;
     public bool isRightDirection; //set for every object
+    public int blockId;
     public bool upAllowed;
     public bool downAllowed;
 

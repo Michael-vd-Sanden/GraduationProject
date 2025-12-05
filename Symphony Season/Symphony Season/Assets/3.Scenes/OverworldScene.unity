@@ -959,6 +959,7 @@ MonoBehaviour:
   pushLeftDownControl: {fileID: 1752061049}
   pushRightUpControl: {fileID: 1390939120}
   pushRightDownControl: {fileID: 883273194}
+  victoryText: {fileID: 0}
   manager: {fileID: 1044170964}
 --- !u!4 &1044170963
 Transform:
@@ -1162,7 +1163,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1

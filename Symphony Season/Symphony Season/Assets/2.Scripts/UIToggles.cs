@@ -1,8 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 public class UIToggles : MonoBehaviour
 {
-    [SerializeField] private GameObject holdControl, releaseControl, switchControl, pushLeftUpControl, pushLeftDownControl, pushRightUpControl, pushRightDownControl;
+    [SerializeField] private GameObject holdControl, releaseControl, switchControl, pushLeftUpControl, pushLeftDownControl, pushRightUpControl, pushRightDownControl, victoryText;
     [SerializeField] private BlockPuzzleManager manager;
 
     public void EnteredTrigger()
@@ -72,5 +73,15 @@ public class UIToggles : MonoBehaviour
         switchControl.SetActive(false);
         holdControl.SetActive(true);
         manager.LetGoOfBlock();
+    }
+
+    public void startVictory()
+    { StartCoroutine(Victory()); }
+
+    private IEnumerator Victory()
+    {
+        victoryText.SetActive(true);
+        yield return new WaitForSecondsRealtime(3f);
+        victoryText.SetActive(false);
     }
 }

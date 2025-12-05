@@ -9,6 +9,7 @@ public class BlockPuzzleManager : MonoBehaviour
     public List<MoveBlockScript> enteredBlocks;
     [SerializeField] private int selectedBlockIndex = 0;
     public MoveBlockScript currentSelectedBlock;
+    private int currentBlockId;
 
     public Material defaultMaterial, selectedMaterial;
 
@@ -44,6 +45,7 @@ public class BlockPuzzleManager : MonoBehaviour
         if(enteredBlocks.Count > 0) 
         {
             currentSelectedBlock = enteredBlocks[selectedBlockIndex];
+            currentBlockId = currentSelectedBlock.blockId;
             currentSelectedBlock.meshRenderer.material = selectedMaterial;
             playerMovement.allowedToMove = false;
             currentSelectedBlock.objectAbleToMove = true;
@@ -68,6 +70,7 @@ public class BlockPuzzleManager : MonoBehaviour
     }
     public void LetGoOfBlock()
     {
+        currentBlockId = 0;
         currentSelectedBlock.meshRenderer.material = defaultMaterial;
         currentSelectedBlock.objectAbleToMove = false;
         currentSelectedBlock = null;
