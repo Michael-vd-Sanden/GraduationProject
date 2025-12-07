@@ -5,9 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/3.Scenes/OverworldScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/3.Scenes/MainMenu.unity
+    guid: e2c5c948c01fb5447a5357679c909a8b
+  - enabled: 1
+    path: Assets/3.Scenes/BlockPuzzles/BP 1_Easy.unity
+    guid: 5d103f9278e8d3341a84ab80080905bf
+  - enabled: 1
+    path: Assets/3.Scenes/BlockPuzzles/BP 1_Hard.unity
+    guid: 53fb5002f2dc70543a36427d4712704f
+  - enabled: 1
+    path: Assets/3.Scenes/BlockPuzzles/BP 2_Easy.unity
+    guid: c71118b7858578f48ac9917704ca3929
+  - enabled: 1
+    path: Assets/3.Scenes/BlockPuzzles/BP 2_Hard.unity
+    guid: e981e90571a38c842a45a5676887d03c
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 34bbc23a37b4a3a4b8cf384479f2a8d5, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: d0023cf99f94471429399f8a2f79c4ab, type: 2}

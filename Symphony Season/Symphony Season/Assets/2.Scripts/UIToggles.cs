@@ -5,6 +5,7 @@ public class UIToggles : MonoBehaviour
 {
     [SerializeField] private GameObject holdControl, releaseControl, switchControl, pushLeftUpControl, pushLeftDownControl, pushRightUpControl, pushRightDownControl, victoryText;
     [SerializeField] private BlockPuzzleManager manager;
+    [SerializeField] private SceneSwitching sceneSwitching;
 
     public void EnteredTrigger()
     {
@@ -81,7 +82,8 @@ public class UIToggles : MonoBehaviour
     private IEnumerator Victory()
     {
         victoryText.SetActive(true);
-        yield return new WaitForSecondsRealtime(3f);
-        victoryText.SetActive(false);
+        yield return new WaitForSecondsRealtime(2f);
+        sceneSwitching.ChangeSceneName("MainMenu");
+        sceneSwitching.ChangeScene();
     }
 }
