@@ -45,11 +45,11 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _FarGroundColour: {r: 0.19896865, g: 0.104136825, b: 0.29380047, a: 0}
-    - _HazeColour: {r: 0, g: 0, b: 0, a: 0}
-    - _HorizonColour: {r: 0.16981119, g: 0.10229865, b: 0.11917678, a: 0}
-    - _HorizonTrue: {r: 0.14930029, g: 0.066597104, b: 0.16981119, a: 0}
-    - _TopColour: {r: 0.31882536, g: 0.14074653, b: 0.3638814, a: 0}
+    - _FarGroundColour: {r: 0.16442037, g: 0.029914742, b: 0.112007126, a: 0}
+    - _HazeColour: {r: 0.23989207, g: 0.072096914, b: 0.105759926, a: 0}
+    - _HorizonColour: {r: 0.27223712, g: 0.07741513, b: 0.16326892, a: 0}
+    - _HorizonTrue: {r: 0.09973043, g: 0.05792966, b: 0.08579683, a: 0}
+    - _TopColour: {r: 0.34770882, g: 0.10262563, b: 0.16667734, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &8462572301377036946
