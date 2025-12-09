@@ -9,16 +9,45 @@ public class BlockPuzzleManager : MonoBehaviour
     public List<MoveBlockScript> enteredBlocks;
     [SerializeField] private int selectedBlockIndex = 0;
     public MoveBlockScript currentSelectedBlock;
-    private int currentBlockId;
+    public string currentBlockNote;
+    public string noteSelected; //which note btn was pressed
 
     public Material defaultMaterial, selectedMaterial;
 
     public int layer;
     private int layerAsLayerMask;
 
+    private bool isCheckingForNotes = false;
+
     private void Awake()
     {
         layerAsLayerMask = (1 << layer);
+    }
+
+    private void Update()
+    {
+        if(isCheckingForNotes) 
+        {
+            if (noteSelected == currentBlockNote)
+            {
+                //currentSelectedBlock.meshRenderer.material = selectedMaterial;
+                playerMovement.allowedToMove = false;
+                currentSelectedBlock.objectAbleToMove = true;
+                CheckIfAllowedToMove();
+                noteSelected = null;
+                uiToggle.DeactivateNoteBtns();
+                isCheckingForNotes= false;
+                return;
+            }
+            if(!string.IsNullOrEmpty(noteSelected) && noteSelected != currentBlockNote)
+            {
+                //play some sort of sound
+                Debug.Log("fout");
+                LetGoOfBlock();
+                uiToggle.DeactivateNoteBtns();
+                isCheckingForNotes= false;
+            }
+        }
     }
 
     public void EnteredTrigger(MoveBlockScript block)
@@ -34,7 +63,8 @@ public class BlockPuzzleManager : MonoBehaviour
     {
         enteredBlocks.Remove(block);
         if (enteredBlocks.Count == 0) 
-        { 
+        {
+            selectedBlockIndex = 0;
             playerMovement.canBeOverUI= false;
             uiToggle.ExitedTrigger();
         }
@@ -45,17 +75,14 @@ public class BlockPuzzleManager : MonoBehaviour
         if(enteredBlocks.Count > 0) 
         {
             currentSelectedBlock = enteredBlocks[selectedBlockIndex];
-            currentBlockId = currentSelectedBlock.blockId;
-            currentSelectedBlock.meshRenderer.material = selectedMaterial;
-            playerMovement.allowedToMove = false;
-            currentSelectedBlock.objectAbleToMove = true;
-            CheckIfAllowedToMove();
+            currentBlockNote = currentSelectedBlock.blockNote;
+            isCheckingForNotes = true;
         }
     }
     public void SwitchBlock()
     {
         LetGoOfBlock();
-        Debug.Log(enteredBlocks.Count.ToString());
+        //Debug.Log(enteredBlocks.Count.ToString());
         if(enteredBlocks.Count -1 > selectedBlockIndex)
         {
             selectedBlockIndex++;
@@ -70,8 +97,8 @@ public class BlockPuzzleManager : MonoBehaviour
     }
     public void LetGoOfBlock()
     {
-        currentBlockId = 0;
-        currentSelectedBlock.meshRenderer.material = defaultMaterial;
+        currentBlockNote = null;
+        //currentSelectedBlock.meshRenderer.material = defaultMaterial;
         currentSelectedBlock.objectAbleToMove = false;
         currentSelectedBlock = null;
         playerMovement.allowedToMove = true;

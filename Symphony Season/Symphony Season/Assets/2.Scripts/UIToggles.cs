@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class UIToggles : MonoBehaviour
 {
-    [SerializeField] private GameObject holdControl, releaseControl, switchControl, pushLeftUpControl, pushLeftDownControl, pushRightUpControl, pushRightDownControl, victoryText;
+    [SerializeField] private GameObject holdControl, releaseControl, switchControl, pushLeftUpControl, pushLeftDownControl, pushRightUpControl, pushRightDownControl, victoryText,
+        btnsSharp, btnsFlat, noteBtns;
     [SerializeField] private BlockPuzzleManager manager;
     [SerializeField] private SceneSwitching sceneSwitching;
 
@@ -15,12 +16,25 @@ public class UIToggles : MonoBehaviour
     public void ExitedTrigger() 
     { 
         holdControl.SetActive(false);
+        noteBtns.SetActive(false);
+    }
+
+    public void DeactivateNoteBtns()
+    {
+        noteBtns.SetActive(false) ;
+    }
+
+    public void SwitchSharpOrSflat()
+    {
+        btnsFlat.SetActive(!btnsFlat.activeSelf);
+        btnsSharp.SetActive(!btnsSharp.activeSelf);
     }
 
     public void PressedHoldBtn()
     {
         holdControl.SetActive(false);
         releaseControl.SetActive(true);
+        noteBtns.SetActive(true);
         manager.HoldBlock(); 
     }
 
@@ -61,6 +75,7 @@ public class UIToggles : MonoBehaviour
     public void PressedSwitchBtn()
     {
         //Debug.Log("pressed switch");
+        noteBtns.SetActive(true);
         manager.SwitchBlock();
     }
 
@@ -72,8 +87,14 @@ public class UIToggles : MonoBehaviour
         pushRightUpControl.SetActive(false);
         releaseControl.SetActive(false);
         switchControl.SetActive(false);
+        noteBtns.SetActive(false);
         holdControl.SetActive(true);
         manager.LetGoOfBlock();
+    }
+
+    public void PressedNoteBtn(string note)
+    {
+        manager.noteSelected = note;
     }
 
     public void startVictory()

@@ -19,7 +19,6 @@ public class PlayerMouseMovement : MonoBehaviour
     [SerializeField] public InputActionReference moveAction;
 
     private Vector3 screenPos, worldPos, gridPos;
-    public GameObject testObj;
     public LayerMask layersToHit;
 
     [SerializeField] private Vector2[] UIMask;
@@ -76,6 +75,11 @@ public class PlayerMouseMovement : MonoBehaviour
             else
             {
                 //Debug.Log("not on navmesh");
+                if(hitData.collider.CompareTag("Movable"))
+                {
+                    Debug.Log("hit block");
+                    //ga naar closest point van block
+                }
             }
         }
     }
