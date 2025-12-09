@@ -35,7 +35,12 @@ public class UIToggles : MonoBehaviour
         holdControl.SetActive(false);
         releaseControl.SetActive(true);
         noteBtns.SetActive(true);
-        manager.HoldBlock(); 
+        manager.HoldBlock();
+
+        if (manager.enteredBlocks.Count > 1)
+        { switchControl.SetActive(true); }
+        else
+        { switchControl.SetActive(false); }
     }
 
     public void ActivateDirections()
@@ -61,8 +66,8 @@ public class UIToggles : MonoBehaviour
             { pushRightDownControl.SetActive(true); }
         }
 
-        if(manager.enteredBlocks.Count > 1) 
-        { switchControl.SetActive(true);  }
+        if (manager.enteredBlocks.Count > 1)
+        { switchControl.SetActive(true); }
         else
         { switchControl.SetActive(false); }
     }
@@ -75,6 +80,10 @@ public class UIToggles : MonoBehaviour
     public void PressedSwitchBtn()
     {
         //Debug.Log("pressed switch");
+        pushLeftUpControl.SetActive(false);
+        pushLeftDownControl.SetActive(false);
+        pushRightDownControl.SetActive(false);
+        pushRightUpControl.SetActive(false);
         noteBtns.SetActive(true);
         manager.SwitchBlock();
     }

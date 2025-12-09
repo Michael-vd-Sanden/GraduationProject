@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class MoveBlockScript : MonoBehaviour
 {
-    public MeshRenderer meshRenderer;
+    public GameObject selectedNotification;
 
     [SerializeField] private PlayerMouseMovement playerMovement;
     private BlockPuzzleManager manager;
@@ -31,7 +31,6 @@ public class MoveBlockScript : MonoBehaviour
     {
         manager = FindFirstObjectByType<BlockPuzzleManager>();
         playerMovement = FindFirstObjectByType<PlayerMouseMovement>();
-        meshRenderer = GetComponent<MeshRenderer>();
         isMoving = false;
     }
 

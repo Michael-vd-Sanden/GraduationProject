@@ -960,6 +960,9 @@ MonoBehaviour:
   pushRightUpControl: {fileID: 1390939120}
   pushRightDownControl: {fileID: 883273194}
   victoryText: {fileID: 0}
+  btnsSharp: {fileID: 0}
+  btnsFlat: {fileID: 0}
+  noteBtns: {fileID: 0}
   manager: {fileID: 1044170964}
   sceneSwitching: {fileID: 0}
 --- !u!4 &1044170963
@@ -994,6 +997,8 @@ MonoBehaviour:
   enteredBlocks: []
   selectedBlockIndex: 0
   currentSelectedBlock: {fileID: 0}
+  currentBlockNote: 
+  noteSelected: 
   defaultMaterial: {fileID: 2100000, guid: fd29dd06e5f1bff43b9f58681ea34b92, type: 2}
   selectedMaterial: {fileID: 2100000, guid: 226c1bf0ed0be3c46986d2f5745e3398, type: 2}
   layer: 6
@@ -1483,7 +1488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6034811686613585978, guid: bca2bed4d35a707439275c9fddaae7c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6034811686613585978, guid: bca2bed4d35a707439275c9fddaae7c6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1491,7 +1496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6034811686613585978, guid: bca2bed4d35a707439275c9fddaae7c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 6034811686613585978, guid: bca2bed4d35a707439275c9fddaae7c6, type: 3}
       propertyPath: m_LocalRotation.w

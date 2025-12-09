@@ -68,9 +68,19 @@ public class PlayerMouseMovement : MonoBehaviour
                 gridPos = new Vector3(Mathf.FloorToInt(worldPos.x), Mathf.FloorToInt(worldPos.y), Mathf.FloorToInt(worldPos.z));
 
                 destination = gridPos;
-                isMoving = true;
-                agent.SetDestination(gridPos);
-                //Debug.Log(gridPos.ToString());
+
+                var path = new NavMeshPath();
+                agent.CalculatePath(destination, path);
+                switch (path.status)
+                {
+                    case NavMeshPathStatus.PathComplete:
+                        isMoving = true;
+                        agent.SetDestination(destination);
+                        break;
+                    default:
+                        //Debug.Log("Can't move there");
+                        break;
+                }
             }
             else
             {

@@ -28,9 +28,10 @@ public class BlockPuzzleManager : MonoBehaviour
     {
         if(isCheckingForNotes) 
         {
+            if(currentSelectedBlock== null) { isCheckingForNotes = false; return; }
+
             if (noteSelected == currentBlockNote)
             {
-                //currentSelectedBlock.meshRenderer.material = selectedMaterial;
                 playerMovement.allowedToMove = false;
                 currentSelectedBlock.objectAbleToMove = true;
                 CheckIfAllowedToMove();
@@ -76,6 +77,7 @@ public class BlockPuzzleManager : MonoBehaviour
         {
             currentSelectedBlock = enteredBlocks[selectedBlockIndex];
             currentBlockNote = currentSelectedBlock.blockNote;
+            currentSelectedBlock.selectedNotification.SetActive(true);
             isCheckingForNotes = true;
         }
     }
@@ -98,7 +100,7 @@ public class BlockPuzzleManager : MonoBehaviour
     public void LetGoOfBlock()
     {
         currentBlockNote = null;
-        //currentSelectedBlock.meshRenderer.material = defaultMaterial;
+        currentSelectedBlock.selectedNotification.SetActive(false);
         currentSelectedBlock.objectAbleToMove = false;
         currentSelectedBlock = null;
         playerMovement.allowedToMove = true;
