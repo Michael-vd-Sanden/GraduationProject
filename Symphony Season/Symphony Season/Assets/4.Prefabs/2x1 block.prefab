@@ -602,8 +602,8 @@ MonoBehaviour:
   stepDuration: 0.45
   isMoving: 0
   playerIsFront: 0
-  playerDistance: 2
-  wallDistance: 1
+  playerDistance: 2.5
+  wallDistance: 1.5
 --- !u!1 &7387684139860629148
 GameObject:
   m_ObjectHideFlags: 0

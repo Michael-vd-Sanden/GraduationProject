@@ -44,8 +44,9 @@ public class BlockPuzzleManager : MonoBehaviour
             {
                 //play some sort of sound
                 Debug.Log("fout");
-                LetGoOfBlock();
+                uiToggle.PressedReleaseBtn();
                 uiToggle.DeactivateNoteBtns();
+                noteSelected = null;
                 isCheckingForNotes= false;
             }
         }
@@ -57,8 +58,11 @@ public class BlockPuzzleManager : MonoBehaviour
         if (enteredBlocks.Count > 0) 
         { 
             playerMovement.canBeOverUI= true;
+        }   
+        if(enteredBlocks.Count == 1)
+        {
             uiToggle.EnteredTrigger();
-        }     
+        }
     }
     public void ExitedTrigger(MoveBlockScript block)
     {
@@ -99,10 +103,13 @@ public class BlockPuzzleManager : MonoBehaviour
     }
     public void LetGoOfBlock()
     {
+        if (currentSelectedBlock != null)
+        {
+            currentSelectedBlock.selectedNotification.SetActive(false);
+            currentSelectedBlock.objectAbleToMove = false;
+            currentSelectedBlock = null;
+        }
         currentBlockNote = null;
-        currentSelectedBlock.selectedNotification.SetActive(false);
-        currentSelectedBlock.objectAbleToMove = false;
-        currentSelectedBlock = null;
         playerMovement.allowedToMove = true;
     }
 

@@ -25,6 +25,7 @@ public class PlayerMouseMovement : MonoBehaviour
 
     public bool allowedToMove;
     public bool canBeOverUI;
+    public bool isInMaze, mazeMovedLeft, mazeMovedRight;
 
     private void Start()
     {
@@ -74,8 +75,16 @@ public class PlayerMouseMovement : MonoBehaviour
                 switch (path.status)
                 {
                     case NavMeshPathStatus.PathComplete:
-                        isMoving = true;
-                        agent.SetDestination(destination);
+                        if(isInMaze && destination.z != 0) //moved left or right
+                        {
+                            if (destination.z > 0) { mazeMovedRight = true; }
+                            if (destination.z < 0) { mazeMovedLeft = true; }
+                        }
+                        else
+                        {
+                            agent.SetDestination(destination);
+                            isMoving = true;
+                        }
                         break;
                     default:
                         //Debug.Log("Can't move there");
