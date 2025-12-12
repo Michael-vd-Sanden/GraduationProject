@@ -77,23 +77,28 @@ public class PlayerMouseMovement : MonoBehaviour
                     case NavMeshPathStatus.PathComplete:
                         if(isInMaze && destination.z != 0) //moved left or right
                         {
-                            if (destination.z > 0) { mazeMovedRight = true; }
-                            if (destination.z < 0) { mazeMovedLeft = true; }
+                            if (!isMoving)
+                            {
+                                if (destination.z > 0) { mazeMovedRight = true; }
+                                if (destination.z < 0) { mazeMovedLeft = true; }
+                                Debug.Log("moved left or right");
+                            }
                         }
                         else
                         {
                             agent.SetDestination(destination);
                             isMoving = true;
+                            Debug.Log("moved forward");
                         }
                         break;
                     default:
-                        //Debug.Log("Can't move there");
+                        Debug.Log("Can't move there");
                         break;
                 }
             }
             else
             {
-                //Debug.Log("not on navmesh");
+                Debug.Log("not on navmesh");
                 if(hitData.collider.CompareTag("Movable"))
                 {
                     Debug.Log("hit block");
