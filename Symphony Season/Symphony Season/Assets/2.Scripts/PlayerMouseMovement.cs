@@ -12,8 +12,8 @@ public class PlayerMouseMovement : MonoBehaviour
     [SerializeField] private float sampleDistance = 0.5f;
     [SerializeField] private Vector3 offset = new Vector3(0.5f, 0f, 0.5f);
     [SerializeField] private Vector3 targetMargin = new Vector3(0.1f, 0f, 0.1f);
-    [SerializeField] private bool isMoving = false;
-    private Vector3 currentPos, destination;
+    public bool isMoving = false;
+    [SerializeField] private Vector3 currentPos, destination;
     public NavMeshAgent agent;
 
     [SerializeField] public InputActionReference moveAction;
@@ -25,6 +25,7 @@ public class PlayerMouseMovement : MonoBehaviour
 
     public bool allowedToMove;
     public bool canBeOverUI;
+    public bool isInMaze;
 
     private void Start()
     {
@@ -35,12 +36,14 @@ public class PlayerMouseMovement : MonoBehaviour
     {
         if(isMoving) 
         {
+            if(isInMaze) { allowedToMove= false; }
             currentPos = transform.position;
             if ((currentPos.x - targetMargin.x < destination.x && currentPos.x + targetMargin.x > destination.x)
                 && (currentPos.z - targetMargin.z < destination.z && currentPos.z + targetMargin.z > destination.z))
             {
                 transform.position = new Vector3(destination.x, currentPos.y, destination.z);
                 isMoving = false;
+                if(isInMaze) { allowedToMove= true; }
             }
         }
     }
@@ -66,31 +69,36 @@ public class PlayerMouseMovement : MonoBehaviour
             {
                 worldPos = navMeshHit.position + offset;
                 gridPos = new Vector3(Mathf.FloorToInt(worldPos.x), Mathf.FloorToInt(worldPos.y), Mathf.FloorToInt(worldPos.z));
-
+                Debug.Log(gridPos);
                 destination = gridPos;
 
-                var path = new NavMeshPath();
-                agent.CalculatePath(destination, path);
-                switch (path.status)
-                {
-                    case NavMeshPathStatus.PathComplete:
-                        isMoving = true;
-                        agent.SetDestination(destination);
-                        break;
-                    default:
-                        //Debug.Log("Can't move there");
-                        break;
-                }
+                CheckIfCanReachDestination();
             }
             else
             {
-                //Debug.Log("not on navmesh");
+                Debug.Log("not on navmesh");
                 if(hitData.collider.CompareTag("Movable"))
                 {
                     Debug.Log("hit block");
                     //ga naar closest point van block
                 }
             }
+        }
+    }
+
+    private void CheckIfCanReachDestination()
+    {
+        var path = new NavMeshPath();
+        agent.CalculatePath(destination, path);
+        switch (path.status)
+        {
+            case NavMeshPathStatus.PathComplete:
+                agent.SetDestination(destination);
+                isMoving = true;
+                break;
+            default:
+                Debug.Log("Can't move there");
+                break;
         }
     }
 
@@ -107,14 +115,13 @@ public class PlayerMouseMovement : MonoBehaviour
     public void MoveOutsideScript(Vector3 pos) 
     {
         destination = pos;
-        isMoving = true;
-        agent.SetDestination(pos);
+        CheckIfCanReachDestination();
     }
 
     private void Move(InputAction.CallbackContext obj)
     {
         screenPos = obj.ReadValue<Vector2>();
-        if (allowedToMove) 
+        if (allowedToMove && !isInMaze) 
         {
             castRay();    
         }
