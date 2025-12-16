@@ -4,10 +4,14 @@ using UnityEngine.AI;
 
 public class MoveBlockScript : MonoBehaviour
 {
-    public GameObject selectedNotification;
+    public GameObject questionNotification, noteNotification;
 
     [SerializeField] private PlayerMouseMovement playerMovement;
     private BlockPuzzleManager manager;
+    private ColourChanger colourChanger;
+    [SerializeField] private MeshRenderer colourRenderer;
+    private Material colourMaterial;
+
     public bool objectAbleToMove;
     public bool isRightDirection; //set for every object
     public string blockNote;
@@ -29,6 +33,8 @@ public class MoveBlockScript : MonoBehaviour
 
     private void Awake()
     {
+        colourChanger = FindFirstObjectByType<ColourChanger>();
+        ChangeColourBasedOnNote();
         manager = FindFirstObjectByType<BlockPuzzleManager>();
         playerMovement = FindFirstObjectByType<PlayerMouseMovement>();
         isMoving = false;
@@ -103,5 +109,14 @@ public class MoveBlockScript : MonoBehaviour
             //playerMovement.agent.isStopped = true;
             manager.CheckIfAllowedToMove();
         }
+    }
+
+    private void ChangeColourBasedOnNote()
+    {
+        colourMaterial = colourChanger.ChangeColourBasedOnNote(blockNote);
+
+        var materialTemp = colourRenderer.materials;
+        materialTemp[1] = colourMaterial;
+        colourRenderer.materials = materialTemp;
     }
 }

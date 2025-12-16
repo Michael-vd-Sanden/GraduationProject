@@ -750,6 +750,7 @@ GameObject:
   - component: {fileID: 493139571}
   - component: {fileID: 493139570}
   - component: {fileID: 493139569}
+  - component: {fileID: 493139573}
   m_Layer: 0
   m_Name: BlockPuzzleManager
   m_TagString: Untagged
@@ -788,8 +789,7 @@ MonoBehaviour:
   currentSelectedBlock: {fileID: 0}
   currentBlockNote: 
   noteSelected: 
-  defaultMaterial: {fileID: 2100000, guid: fd29dd06e5f1bff43b9f58681ea34b92, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 226c1bf0ed0be3c46986d2f5745e3398, type: 2}
+  colourMaterials: []
   layer: 6
 --- !u!114 &493139571
 MonoBehaviour:
@@ -831,6 +831,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &493139573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493139568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1132724dc451105448645bf8a6e6f277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColourChanger
+  colours:
+  - {fileID: 2100000, guid: d3bbf511c4f7b804aba380279aecdebd, type: 2}
+  - {fileID: 2100000, guid: e76e250ef00f39b44a50b700d9ee7123, type: 2}
+  - {fileID: 2100000, guid: 991b02ba4784cd148bdd93433a9def90, type: 2}
+  - {fileID: 2100000, guid: beba655a2761b5b48893f4547783f47e, type: 2}
+  - {fileID: 2100000, guid: bdc3f0e567575664ba86b706a4f4407f, type: 2}
+  - {fileID: 2100000, guid: 3c29f7e93c00d8d45877fd8f6df3252e, type: 2}
+  - {fileID: 2100000, guid: 3427ec5f05a6561499658e3037d7ad75, type: 2}
 --- !u!1 &514233866
 GameObject:
   m_ObjectHideFlags: 0
@@ -5135,6 +5155,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6034811686613585978, guid: 67d995d065895b54ca0631457e272fc7, type: 3}
   m_PrefabInstance: {fileID: 1017123882}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1993157000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1993157001}
+  m_Layer: 0
+  m_Name: GlobalRoot
+  m_TagString: GlobalRoot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1993157001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993157000}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2077971178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5372,6 +5423,10 @@ PrefabInstance:
     - target: {fileID: 3157454766608296995, guid: 1a58dea48473d3a4ea8952c33b16ddc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PressedNoteBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 3450506966332696812, guid: 1a58dea48473d3a4ea8952c33b16ddc1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3912666210717185470, guid: 1a58dea48473d3a4ea8952c33b16ddc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5764,3 +5819,4 @@ SceneRoots:
   - {fileID: 708266806}
   - {fileID: 1572638090}
   - {fileID: 493139572}
+  - {fileID: 1993157001}

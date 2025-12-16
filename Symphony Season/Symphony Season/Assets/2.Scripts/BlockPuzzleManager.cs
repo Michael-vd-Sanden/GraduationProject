@@ -5,6 +5,7 @@ public class BlockPuzzleManager : MonoBehaviour
 {
     [SerializeField] private PlayerMouseMovement playerMovement;
     [SerializeField] private UIToggles uiToggle;
+    
 
     public List<MoveBlockScript> enteredBlocks;
     [SerializeField] private int selectedBlockIndex = 0;
@@ -12,7 +13,7 @@ public class BlockPuzzleManager : MonoBehaviour
     public string currentBlockNote;
     public string noteSelected; //which note btn was pressed
 
-    public Material defaultMaterial, selectedMaterial;
+    public Material[] colourMaterials;
 
     public int layer;
     private int layerAsLayerMask;
@@ -30,23 +31,23 @@ public class BlockPuzzleManager : MonoBehaviour
         {
             if(currentSelectedBlock== null) { isCheckingForNotes = false; return; }
 
-            if (noteSelected == currentBlockNote)
+            if (noteSelected == currentBlockNote) //goede noot
             {
                 playerMovement.allowedToMove = false;
                 currentSelectedBlock.objectAbleToMove = true;
+                currentSelectedBlock.noteNotification.SetActive(true);
+                currentSelectedBlock.questionNotification.SetActive(false);
                 CheckIfAllowedToMove();
                 noteSelected = null;
                 uiToggle.DeactivateNoteBtns();
                 isCheckingForNotes= false;
                 return;
             }
-            if(!string.IsNullOrEmpty(noteSelected) && noteSelected != currentBlockNote)
+            if(!string.IsNullOrEmpty(noteSelected) && noteSelected != currentBlockNote) //foute noot
             {
                 //play some sort of sound
                 Debug.Log("fout");
-                LetGoOfBlock();
-                uiToggle.DeactivateNoteBtns();
-                isCheckingForNotes= false;
+                noteSelected = null;
             }
         }
     }
@@ -57,8 +58,11 @@ public class BlockPuzzleManager : MonoBehaviour
         if (enteredBlocks.Count > 0) 
         { 
             playerMovement.canBeOverUI= true;
+        }   
+        if(enteredBlocks.Count == 1)
+        {
             uiToggle.EnteredTrigger();
-        }     
+        }
     }
     public void ExitedTrigger(MoveBlockScript block)
     {
@@ -77,7 +81,7 @@ public class BlockPuzzleManager : MonoBehaviour
         {
             currentSelectedBlock = enteredBlocks[selectedBlockIndex];
             currentBlockNote = currentSelectedBlock.blockNote;
-            currentSelectedBlock.selectedNotification.SetActive(true);
+            currentSelectedBlock.questionNotification.SetActive(true);
             isCheckingForNotes = true;
         }
     }
@@ -99,10 +103,14 @@ public class BlockPuzzleManager : MonoBehaviour
     }
     public void LetGoOfBlock()
     {
+        if (currentSelectedBlock != null)
+        {
+            currentSelectedBlock.questionNotification.SetActive(false);
+            currentSelectedBlock.noteNotification.SetActive(false);
+            currentSelectedBlock.objectAbleToMove = false;
+            currentSelectedBlock = null;
+        }
         currentBlockNote = null;
-        currentSelectedBlock.selectedNotification.SetActive(false);
-        currentSelectedBlock.objectAbleToMove = false;
-        currentSelectedBlock = null;
         playerMovement.allowedToMove = true;
     }
 
