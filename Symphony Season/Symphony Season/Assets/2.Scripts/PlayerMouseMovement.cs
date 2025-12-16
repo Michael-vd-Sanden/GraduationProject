@@ -69,17 +69,17 @@ public class PlayerMouseMovement : MonoBehaviour
             {
                 worldPos = navMeshHit.position + offset;
                 gridPos = new Vector3(Mathf.FloorToInt(worldPos.x), Mathf.FloorToInt(worldPos.y), Mathf.FloorToInt(worldPos.z));
-                Debug.Log(gridPos);
+                //Debug.Log(gridPos);
                 destination = gridPos;
 
                 CheckIfCanReachDestination();
             }
             else
             {
-                Debug.Log("not on navmesh");
+                //Debug.Log("not on navmesh");
                 if(hitData.collider.CompareTag("Movable"))
                 {
-                    Debug.Log("hit block");
+                    //Debug.Log("hit block");
                     //ga naar closest point van block
                 }
             }
@@ -97,7 +97,7 @@ public class PlayerMouseMovement : MonoBehaviour
                 isMoving = true;
                 break;
             default:
-                Debug.Log("Can't move there");
+                //Debug.Log("Can't move there");
                 break;
         }
     }
