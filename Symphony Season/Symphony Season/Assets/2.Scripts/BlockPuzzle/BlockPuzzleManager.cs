@@ -34,7 +34,7 @@ public class BlockPuzzleManager : MonoBehaviour
 
             if (noteSelected == currentBlockNote) //goede noot
             {
-                audioPlayer.PlayEffect(noteSelected);
+                //audioPlayer.PlayEffect(noteSelected); Al in button
                 playerMovement.allowedToMove = false;
                 currentSelectedBlock.objectAbleToMove = true;
                 currentSelectedBlock.noteNotification.SetActive(true);
@@ -86,6 +86,7 @@ public class BlockPuzzleManager : MonoBehaviour
             currentBlockNote = currentSelectedBlock.blockNote;
             currentSelectedBlock.questionNotification.SetActive(true);
             isCheckingForNotes = true;
+            noteSelected = null;
             playerFollow.ToggleHolding(1f);
         }
     }

@@ -85,11 +85,12 @@ Material:
     - _Wobble: 1
     - _WobbleRange: 0.2
     - _WobleSpeed: 3
+    - _XRMotionVectorsPass: 1
     - _ZTest: 4
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Colour: {r: 0.40161723, g: 0.047089845, b: 0.09284017, a: 0}
+    - _Colour: {r: 0.23584908, g: 0, b: 0.031446513, a: 0}
     - _ShadingColour: {r: 0.4339623, g: 0.041524667, b: 0.33005226, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -87,7 +87,6 @@ GameObject:
   - component: {fileID: 8021900421427927081}
   - component: {fileID: 556668339582886571}
   - component: {fileID: 5786529378805485977}
-  - component: {fileID: 6988730380218302536}
   m_Layer: 0
   m_Name: Question Mark
   m_TagString: Untagged
@@ -166,20 +165,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6988730380218302536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2553657282420760928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d23be7d832a17ec429ec2b406d79bee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ColourChange
-  ColourChangeObject: {fileID: 5280733442349491611}
-  MaterialIndex: 3
 --- !u!1 &4114902602454117863
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +264,9 @@ MonoBehaviour:
   questionNotification: {fileID: 2553657282420760928}
   noteNotification: {fileID: 6586865981214656877}
   playerMovement: {fileID: 0}
-  colourRenderer: {fileID: 5280733442349491611}
+  colourBlockRenderer: {fileID: 5280733442349491611}
+  colourQuestionRenderer: {fileID: 5786529378805485977}
+  colourNoteRenderer: {fileID: 9030437201698071636}
   objectAbleToMove: 0
   isRightDirection: 0
   blockNote: 
@@ -359,7 +346,6 @@ GameObject:
   - component: {fileID: 8501165854239303811}
   - component: {fileID: 2886560261602115258}
   - component: {fileID: 9030437201698071636}
-  - component: {fileID: 2151115721512496000}
   m_Layer: 0
   m_Name: Note
   m_TagString: Untagged
@@ -438,20 +424,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2151115721512496000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6586865981214656877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d23be7d832a17ec429ec2b406d79bee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ColourChange
-  ColourChangeObject: {fileID: 5280733442349491611}
-  MaterialIndex: 3
 --- !u!1 &7387684139860629148
 GameObject:
   m_ObjectHideFlags: 0

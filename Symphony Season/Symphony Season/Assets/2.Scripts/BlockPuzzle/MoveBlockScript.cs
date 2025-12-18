@@ -9,7 +9,7 @@ public class MoveBlockScript : MonoBehaviour
     [SerializeField] private PlayerMouseMovement playerMovement;
     private BlockPuzzleManager manager;
     private ColourChanger colourChanger;
-    [SerializeField] private MeshRenderer colourRenderer;
+    [SerializeField] private MeshRenderer colourBlockRenderer, colourQuestionRenderer, colourNoteRenderer;
     private Material colourMaterial;
 
     public bool objectAbleToMove;
@@ -115,8 +115,20 @@ public class MoveBlockScript : MonoBehaviour
     {
         colourMaterial = colourChanger.ChangeColourBasedOnNote(blockNote);
 
-        var materialTemp = colourRenderer.materials;
+        var materialTemp = colourBlockRenderer.materials;
         materialTemp[1] = colourMaterial;
-        colourRenderer.materials = materialTemp;
+        colourBlockRenderer.materials = materialTemp;
+
+        var material2Temp = colourQuestionRenderer.materials;
+        //material2Temp[0].EnableKeyword("_EMISSION");
+        //material2Temp[0].color = colourMaterial.GetColor("_EmissionColor");
+        material2Temp[0] = colourMaterial;
+        colourQuestionRenderer.materials = material2Temp;
+
+        var material3Temp = colourNoteRenderer.materials;
+        // material3Temp[0].EnableKeyword("_EMISSION");
+        //material3Temp[0].color = colourMaterial.GetColor("_EmissionColor");
+        material3Temp[0] = colourMaterial;
+        colourNoteRenderer.materials = material3Temp;
     }
 }

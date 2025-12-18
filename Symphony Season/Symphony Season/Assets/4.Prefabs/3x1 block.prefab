@@ -265,7 +265,9 @@ MonoBehaviour:
   questionNotification: {fileID: 419376767644873355}
   noteNotification: {fileID: 5243409297223215601}
   playerMovement: {fileID: 0}
-  colourRenderer: {fileID: 825601474294461021}
+  colourBlockRenderer: {fileID: 825601474294461021}
+  colourQuestionRenderer: {fileID: 6992806910183882814}
+  colourNoteRenderer: {fileID: 3278474272733102630}
   objectAbleToMove: 0
   isRightDirection: 0
   blockNote: 

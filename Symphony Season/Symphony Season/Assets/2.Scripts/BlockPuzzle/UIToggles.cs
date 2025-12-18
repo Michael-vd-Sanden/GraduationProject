@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class UIToggles : MonoBehaviour
 {
-    [SerializeField] private GameObject holdControl, releaseControl, switchControl, pushLeftUpControl, pushLeftDownControl, pushRightUpControl, pushRightDownControl, victoryText,
-        btnsSharp, btnsFlat, noteBtns;
+    [SerializeField]
+    private GameObject holdControl, releaseControl, switchControl, pushLeftUpControl, pushLeftDownControl, pushRightUpControl, pushRightDownControl, victoryText,
+        btnsSharp, btnsFlat, noteBtnsCanvas;
+    [SerializeField] private GameObject[] noteBtnsObjects;
     [SerializeField] private BlockPuzzleManager manager;
     [SerializeField] private SceneSwitching sceneSwitching;
 
@@ -16,12 +18,14 @@ public class UIToggles : MonoBehaviour
     public void ExitedTrigger() 
     { 
         holdControl.SetActive(false);
-        noteBtns.SetActive(false);
+        noteBtnsCanvas.SetActive(false);
+        foreach(GameObject g in noteBtnsObjects) { g.SetActive(false); }
     }
 
     public void DeactivateNoteBtns()
     {
-        noteBtns.SetActive(false) ;
+        noteBtnsCanvas.SetActive(false) ;
+        foreach (GameObject g in noteBtnsObjects) { g.SetActive(false); }
     }
 
     public void SwitchSharpOrSflat()
@@ -34,7 +38,8 @@ public class UIToggles : MonoBehaviour
     {
         holdControl.SetActive(false);
         releaseControl.SetActive(true);
-        noteBtns.SetActive(true);
+        noteBtnsCanvas.SetActive(true);
+        foreach (GameObject g in noteBtnsObjects) { g.SetActive(true); }
         manager.HoldBlock();
 
         if (manager.enteredBlocks.Count > 1)
@@ -84,7 +89,8 @@ public class UIToggles : MonoBehaviour
         pushLeftDownControl.SetActive(false);
         pushRightDownControl.SetActive(false);
         pushRightUpControl.SetActive(false);
-        noteBtns.SetActive(true);
+        noteBtnsCanvas.SetActive(true);
+        foreach (GameObject g in noteBtnsObjects) { g.SetActive(true); }
         manager.SwitchBlock();
     }
 
@@ -96,7 +102,8 @@ public class UIToggles : MonoBehaviour
         pushRightUpControl.SetActive(false);
         releaseControl.SetActive(false);
         switchControl.SetActive(false);
-        noteBtns.SetActive(false);
+        noteBtnsCanvas.SetActive(false);
+        foreach (GameObject g in noteBtnsObjects) { g.SetActive(false); }
         holdControl.SetActive(true);
         manager.LetGoOfBlock();
     }
