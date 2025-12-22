@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1196920069682341731
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
+  version: 10
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WoodMat
+  m_Shader: {fileID: -6465566751694194690, guid: a4a4c3c5be0d5654182dfed26c552e6e, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_1bc6fcaa59634711beda8b51c2b27a61:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_4af4357629de4f93bc85e2e76130857e:
+        m_Texture: {fileID: 2800000, guid: 2fe87d9dfd915994db5abb3d3bc6b4e0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_c99d6377f46445d79cf4bd3b5a535e72:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - Boolean_06d470423eaf48d08fda2dd5516c0f27: 0
+    - Boolean_7e43ca7d04fb41b082a08913f94954b0: 0
+    - Boolean_a28ad3fc8d3f4fda93f9c8945a5a33cb: 1
+    - Vector1_6cabd9f62b534aba8ae9044c87319336: 1.12
+    - Vector1_77df1527ee0c44eab2c602a261ac1519: 0.57
+    - Vector1_9e48ce31b4be426a8bcca95ac7ce07e4: 0
+    - Vector1_cbf16136a67d49c0a5beaaa5e67e42a3: 4.11
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    m_Colors:
+    - Color_36240a1e513f4404abd4825a661da3cb: {r: 0.2776279, g: 0.056498393, b: 0.11915174, a: 0}
+    - Color_e0d546a33d4d4523a52d1760c0e1cee8: {r: 0.1159029, g: 0.02858521, b: 0.02858521, a: 0}
+    - Color_f61d22bb50de454190161ca39eb744cc: {r: 0.5309972, g: 0.2826737, b: 0.4198076, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

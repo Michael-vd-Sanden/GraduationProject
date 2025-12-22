@@ -554,6 +554,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6034811686613585978}
     m_Modifications:
+    - target: {fileID: 5049109919951737348, guid: 5b5813cfefe20f24f924671b7e299123, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c2c4158389ab5a849bc3a65a826ed91e, type: 2}
     - target: {fileID: 5341326349361732318, guid: 5b5813cfefe20f24f924671b7e299123, type: 3}
       propertyPath: m_Name
       value: NoteCube2x1
