@@ -20,7 +20,7 @@ Material:
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
-  m_LockedProperties: 
+  m_LockedProperties: :m_EnableInstancingVariants
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -45,11 +45,11 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _FarGroundColour: {r: 0.16442037, g: 0.029914742, b: 0.112007126, a: 0}
+    - _FarGroundColour: {r: 0.12129372, g: 0.00768302, b: 0.10889318, a: 0}
     - _HazeColour: {r: 0.23989207, g: 0.072096914, b: 0.105759926, a: 0}
-    - _HorizonColour: {r: 0.27223712, g: 0.07741513, b: 0.16326892, a: 0}
+    - _HorizonColour: {r: 0.20754701, g: 0.024335003, b: 0.081909984, a: 0}
     - _HorizonTrue: {r: 0.09973043, g: 0.05792966, b: 0.08579683, a: 0}
-    - _TopColour: {r: 0.34770882, g: 0.10262563, b: 0.16667734, a: 0}
+    - _TopColour: {r: 0.1913746, g: 0.054420535, b: 0.09137639, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &8462572301377036946
