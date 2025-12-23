@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1196920069682341731
+--- !u!114 &-2631264757025976105
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CurtainMatDark
-  m_Shader: {fileID: -6465566751694194690, guid: a4a4c3c5be0d5654182dfed26c552e6e, type: 3}
+  m_Name: NoteScreenMat
+  m_Shader: {fileID: -6465566751694194690, guid: 823808fe637e3274894846dc56584178, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -33,20 +33,32 @@ Material:
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
-  m_LockedProperties: Color_e0d546a33d4d4523a52d1760c0e1cee8
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_1bc6fcaa59634711beda8b51c2b27a61:
-        m_Texture: {fileID: 2800000, guid: 2fe87d9dfd915994db5abb3d3bc6b4e0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - Texture2D_4af4357629de4f93bc85e2e76130857e:
-        m_Texture: {fileID: 2800000, guid: e9393a66b0cd36c419d8c3f466d35678, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - Texture2D_c99d6377f46445d79cf4bd3b5a535e72:
-        m_Texture: {fileID: 2800000, guid: 2fe87d9dfd915994db5abb3d3bc6b4e0, type: 3}
+    - _BassClefTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BorderTex:
+        m_Texture: {fileID: 2800000, guid: 768c84b1c9287af419114d91cda07efc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoteLineTex:
+        m_Texture: {fileID: 2800000, guid: a774c9239099d824a865b8e24f1eeb05, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TrebleClefTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -63,18 +75,19 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Boolean_06d470423eaf48d08fda2dd5516c0f27: 0
-    - Boolean_7e43ca7d04fb41b082a08913f94954b0: 0
-    - Boolean_a28ad3fc8d3f4fda93f9c8945a5a33cb: 0
-    - Vector1_6cabd9f62b534aba8ae9044c87319336: -0.86
+    - Boolean_a28ad3fc8d3f4fda93f9c8945a5a33cb: 1
+    - Vector1_6cabd9f62b534aba8ae9044c87319336: 1.12
     - Vector1_77df1527ee0c44eab2c602a261ac1519: 0.57
-    - Vector1_9e48ce31b4be426a8bcca95ac7ce07e4: -1.39
-    - Vector1_cbf16136a67d49c0a5beaaa5e67e42a3: 2
+    - Vector1_9e48ce31b4be426a8bcca95ac7ce07e4: 0
+    - Vector1_cbf16136a67d49c0a5beaaa5e67e42a3: 2.03
+    - _Brightness: 0.32
+    - _Contrast: 1.03
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Saturation: 1.51
     m_Colors:
-    - Color_36240a1e513f4404abd4825a661da3cb: {r: 0.30997294, g: 0.10652705, b: 0.21046135, a: 0}
-    - Color_e0d546a33d4d4523a52d1760c0e1cee8: {r: 0.06317758, g: 0.004268343, b: 0.067385375, a: 0}
-    - Color_f61d22bb50de454190161ca39eb744cc: {r: 0.4339623, g: 0.17721097, b: 0.22256586, a: 0}
+    - Color_36240a1e513f4404abd4825a661da3cb: {r: 0.6549864, g: 0.45475397, b: 0.21450359, a: 0}
+    - Color_e0d546a33d4d4523a52d1760c0e1cee8: {r: 0, g: 0, b: 0, a: 0}
+    - Color_f61d22bb50de454190161ca39eb744cc: {r: 0.33153635, g: 0.04780913, b: 0.31035888, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
