@@ -34,8 +34,17 @@ public class UIToggles : MonoBehaviour
         btnsSharp.SetActive(!btnsSharp.activeSelf);
     }
 
+    public void TurnOffDirections()
+    {
+        pushLeftDownControl.SetActive(false);
+        pushLeftUpControl.SetActive(false);
+        pushRightDownControl.SetActive(false);
+        pushRightUpControl.SetActive(false);
+    }
+
     public void PressedHoldBtn()
     {
+        TurnOffDirections();
         holdControl.SetActive(false);
         releaseControl.SetActive(true);
         noteBtnsCanvas.SetActive(true);
@@ -48,12 +57,9 @@ public class UIToggles : MonoBehaviour
         { switchControl.SetActive(false); }
     }
 
-    public void ActivateDirections()
+    public void ActivateBlockDirections()
     {
-        pushLeftDownControl.SetActive(false);
-        pushLeftUpControl.SetActive(false);
-        pushRightDownControl.SetActive(false);
-        pushRightUpControl.SetActive(false);
+        TurnOffDirections();
 
         MoveBlockScript block = manager.currentSelectedBlock;
         if (block.isRightDirection)
@@ -77,9 +83,33 @@ public class UIToggles : MonoBehaviour
         { switchControl.SetActive(false); }
     }
 
+    public void ActivatePlayerDirections(string direction, bool active)
+    {
+        switch (direction)
+        {
+            case "LeftUp":
+                if (active) { pushLeftUpControl.SetActive(true); }
+                else { pushLeftUpControl.SetActive(false); }
+                break;
+            case "RightUp":
+                if (active) { pushRightUpControl.SetActive(true); }
+                else { pushRightUpControl.SetActive(false); }
+                break;
+            case "LeftDown":
+                if (active) { pushLeftDownControl.SetActive(true); }
+                else { pushLeftDownControl.SetActive(false); }
+                break;
+            case "RightDown":
+                if (active) { pushRightDownControl.SetActive(true); }
+                else { pushRightDownControl.SetActive(false); }
+                break;
+        }   
+    }
+
     public void PressedPushBtn(string direction) //miss geen button, maar een drag?
     {
-        manager.currentSelectedBlock.MoveBlock(direction);
+        if (manager.currentSelectedBlock != null)
+        { manager.currentSelectedBlock.MoveBlock(direction); }
     }
 
     public void PressedSwitchBtn()
@@ -105,6 +135,7 @@ public class UIToggles : MonoBehaviour
         noteBtnsCanvas.SetActive(false);
         foreach (GameObject g in noteBtnsObjects) { g.SetActive(false); }
         holdControl.SetActive(true);
+
         manager.LetGoOfBlock();
     }
 

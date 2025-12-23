@@ -21,6 +21,8 @@ public class BlockPuzzleManager : MonoBehaviour
 
     private bool isCheckingForNotes = false;
 
+    public PlayerButtonMovement playerBtnMove;
+
     private void Awake()
     {
         layerAsLayerMask = (1 << layer);
@@ -118,6 +120,8 @@ public class BlockPuzzleManager : MonoBehaviour
         }
         currentBlockNote = null;
         playerMovement.allowedToMove = true;
+        if(!playerMovement.isMouseMovement)
+        { playerBtnMove.CheckPlayerDirections(); }
     }
 
     public void CheckIfAllowedToMove()
@@ -165,7 +169,7 @@ public class BlockPuzzleManager : MonoBehaviour
                 else { currentSelectedBlock.downAllowed = true; }
             }
         }
-        uiToggle.ActivateDirections();
+        uiToggle.ActivateBlockDirections();
         if(enteredBlocks.Count == 1) { selectedBlockIndex = 0; }
     }
 }

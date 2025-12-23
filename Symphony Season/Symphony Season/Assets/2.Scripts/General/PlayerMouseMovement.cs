@@ -28,9 +28,13 @@ public class PlayerMouseMovement : MonoBehaviour
     public bool canBeOverUI;
     public bool isInMaze;
 
+    public bool isMouseMovement;
+    private PlayerButtonMovement playerButtonMove;
+
     private void Start()
     {
         agent.speed = moveSpeed;
+        playerButtonMove= GetComponent<PlayerButtonMovement>();
     }
 
     private void Update()
@@ -45,6 +49,7 @@ public class PlayerMouseMovement : MonoBehaviour
                 transform.position = new Vector3(destination.x, currentPos.y, destination.z);
                 isMoving = false;
                 if(isInMaze) { allowedToMove= true; }
+                if (!isMouseMovement) { playerButtonMove.CheckPlayerDirections();}
             }
         }
     }
@@ -126,7 +131,7 @@ public class PlayerMouseMovement : MonoBehaviour
     private void Move(InputAction.CallbackContext obj)
     {
         screenPos = obj.ReadValue<Vector2>();
-        if (allowedToMove && !isInMaze) 
+        if (allowedToMove && !isInMaze && isMouseMovement) 
         {
             castRay();    
         }
