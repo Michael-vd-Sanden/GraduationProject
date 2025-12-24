@@ -15,6 +15,9 @@ public class PlayerFollower : MonoBehaviour
     private void Start()
     {
         playerMovement = FindFirstObjectByType<PlayerMouseMovement>();
+        ToggleLeft(0f);
+        ToggleMoving(0f);
+        ToggleHolding(0f);
     }
 
     void Update()
