@@ -1,36 +1,36 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem.Controls;
-using UnityEngine.InputSystem.Utilities;
-using TMPro;
 
 public class PlayerMouseMovement : MonoBehaviour
 {
+    [Header("-------------- Required Objects")]
+    public NavMeshAgent agent;
+    [SerializeField] public InputActionReference moveAction;
+    public LayerMask layersToHit;
+    [SerializeField] private Vector2[] UIMask;
+    private PlayerButtonMovement playerButtonMove;
+
+    [Header("-------------- Changeble Values")]
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float sampleDistance = 0.5f;
     [SerializeField] private Vector3 offset = new Vector3(0.5f, 0f, 0.5f);
     [SerializeField] private Vector3 targetMargin = new Vector3(0.1f, 0f, 0.1f);
+    public bool isInMaze;
+    public bool isMouseMovement;
+
+    [Header("-------------- Background Values (do not change)")]
+    public bool allowedToMove;
+    public bool canBeOverUI;
     public bool isMoving = false;
     public bool isMovingLeft = false;
     [SerializeField] private Vector3 currentPos, destination;
-    public NavMeshAgent agent;
-
-    [SerializeField] public InputActionReference moveAction;
-
     private Vector3 screenPos, worldPos, gridPos;
-    public LayerMask layersToHit;
-
-    [SerializeField] private Vector2[] UIMask;
-
-    public bool allowedToMove;
-    public bool canBeOverUI;
-    public bool isInMaze;
 
     private void Start()
     {
         agent.speed = moveSpeed;
+        playerButtonMove= GetComponent<PlayerButtonMovement>();
     }
 
     private void Update()
@@ -45,6 +45,7 @@ public class PlayerMouseMovement : MonoBehaviour
                 transform.position = new Vector3(destination.x, currentPos.y, destination.z);
                 isMoving = false;
                 if(isInMaze) { allowedToMove= true; }
+                if (!isMouseMovement) { playerButtonMove.CheckPlayerDirections();}
             }
         }
     }
@@ -126,7 +127,7 @@ public class PlayerMouseMovement : MonoBehaviour
     private void Move(InputAction.CallbackContext obj)
     {
         screenPos = obj.ReadValue<Vector2>();
-        if (allowedToMove && !isInMaze) 
+        if (allowedToMove && !isInMaze && isMouseMovement) 
         {
             castRay();    
         }

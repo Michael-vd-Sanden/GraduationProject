@@ -2,12 +2,15 @@ using UnityEngine;
 
 public class PlayerFollower : MonoBehaviour
 {
+    [Header("-------------- Required Objects")]
     [SerializeField] private GameObject PlayerObject;
+    [SerializeField] private Material playerMaterial;
+
+    [Header("-------------- Changeble Values")]
     [SerializeField] private float Yoffset;
 
+    [Header("-------------- Background Values (do not change)")]
     [SerializeField] private PlayerMouseMovement playerMovement;
-
-    [SerializeField] private Material playerMaterial;
 
     private void Start()
     {

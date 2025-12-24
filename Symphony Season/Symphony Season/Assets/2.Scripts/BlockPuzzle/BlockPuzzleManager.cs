@@ -3,27 +3,29 @@ using UnityEngine;
 
 public class BlockPuzzleManager : MonoBehaviour
 {
+    [Header("-------------- Required Objects")]
     [SerializeField] private PlayerMouseMovement playerMovement;
     [SerializeField] private UIToggles uiToggle;
     [SerializeField] private AudioPlayer audioPlayer;
     [SerializeField] private PlayerFollower playerFollow;
+    public PlayerButtonMovement playerBtnMove;
 
+    [Header("-------------- Changeble Values")]
+    public int hitLayer;
+    private int layerAsLayerMask;
+
+    [Header("-------------- Background Values (do not change)")]
     public List<MoveBlockScript> enteredBlocks;
     [SerializeField] private int selectedBlockIndex = 0;
     public MoveBlockScript currentSelectedBlock;
     public string currentBlockNote;
     public string noteSelected; //which note btn was pressed
-
     public Material[] colourMaterials;
-
-    public int layer;
-    private int layerAsLayerMask;
-
     private bool isCheckingForNotes = false;
 
     private void Awake()
     {
-        layerAsLayerMask = (1 << layer);
+        layerAsLayerMask = (1 << hitLayer);
     }
 
     private void Update()
@@ -118,6 +120,8 @@ public class BlockPuzzleManager : MonoBehaviour
         }
         currentBlockNote = null;
         playerMovement.allowedToMove = true;
+        if(!playerMovement.isMouseMovement)
+        { playerBtnMove.CheckPlayerDirections(); }
     }
 
     public void CheckIfAllowedToMove()
@@ -134,7 +138,7 @@ public class BlockPuzzleManager : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(b.position, rayDirect, out hit, 3f, layerAsLayerMask))
             {
-                Debug.DrawRay(b.position, rayDirect * hit.distance, Color.green, 2f);
+                Debug.DrawRay(b.position, rayDirect * hit.distance, Color.red, 2f);
                 //Debug.Log("object hit: " + hit.transform.name.ToString());
 
                 float allowedDistance;
@@ -160,12 +164,12 @@ public class BlockPuzzleManager : MonoBehaviour
             }
             else
             {//able to move
-                Debug.DrawRay(b.position, rayDirect * 3f, Color.red, 2f);
+                Debug.DrawRay(b.position, rayDirect * 3f, Color.green, 2f);
                 if (check == 0) { currentSelectedBlock.upAllowed = true; }
                 else { currentSelectedBlock.downAllowed = true; }
             }
         }
-        uiToggle.ActivateDirections();
+        uiToggle.ActivateBlockDirections();
         if(enteredBlocks.Count == 1) { selectedBlockIndex = 0; }
     }
 }

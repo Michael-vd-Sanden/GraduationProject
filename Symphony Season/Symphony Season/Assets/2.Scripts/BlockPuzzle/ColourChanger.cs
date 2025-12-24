@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ColourChanger : MonoBehaviour
 {
+    [Header("-------------- Required Objects")]
     public List<Material> colours;
 
     public Material ChangeColourBasedOnNote(string note)

@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
 {
-    [SerializeField] private AudioClip[] effectClips, ambientClips;
-
+    [Header("-------------- Required Objects")]
+    [SerializeField] private AudioClip[] effectClips;
+    [SerializeField] private AudioClip[] ambientClips;
     public AudioSource musicSource, effectSource;
 
     private int activeMusicClip = 0;
