@@ -4,32 +4,38 @@ using UnityEngine.AI;
 
 public class MoveBlockScript : MonoBehaviour
 {
+    [Header("-------------- Required Objects")]
+    [SerializeField] private MeshRenderer colourBlockRenderer;
+    [SerializeField] private MeshRenderer colourQuestionRenderer, colourNoteRenderer;
     public GameObject questionNotification, noteNotification;
-
-    [SerializeField] private PlayerMouseMovement playerMovement;
+    private Material colourMaterial;
     private BlockPuzzleManager manager;
     private ColourChanger colourChanger;
-    [SerializeField] private MeshRenderer colourBlockRenderer, colourQuestionRenderer, colourNoteRenderer;
-    private Material colourMaterial;
 
-    public bool objectAbleToMove;
+    [Header("-------------- Changeble Values")]
+    public float playerDistance;
+    public float wallDistance;
     public bool isRightDirection; //set for every object
     public string blockNote;
+    [SerializeField] private int materialInArray;
+
+    [Header("-------------- Background Values (do not change)")]
+    //sets in awake
+    [SerializeField] private PlayerMouseMovement playerMovement;
+    //background values
+    public bool objectAbleToMove;
     public bool upAllowed;
     public bool downAllowed;
-
+    //positioning
+    private Vector3 objectCurrentPos, objectTargetPos, playerTargetPos, playerCurrentPos;
+    [SerializeField] private bool isMoving;
+    public bool playerIsFront; //on which side the player is (true = front, false = back)
     //smooth movement
     [SerializeField] AnimationCurve stepEase = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(1f, 1f));
     [SerializeField] AnimationCurve stepHeightShape = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(0.5f, 1f), new Keyframe(1f, 0f));
     [SerializeField] float stepHeight = 0.3f;
     [SerializeField] float stepDuration = 0.3f;
     private float stepTime;
-
-    private Vector3 objectCurrentPos, objectTargetPos, playerTargetPos, playerCurrentPos;
-    [SerializeField] private bool isMoving;
-    public bool playerIsFront; //on which side the player is (true = front, false = back)
-    public float playerDistance;
-    public float wallDistance;
 
     private void Awake()
     {
@@ -106,7 +112,6 @@ public class MoveBlockScript : MonoBehaviour
         if (progress >= 1f)
         {
             isMoving = false;
-            //playerMovement.agent.isStopped = true;
             manager.CheckIfAllowedToMove();
         }
     }
@@ -116,7 +121,7 @@ public class MoveBlockScript : MonoBehaviour
         colourMaterial = colourChanger.ChangeColourBasedOnNote(blockNote);
 
         var materialTemp = colourBlockRenderer.materials;
-        materialTemp[1] = colourMaterial;
+        materialTemp[materialInArray] = colourMaterial;
         colourBlockRenderer.materials = materialTemp;
 
         var material2Temp = colourQuestionRenderer.materials;

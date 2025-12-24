@@ -222,13 +222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c294fdda9889349b295ac020401746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMouseMovement
-  moveSpeed: 4
-  sampleDistance: 0.5
-  offset: {x: 0.5, y: 0, z: 0.5}
-  targetMargin: {x: 0.01, y: 0, z: 0.01}
-  isMoving: 0
-  currentPos: {x: 0, y: 0, z: 0}
-  destination: {x: 0, y: 0, z: 0}
   agent: {fileID: 2645227324962557039}
   moveAction: {fileID: -2987801270570978133, guid: 6876523846f0dd14b8c2c75c1f2926e8, type: 3}
   layersToHit:
@@ -239,9 +232,18 @@ MonoBehaviour:
   - {x: 1880, y: 0}
   - {x: 2340, y: 302}
   - {x: 2340, y: 0}
+  moveSpeed: 4
+  sampleDistance: 0.5
+  offset: {x: 0.5, y: 0, z: 0.5}
+  targetMargin: {x: 0.01, y: 0, z: 0.01}
+  isInMaze: 0
+  isMouseMovement: 1
   allowedToMove: 1
   canBeOverUI: 0
-  isInMaze: 0
+  isMoving: 0
+  isMovingLeft: 0
+  currentPos: {x: 0, y: 0, z: 0}
+  destination: {x: 0, y: 0, z: 0}
 --- !u!54 &1585671548959073988
 Rigidbody:
   m_ObjectHideFlags: 0

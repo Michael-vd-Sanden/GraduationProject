@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class UIToggles : MonoBehaviour
 {
+    [Header("-------------- Required Objects")]
+    [SerializeField] private BlockPuzzleManager manager;
+    [SerializeField] private SceneSwitching sceneSwitching;
     [SerializeField]
     private GameObject holdControl, releaseControl, switchControl, pushLeftUpControl, pushLeftDownControl, pushRightUpControl, pushRightDownControl, victoryText,
         btnsSharp, btnsFlat, noteBtnsCanvas;
     [SerializeField] private GameObject[] noteBtnsObjects;
-    [SerializeField] private BlockPuzzleManager manager;
-    [SerializeField] private SceneSwitching sceneSwitching;
 
     public void EnteredTrigger()
     {

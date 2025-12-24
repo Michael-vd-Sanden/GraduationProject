@@ -952,6 +952,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe29a7f7874a76945894f3907b18cc24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIToggles
+  manager: {fileID: 1044170964}
+  sceneSwitching: {fileID: 0}
   holdControl: {fileID: 1982251355}
   releaseControl: {fileID: 1371946042}
   switchControl: {fileID: 993098872}
@@ -962,9 +964,8 @@ MonoBehaviour:
   victoryText: {fileID: 0}
   btnsSharp: {fileID: 0}
   btnsFlat: {fileID: 0}
-  noteBtns: {fileID: 0}
-  manager: {fileID: 1044170964}
-  sceneSwitching: {fileID: 0}
+  noteBtnsCanvas: {fileID: 0}
+  noteBtnsObjects: []
 --- !u!4 &1044170963
 Transform:
   m_ObjectHideFlags: 0
@@ -994,14 +995,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BlockPuzzleManager
   playerMovement: {fileID: 1604756754}
   uiToggle: {fileID: 1044170962}
+  audioPlayer: {fileID: 0}
+  playerFollow: {fileID: 0}
+  playerBtnMove: {fileID: 0}
+  hitLayer: 0
   enteredBlocks: []
   selectedBlockIndex: 0
   currentSelectedBlock: {fileID: 0}
   currentBlockNote: 
   noteSelected: 
-  defaultMaterial: {fileID: 2100000, guid: fd29dd06e5f1bff43b9f58681ea34b92, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 226c1bf0ed0be3c46986d2f5745e3398, type: 2}
-  layer: 6
+  colourMaterials: []
 --- !u!1 &1046869468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,11 +2034,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c294fdda9889349b295ac020401746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMouseMovement
-  moveSpeed: 4
-  sampleDistance: 0.5
-  offset: {x: 0.5, y: 0, z: 0.5}
-  targetMargin: {x: 0.01, y: 0, z: 0.01}
-  isMoving: 0
   agent: {fileID: 1604756755}
   moveAction: {fileID: -2987801270570978133, guid: 6876523846f0dd14b8c2c75c1f2926e8, type: 3}
   layersToHit:
@@ -2046,8 +2044,18 @@ MonoBehaviour:
   - {x: 1880, y: 0}
   - {x: 2340, y: 302}
   - {x: 2340, y: 0}
+  moveSpeed: 4
+  sampleDistance: 0.5
+  offset: {x: 0.5, y: 0, z: 0.5}
+  targetMargin: {x: 0.01, y: 0, z: 0.01}
+  isInMaze: 0
+  isMouseMovement: 0
   allowedToMove: 1
   canBeOverUI: 0
+  isMoving: 0
+  isMovingLeft: 0
+  currentPos: {x: 0, y: 0, z: 0}
+  destination: {x: 0, y: 0, z: 0}
 --- !u!195 &1604756755
 NavMeshAgent:
   m_ObjectHideFlags: 0

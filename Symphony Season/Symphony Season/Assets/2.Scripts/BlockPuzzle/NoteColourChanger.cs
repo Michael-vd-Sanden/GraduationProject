@@ -5,6 +5,7 @@ public class NoteColourChanger : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private ColourChanger colourChanger;
 
+    [Header("-------------- Changeble Values")]
     public string note;
 
     private void Awake()
