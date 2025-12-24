@@ -2863,19 +2863,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2543fc73fce050a4c9eb34df2e8b61aa, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.004621753
+      value: 0.0016675538
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2543fc73fce050a4c9eb34df2e8b61aa, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.039163504
+      value: -0.04814623
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2543fc73fce050a4c9eb34df2e8b61aa, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.572984
+      value: -0.57300025
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2543fc73fce050a4c9eb34df2e8b61aa, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.8186173
+      value: -0.81813806
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2543fc73fce050a4c9eb34df2e8b61aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2883,7 +2883,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2543fc73fce050a4c9eb34df2e8b61aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 11.529
+      value: 12.787
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2543fc73fce050a4c9eb34df2e8b61aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -8204,7 +8204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8478745244818864262, guid: c7693e403587bd24fa1219c62e1aa1c9, type: 3}
       propertyPath: m_Name
-      value: MusicPuzzleBlockRedesign3
+      value: MusicPuzzleEnvironment
       objectReference: {fileID: 0}
     - target: {fileID: 8478745244818864262, guid: c7693e403587bd24fa1219c62e1aa1c9, type: 3}
       propertyPath: m_StaticEditorFlags
