@@ -364,7 +364,7 @@ MonoBehaviour:
   wallDistance: 1.5
   isRightDirection: 0
   blockNote: 
-  materialInArray: 1
+  materialInArray: 0
   playerMovement: {fileID: 0}
   objectAbleToMove: 0
   upAllowed: 0
