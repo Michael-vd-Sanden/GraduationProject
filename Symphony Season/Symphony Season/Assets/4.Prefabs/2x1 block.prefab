@@ -232,7 +232,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &1437860135101871427
 NavMeshObstacle:
@@ -262,17 +262,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ddb74d52f2238439566418c3895bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveBlockScript
-  questionNotification: {fileID: 2553657282420760928}
-  noteNotification: {fileID: 6586865981214656877}
-  playerMovement: {fileID: 0}
   colourBlockRenderer: {fileID: 7685247133889815266}
   colourQuestionRenderer: {fileID: 5786529378805485977}
   colourNoteRenderer: {fileID: 9030437201698071636}
-  objectAbleToMove: 0
+  questionNotification: {fileID: 2553657282420760928}
+  noteNotification: {fileID: 6586865981214656877}
+  playerDistance: 2
+  wallDistance: 1
   isRightDirection: 0
   blockNote: 
+  materialInArray: 1
+  playerMovement: {fileID: 0}
+  objectAbleToMove: 0
   upAllowed: 0
   downAllowed: 0
+  isMoving: 0
+  playerIsFront: 0
   stepEase:
     serializedVersion: 2
     m_Curve:
@@ -332,10 +337,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   stepHeight: 0
   stepDuration: 0.45
-  isMoving: 0
-  playerIsFront: 0
-  playerDistance: 2
-  wallDistance: 1
 --- !u!1 &6586865981214656877
 GameObject:
   m_ObjectHideFlags: 0
