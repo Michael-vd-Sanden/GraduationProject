@@ -271,7 +271,7 @@ MonoBehaviour:
   wallDistance: 1
   isRightDirection: 0
   blockNote: 
-  materialInArray: 1
+  materialInArray: 2
   playerMovement: {fileID: 0}
   objectAbleToMove: 0
   upAllowed: 0
@@ -529,8 +529,8 @@ Transform:
   m_GameObject: {fileID: 8282008276502801802}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: -0.23, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 135}
+  m_LocalPosition: {x: 0, y: -0.1, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1.0400661}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6034811686613585978}
