@@ -2741,6 +2741,10 @@ PrefabInstance:
       propertyPath: blockNote
       value: E
       objectReference: {fileID: 0}
+    - target: {fileID: 8305375283168669803, guid: 67d995d065895b54ca0631457e272fc7, type: 3}
+      propertyPath: materialInArray
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8654226670527642726, guid: 67d995d065895b54ca0631457e272fc7, type: 3}
       propertyPath: m_Color.b
       value: 0.4156863
