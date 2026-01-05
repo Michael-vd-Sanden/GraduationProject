@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 2645227324962557039}
   - component: {fileID: 376932450759894084}
   - component: {fileID: 1585671548959073988}
+  - component: {fileID: 8546110653827720202}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -271,3 +272,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8546110653827720202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8530306509875577040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81bd26e50295cb04fbea0a15016ca94b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerButtonMovement
+  layer: 6

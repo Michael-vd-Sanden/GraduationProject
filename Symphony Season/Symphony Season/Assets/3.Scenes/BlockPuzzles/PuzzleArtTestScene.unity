@@ -9214,18 +9214,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 88441312803881057, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.97606677
-      objectReference: {fileID: 0}
-    - target: {fileID: 88441312803881057, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.1527597
-      objectReference: {fileID: 0}
-    - target: {fileID: 88441312803881057, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.63037115
-      objectReference: {fileID: 0}
-    - target: {fileID: 88441312803881057, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2
       objectReference: {fileID: 0}
@@ -9265,33 +9253,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 970871071500312496, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 86.78166
-      objectReference: {fileID: 0}
-    - target: {fileID: 970871071500312496, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 59.24406
-      objectReference: {fileID: 0}
-    - target: {fileID: 970871071500312496, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 106.369545
-      objectReference: {fileID: 0}
     - target: {fileID: 3248287343648061380, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
       propertyPath: m_Name
       value: Orthographic Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 3248287343648061380, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4910230966664760108, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5034127565947136817, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
-      propertyPath: orthographic size
-      value: 5.92
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

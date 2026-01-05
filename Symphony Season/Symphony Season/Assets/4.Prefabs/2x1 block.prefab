@@ -267,6 +267,8 @@ MonoBehaviour:
   colourNoteRenderer: {fileID: 9030437201698071636}
   questionNotification: {fileID: 2553657282420760928}
   noteNotification: {fileID: 6586865981214656877}
+  HoldBtn: {fileID: 0}
+  ReleaseBtn: {fileID: 0}
   playerDistance: 2
   wallDistance: 1
   isRightDirection: 0
