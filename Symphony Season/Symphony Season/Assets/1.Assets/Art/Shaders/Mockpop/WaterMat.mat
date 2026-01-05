@@ -39,15 +39,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_0dcfc228be3140f2811cf00408e64280:
-        m_Texture: {fileID: 2800000, guid: 44d483a7ce66667489579627bd7e5c77, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_3a2b9da54e3849aa814eed9d29f3cb60_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: bf50d7ad58d60d14baaa0ee1f10f9f70, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _ShadowPattern:
-        m_Texture: {fileID: 2800000, guid: 44d483a7ce66667489579627bd7e5c77, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -64,7 +68,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_dc79406616554abebf1c259bff01ca29: 15
+    - Vector1_dc79406616554abebf1c259bff01ca29: 14.88
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -82,14 +86,16 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _Transparency: 1
-    - _Wobble: 1
+    - _WaterLineShear: 0
+    - _WaterLineTiling: 10
+    - _Wobble: 0
     - _WobbleRange: 0.05
-    - _WobleSpeed: 0.025
+    - _WobleSpeed: 0.02
     - _ZTest: 4
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Colour: {r: 0.6011912, g: 0.5877208, b: 0.8274932, a: 0}
+    - _Colour: {r: 0.5384986, g: 0.5620628, b: 0.735849, a: 0}
     - _ShadingColour: {r: 0.55699307, g: 0.27210996, b: 0.703504, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

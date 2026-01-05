@@ -156,7 +156,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _InverseFresnel: 0
-    - _IsHolding: 1
+    - _IsHolding: 0
     - _IsLeft: 1
     - _IsMoving: 0
     - _Metallic: 0
