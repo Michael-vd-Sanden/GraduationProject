@@ -45,7 +45,7 @@ public class PlayerMouseMovement : MonoBehaviour
                 transform.position = new Vector3(destination.x, currentPos.y, destination.z);
                 isMoving = false;
                 if(isInMaze) { allowedToMove= true; }
-                if (!isMouseMovement) { playerButtonMove.CheckPlayerDirections();}
+                if (!isMouseMovement && !isInMaze) { playerButtonMove.CheckPlayerDirections();}
             }
         }
     }

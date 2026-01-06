@@ -487,7 +487,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: BP Tutorial
+          m_StringArgument: BP 1TutMovement
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1315587689}
@@ -4338,6 +4338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b26d8d8a1e5a04ea6f29e701742928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneSwitching
+  nextScene: 
 --- !u!4 &1315587690
 Transform:
   m_ObjectHideFlags: 0
@@ -5648,7 +5649,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: BP Tutorial
+          m_StringArgument: BP 1TutMovement
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1315587689}

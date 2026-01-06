@@ -8,7 +8,7 @@ public class VictoryTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            uiToggles.startVictory();
+            uiToggles.Victory();
         }
     }
 }

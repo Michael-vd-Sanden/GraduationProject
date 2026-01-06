@@ -10,6 +10,7 @@ public class MazeMovement : MonoBehaviour
     [SerializeField] private GameObject mazeObject;
     [SerializeField] private NavMeshSurface navMash;
     [SerializeField] private NavMeshAgent agent;
+    [SerializeField] private PlayerFollower playerFollow;
 
     private string direction;
     [SerializeField] private bool mazeIsMoving;
@@ -32,6 +33,7 @@ public class MazeMovement : MonoBehaviour
     {
         if(mazeIsMoving) 
         {
+            playerFollow.ToggleMoving(1);
             currentAngle = mazeObject.transform.rotation;
 
             var step = turnSpeed * Time.deltaTime;
@@ -41,6 +43,7 @@ public class MazeMovement : MonoBehaviour
            if (currentAngle == targetAngle)
            { 
                 mazeIsMoving= false;
+                playerFollow.ToggleMoving(0);
                 navMash.BuildNavMesh();
                 playerMovement.allowedToMove = true;
            }

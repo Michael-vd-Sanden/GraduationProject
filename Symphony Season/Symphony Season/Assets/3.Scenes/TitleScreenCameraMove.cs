@@ -1,8 +1,4 @@
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
-using UnityEngine.Rendering;
-using static UnityEditor.FilePathAttribute;
-using static UnityEngine.Rendering.DebugUI.Table;
 
 public class TitleScreenCameraMove : MonoBehaviour
 {
