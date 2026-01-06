@@ -73,13 +73,14 @@ Material:
     - _AlphaToMask: 0
     - _Blend: 0
     - _CastShadows: 1
-    - _Cull: 2
+    - _Cull: 0
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _Fresnel: 1
     - _InverseFresnel: 0
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Rotation: 0
     - _ShadingCutoff: 0.95
     - _ShadingOpacity: 0.5
     - _SrcBlend: 1
@@ -88,14 +89,14 @@ Material:
     - _Transparency: 1
     - _WaterLineShear: 0
     - _WaterLineTiling: 10
-    - _Wobble: 0
+    - _Wobble: 1
     - _WobbleRange: 0.05
     - _WobleSpeed: 0.02
     - _ZTest: 4
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Colour: {r: 0.5384986, g: 0.5620628, b: 0.735849, a: 0}
+    - _Colour: {r: 0.38993466, g: 0.35420758, b: 0.7574123, a: 0}
     - _ShadingColour: {r: 0.55699307, g: 0.27210996, b: 0.703504, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

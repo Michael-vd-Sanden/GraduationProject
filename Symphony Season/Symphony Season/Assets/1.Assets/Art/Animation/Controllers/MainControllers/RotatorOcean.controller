@@ -34,7 +34,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CameraFollow
+  m_Name: RotatorOcean
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Rotator
@@ -140,7 +140,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RotateTowerBack
+  m_Name: RotateSeaBack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -154,7 +154,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 836f159767fe9ab438de6833f6eb641b, type: 2}
+  m_Motion: {fileID: 7400000, guid: 1c9eba96775d8ed4c9c7a10a04bf71e3, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -192,7 +192,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RotateTower
+  m_Name: RotateSea
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -206,7 +206,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 46de28fd794b0ee429a00df8e5fb09ef, type: 2}
+  m_Motion: {fileID: 7400000, guid: d10c4be81355608469cb78c95550093d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

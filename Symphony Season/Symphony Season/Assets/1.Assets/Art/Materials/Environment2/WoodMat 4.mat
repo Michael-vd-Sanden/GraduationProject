@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CurtainMatSuperDark
+  m_Name: WoodMat 4
   m_Shader: {fileID: -6465566751694194690, guid: a4a4c3c5be0d5654182dfed26c552e6e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -33,7 +33,7 @@ Material:
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
-  m_LockedProperties: Color_e0d546a33d4d4523a52d1760c0e1cee8 Color_f61d22bb50de454190161ca39eb744cc
+  m_LockedProperties: Color_36240a1e513f4404abd4825a661da3cb
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -65,16 +65,16 @@ Material:
     m_Floats:
     - Boolean_06d470423eaf48d08fda2dd5516c0f27: 0
     - Boolean_7e43ca7d04fb41b082a08913f94954b0: 0
-    - Boolean_a28ad3fc8d3f4fda93f9c8945a5a33cb: 0
-    - Vector1_6cabd9f62b534aba8ae9044c87319336: -0.86
-    - Vector1_77df1527ee0c44eab2c602a261ac1519: 0.57
-    - Vector1_9e48ce31b4be426a8bcca95ac7ce07e4: -1.39
-    - Vector1_cbf16136a67d49c0a5beaaa5e67e42a3: 3.76
+    - Boolean_a28ad3fc8d3f4fda93f9c8945a5a33cb: 1
+    - Vector1_6cabd9f62b534aba8ae9044c87319336: -0.96
+    - Vector1_77df1527ee0c44eab2c602a261ac1519: 0.17
+    - Vector1_9e48ce31b4be426a8bcca95ac7ce07e4: 0
+    - Vector1_cbf16136a67d49c0a5beaaa5e67e42a3: 0.67
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - Color_36240a1e513f4404abd4825a661da3cb: {r: 0.46630716, g: 0.094895385, b: 0.28774384, a: 0}
-    - Color_e0d546a33d4d4523a52d1760c0e1cee8: {r: 0, g: 0, b: 0, a: 0}
-    - Color_f61d22bb50de454190161ca39eb744cc: {r: 0.27058825, g: 0.109803915, b: 0.18664053, a: 0}
+    - Color_36240a1e513f4404abd4825a661da3cb: {r: 0.50980395, g: 0, b: 0.19077003, a: 0}
+    - Color_e0d546a33d4d4523a52d1760c0e1cee8: {r: 0.13134505, g: 0.02352941, b: 0.22745098, a: 0}
+    - Color_f61d22bb50de454190161ca39eb744cc: {r: 0.8059299, g: 0.47643715, b: 0.294349, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

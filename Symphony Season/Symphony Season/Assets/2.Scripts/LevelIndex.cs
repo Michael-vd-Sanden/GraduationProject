@@ -15,11 +15,14 @@ public class LevelIndex : MonoBehaviour
     public Animator[] DioramaAnimators;
     //public void Awake()
     //{
-        //to do: Add code to make sure whenever you exit a level, the tower starts at that floor
-        //should probably fix something in the animator to do that too
-        //maybe use an integer in the animator to change the starting Idle position when the player returns to the level select.
+    //to do: Add code to make sure whenever you exit a level, the tower starts at that floor
+    //should probably fix something in the animator to do that too
+    //maybe use an integer in the animator to change the starting Idle position when the player returns to the level select.
     //}
-
+    public void Awake()
+    {
+        DioramaAnimators[FloorIndex].SetTrigger("Pulsing");
+    }
     public void LevelShift(int IndexShift)
     {
         var PrevFloorIndex = FloorIndex;

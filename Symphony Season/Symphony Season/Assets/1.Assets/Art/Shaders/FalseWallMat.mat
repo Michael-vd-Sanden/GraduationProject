@@ -61,7 +61,7 @@ Material:
     m_Floats:
     - Boolean_a28ad3fc8d3f4fda93f9c8945a5a33cb: 1
     - Vector1_6cabd9f62b534aba8ae9044c87319336: 5.99
-    - Vector1_77df1527ee0c44eab2c602a261ac1519: 0.15
+    - Vector1_77df1527ee0c44eab2c602a261ac1519: 0.07
     - Vector1_9e48ce31b4be426a8bcca95ac7ce07e4: 0
     - Vector1_cbf16136a67d49c0a5beaaa5e67e42a3: 0.72
     - _QueueControl: 0
@@ -70,7 +70,7 @@ Material:
     - Color_36240a1e513f4404abd4825a661da3cb: {r: 0, g: 0, b: 0, a: 0}
     - Color_e0d546a33d4d4523a52d1760c0e1cee8: {r: 0.07747709, g: 0.0045298925, b: 0.07816702, a: 0}
     - Color_f61d22bb50de454190161ca39eb744cc: {r: 0.374663, g: 0.1287588, b: 0.1287588, a: 0}
-    - _CutoffOfset: {r: 0.32, g: 0.23, b: 0, a: 0}
-    - _CutoffTiling: {r: 0.29, g: 0.53, b: 0, a: 0}
+    - _CutoffOfset: {r: 0.32, g: 0.15, b: 0, a: 0}
+    - _CutoffTiling: {r: 0.29, g: 0.68, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
