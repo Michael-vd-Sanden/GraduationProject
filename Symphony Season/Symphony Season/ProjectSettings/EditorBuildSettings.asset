@@ -13,7 +13,7 @@ EditorBuildSettings:
     guid: e2c5c948c01fb5447a5357679c909a8b
   - enabled: 1
     path: Assets/3.Scenes/BlockPuzzles/BP 1_Easy.unity
-    guid: 5d103f9278e8d3341a84ab80080905bf
+    guid: f0d65af551020594b9c2e175344984bd
   - enabled: 1
     path: Assets/3.Scenes/BlockPuzzles/BP 1_Hard.unity
     guid: 53fb5002f2dc70543a36427d4712704f
@@ -23,6 +23,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/3.Scenes/BlockPuzzles/BP 2_Hard.unity
     guid: e981e90571a38c842a45a5676887d03c
+  - enabled: 1
+    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP 1TutMovement.unity
+    guid: 7fbc0c60d236ac14d99295e6cc9133d6
+  - enabled: 1
+    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP 2TutBlockMovement.unity
+    guid: 862ab45f1a7c6da438443da22d117f36
+  - enabled: 1
+    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP 3TutSwitchBlock.unity
+    guid: 8cd7af6430cc8a0489e5f812dd12bf2c
+  - enabled: 1
+    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP 4TutAdvancedBlockMovement.unity
+    guid: cc22cd624c5496c46930d5e0c3c35e9b
+  - enabled: 1
+    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP 5TutNoteG.unity
+    guid: a0833e0f6cd4e9048abf0529f6c096a1
+  - enabled: 1
+    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP 6TutNoteGAB.unity
+    guid: 051a90e35d80db84cb18169675c28539
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 34bbc23a37b4a3a4b8cf384479f2a8d5, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: d0023cf99f94471429399f8a2f79c4ab, type: 2}

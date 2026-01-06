@@ -7,8 +7,9 @@ public class UIToggles : MonoBehaviour
     [SerializeField] private BlockPuzzleManager manager;
     [SerializeField] private SceneSwitching sceneSwitching;
     [SerializeField]
-    private GameObject holdControl, releaseControl, switchControl, pushLeftUpControl, pushLeftDownControl, pushRightUpControl, pushRightDownControl, victoryText,
+    private GameObject pushLeftUpControl, pushLeftDownControl, pushRightUpControl, pushRightDownControl, nextLevelScreen,
         btnsSharp, btnsFlat, noteBtnsCanvas;
+    public GameObject holdControl, releaseControl, switchControl;
     [SerializeField] private GameObject[] noteBtnsObjects;
 
     public void EnteredTrigger()
@@ -145,14 +146,8 @@ public class UIToggles : MonoBehaviour
         manager.noteSelected = note;
     }
 
-    public void startVictory()
-    { StartCoroutine(Victory()); }
-
-    private IEnumerator Victory()
-    {
-        victoryText.SetActive(true);
-        yield return new WaitForSecondsRealtime(2f);
-        sceneSwitching.ChangeSceneName("MainMenu");
-        sceneSwitching.ChangeScene();
+    public void Victory()
+    { 
+        nextLevelScreen.SetActive(true) ;
     }
 }

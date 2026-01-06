@@ -8,6 +8,8 @@ public class PlayerFollower : MonoBehaviour
 
     [Header("-------------- Changeble Values")]
     [SerializeField] private float Yoffset;
+    [SerializeField] private float Xoffset;
+    [SerializeField] private float Zoffset;
 
     [Header("-------------- Background Values (do not change)")]
     [SerializeField] private PlayerMouseMovement playerMovement;
@@ -15,11 +17,14 @@ public class PlayerFollower : MonoBehaviour
     private void Start()
     {
         playerMovement = FindFirstObjectByType<PlayerMouseMovement>();
+        ToggleLeft(0f);
+        ToggleMoving(0f);
+        ToggleHolding(0f);
     }
 
     void Update()
     {
-        transform.position = new Vector3(PlayerObject.transform.position.x, PlayerObject.transform.position.y + Yoffset, PlayerObject.transform.position.z);
+        transform.position = new Vector3(PlayerObject.transform.position.x + Xoffset, PlayerObject.transform.position.y + Yoffset, PlayerObject.transform.position.z + Zoffset);
         if(playerMovement.isMoving) 
         { 
             ToggleMoving(1f); 

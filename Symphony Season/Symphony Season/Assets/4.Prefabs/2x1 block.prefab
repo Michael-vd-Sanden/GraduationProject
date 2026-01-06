@@ -267,8 +267,8 @@ MonoBehaviour:
   colourNoteRenderer: {fileID: 9030437201698071636}
   questionNotification: {fileID: 2553657282420760928}
   noteNotification: {fileID: 6586865981214656877}
-  playerDistance: 2
-  wallDistance: 1
+  playerDistance: 2.5
+  wallDistance: 1.5
   isRightDirection: 0
   blockNote: 
   materialInArray: 2

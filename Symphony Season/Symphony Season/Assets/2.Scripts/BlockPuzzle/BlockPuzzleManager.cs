@@ -13,6 +13,7 @@ public class BlockPuzzleManager : MonoBehaviour
     [Header("-------------- Changeble Values")]
     public int hitLayer;
     private int layerAsLayerMask;
+    [SerializeField] private bool isTutorial;
 
     [Header("-------------- Background Values (do not change)")]
     public List<MoveBlockScript> enteredBlocks;
@@ -36,16 +37,7 @@ public class BlockPuzzleManager : MonoBehaviour
 
             if (noteSelected == currentBlockNote) //goede noot
             {
-                //audioPlayer.PlayEffect(noteSelected); Al in button
-                playerMovement.allowedToMove = false;
-                currentSelectedBlock.objectAbleToMove = true;
-                currentSelectedBlock.noteNotification.SetActive(true);
-                currentSelectedBlock.questionNotification.SetActive(false);
-                CheckIfAllowedToMove();
-                noteSelected = null;
-                uiToggle.DeactivateNoteBtns();
-                isCheckingForNotes= false;
-                return;
+                RightNote();
             }
             if(!string.IsNullOrEmpty(noteSelected) && noteSelected != currentBlockNote) //foute noot
             {
@@ -55,6 +47,20 @@ public class BlockPuzzleManager : MonoBehaviour
                 noteSelected = null;
             }
         }
+    }
+
+    public void RightNote()
+    {
+        //audioPlayer.PlayEffect(noteSelected); Al in button
+        playerMovement.allowedToMove = false;
+        currentSelectedBlock.objectAbleToMove = true;
+        currentSelectedBlock.noteNotification.SetActive(true);
+        currentSelectedBlock.questionNotification.SetActive(false);
+        CheckIfAllowedToMove();
+        noteSelected = null;
+        uiToggle.DeactivateNoteBtns();
+        isCheckingForNotes = false;
+        return;
     }
 
     public void EnteredTrigger(MoveBlockScript block)
@@ -90,6 +96,11 @@ public class BlockPuzzleManager : MonoBehaviour
             isCheckingForNotes = true;
             noteSelected = null;
             playerFollow.ToggleHolding(1f);
+            if(isTutorial) 
+            { 
+                isCheckingForNotes=false;
+                RightNote();
+            }
         }
     }
     public void SwitchBlock()
