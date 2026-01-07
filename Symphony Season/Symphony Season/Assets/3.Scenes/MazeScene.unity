@@ -7441,6 +7441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1324385474}
   - component: {fileID: 1324385473}
+  - component: {fileID: 1324385475}
   m_Layer: 0
   m_Name: MazeManager
   m_TagString: Untagged
@@ -7461,12 +7462,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MazeMovement
   playerMovement: {fileID: 408922224}
+  mazePuzzle: {fileID: 1324385475}
   mazeObject: {fileID: 1281032202}
   navMash: {fileID: 37289743}
   agent: {fileID: 408922225}
   playerFollow: {fileID: 432996073}
-  mazeIsMoving: 0
+  left: {fileID: 245307052}
+  right: {fileID: 1532864697}
+  up: {fileID: 804024577}
+  down: {fileID: 1437581148}
   turnSpeed: 25
+  layer: 3
+  hitDistance: 2
   availableAngles:
   - {x: 0.70710677, y: 0, z: 0, w: -0.70710677}
   - {x: 0.5877852, y: 0, z: 0, w: -0.80901706}
@@ -7489,6 +7496,8 @@ MonoBehaviour:
   - {x: 0.8910066, y: 0, z: 0, w: -0.4539904}
   - {x: 0.809017, y: 0, z: 0, w: -0.5877852}
   currentAngleID: 0
+  mazeIsMoving: 0
+  playerIsMoving: 0
 --- !u!4 &1324385474
 Transform:
   m_ObjectHideFlags: 0
@@ -7504,6 +7513,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1324385475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324385472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7318ab953fbde94d93a69fc223ba143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MazePuzzle
 --- !u!1 &1436473973
 GameObject:
   m_ObjectHideFlags: 0
@@ -8176,10 +8197,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2278823206521384321, guid: 9f3a0f87d46adb64f86943928d487d70, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3885709736346458181, guid: 9f3a0f87d46adb64f86943928d487d70, type: 3}
       propertyPath: m_Name
       value: TowerMaze
@@ -8222,10 +8239,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6445627898135987055, guid: 9f3a0f87d46adb64f86943928d487d70, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9069430293946725126, guid: 9f3a0f87d46adb64f86943928d487d70, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
