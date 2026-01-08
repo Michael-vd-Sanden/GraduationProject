@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WoodMat 4
+  m_Name: WoodMat 5
   m_Shader: {fileID: -6465566751694194690, guid: a4a4c3c5be0d5654182dfed26c552e6e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
