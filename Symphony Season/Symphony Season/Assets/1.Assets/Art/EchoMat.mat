@@ -157,7 +157,7 @@ Material:
     - _GlossyReflections: 0
     - _InverseFresnel: 0
     - _IsHolding: 0
-    - _IsLeft: 0
+    - _IsLeft: 1
     - _IsMoving: 0
     - _Metallic: 0
     - _OcclusionStrength: 1

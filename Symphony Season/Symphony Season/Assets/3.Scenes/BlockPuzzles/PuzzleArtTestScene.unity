@@ -584,6 +584,7 @@ MonoBehaviour:
   playerFollow: {fileID: 1372480345}
   playerBtnMove: {fileID: 0}
   hitLayer: 0
+  isTutorial: 0
   enteredBlocks: []
   selectedBlockIndex: 0
   currentSelectedBlock: {fileID: 0}
@@ -604,17 +605,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIToggles
   manager: {fileID: 380967768}
   sceneSwitching: {fileID: 380967771}
-  holdControl: {fileID: 7649279023629377893}
-  releaseControl: {fileID: 5893802563947828009}
-  switchControl: {fileID: 3851807009308446127}
   pushLeftUpControl: {fileID: 8681571502865990373}
   pushLeftDownControl: {fileID: 1283216800816449380}
   pushRightUpControl: {fileID: 8887878539868857279}
   pushRightDownControl: {fileID: 7684699621326768753}
-  victoryText: {fileID: 1871380499244652720}
+  nextLevelScreen: {fileID: 0}
   btnsSharp: {fileID: 7326868438783017433}
   btnsFlat: {fileID: 7326868438783017433}
   noteBtnsCanvas: {fileID: 823424636409433732}
+  holdControl: {fileID: 7649279023629377893}
+  releaseControl: {fileID: 5893802563947828009}
+  switchControl: {fileID: 3851807009308446127}
   noteBtnsObjects:
   - {fileID: 5292437029933740495}
   - {fileID: 5221679315657823401}
@@ -654,6 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b26d8d8a1e5a04ea6f29e701742928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneSwitching
+  nextScene: 
 --- !u!114 &380967772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2602,6 +2604,8 @@ MonoBehaviour:
   PlayerObject: {fileID: 917171549}
   playerMaterial: {fileID: 2100000, guid: 11166b03de170cf47b5c84d20842362f, type: 2}
   Yoffset: 0.36
+  Xoffset: 0
+  Zoffset: 0
   playerMovement: {fileID: 0}
 --- !u!1001 &1373124527
 PrefabInstance:
@@ -11598,6 +11602,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[2]'
       value: 
       objectReference: {fileID: 2100000, guid: c2c4158389ab5a849bc3a65a826ed91e, type: 2}
+    - target: {fileID: 3818161877144702840, guid: eebf2991e53e99840b2383ab95c6cb24, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4115889569032155700, guid: eebf2991e53e99840b2383ab95c6cb24, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
