@@ -4,7 +4,8 @@ public class TurnObject : MonoBehaviour
 {
     //[Header("-------------- Required Objects")]
     [Header("-------------- Changeble Values")]
-    [SerializeField] private float turnSpeed = 1.0f;
+    [SerializeField] private float turnSpeedSeconds = 1.0f;
+    [SerializeField] private float turnSpeedModifier = 180f, turnSpeed;
     [SerializeField] private Quaternion toAngle, halfwayToAngle, halfwayFromAngle;
 
     [Header("-------------- Background Values (do not change)")]
@@ -14,6 +15,7 @@ public class TurnObject : MonoBehaviour
     private void Awake()
     {
         startAngle = transform.rotation;
+        turnSpeed = turnSpeedSeconds * turnSpeedModifier;
     }
 
     private void Update()
@@ -50,5 +52,10 @@ public class TurnObject : MonoBehaviour
 
             isRotating = true;
         }
+    }
+
+    public void SetCurrent()
+    {
+        currentAngle = transform.rotation;
     }
 }

@@ -779,18 +779,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1250913172}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: FloorShiftDown
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1315587691}
         m_TargetAssemblyTypeName: LevelIndex, Assembly-CSharp
         m_MethodName: LevelShift
@@ -799,6 +787,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1250913174}
+        m_TargetAssemblyTypeName: MoveObject, Assembly-CSharp
+        m_MethodName: StartMoving
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2880,6 +2880,18 @@ MonoBehaviour:
           m_StringArgument: Rotator
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8583502550552858583}
+        m_TargetAssemblyTypeName: TurnObject, Assembly-CSharp
+        m_MethodName: StartRotation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &964267253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3247,18 +3259,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1250913172}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: FloorShiftUp
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1315587691}
         m_TargetAssemblyTypeName: LevelIndex, Assembly-CSharp
         m_MethodName: LevelShift
@@ -3270,6 +3270,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1250913174}
+        m_TargetAssemblyTypeName: MoveObject, Assembly-CSharp
+        m_MethodName: StartMoving
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1055916493
 MonoBehaviour:
@@ -4124,6 +4136,7 @@ GameObject:
   - component: {fileID: 1250913171}
   - component: {fileID: 1250913172}
   - component: {fileID: 1250913173}
+  - component: {fileID: 1250913174}
   m_Layer: 0
   m_Name: CameraFollowPos
   m_TagString: Untagged
@@ -4155,7 +4168,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250913170}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 571478bd78377314392e165fdbe1a861, type: 2}
   m_CullingMode: 0
@@ -4176,12 +4189,34 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250913170}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba37a9345d28fe04e988d2569b5a628f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TitleScreenCameraMove
   TowerAnimator: {fileID: 1250913172}
+--- !u!114 &1250913174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250913170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea1119de77dce54bba4bcc7e43bd1d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveObject
+  moveSpeed: 2
+  positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 1, z: 0}
+  - {x: 0, y: 2, z: 0}
+  - {x: 0, y: 3, z: 0}
+  isMoving: 0
+  pos: 0
+  currentPos: {x: 0, y: 0, z: 0}
+  targetPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1264631458
 GameObject:
   m_ObjectHideFlags: 0
@@ -4215,6 +4250,7 @@ Transform:
   - {fileID: 1910189095}
   - {fileID: 537813176}
   - {fileID: 1101599018}
+  - {fileID: 2983820439862096996}
   m_Father: {fileID: 1250913171}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1264631461
@@ -5844,6 +5880,7 @@ GameObject:
   - component: {fileID: 2983820439862096996}
   - component: {fileID: 8583502550552858582}
   - component: {fileID: 4793124213938947268}
+  - component: {fileID: 8583502550552858583}
   m_Layer: 0
   m_Name: ScreenshotBoard
   m_TagString: Untagged
@@ -6431,13 +6468,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492170686719893561}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000029802322, y: -0.000000010536709, z: -0.000000031610135, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.39488292, y: -0.39488292, z: -0.58657265, w: -0.58657265}
+  m_LocalPosition: {x: -1.5801809, y: 0.34741208, z: -1.2869898}
+  m_LocalScale: {x: 100.00003, y: 118.072044, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5396162381311165752}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1264631460}
+  m_LocalEulerAnglesHint: {x: 292.1028, y: 0, z: 90}
 --- !u!23 &3075878528328516735
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6921,8 +6958,7 @@ Transform:
   m_LocalPosition: {x: -0, y: 0.008, z: 0.001}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2983820439862096996}
+  m_Children: []
   m_Father: {fileID: 7075032027090273784}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5798455108249505788
@@ -7510,6 +7546,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492170686719893561}
   m_Mesh: {fileID: -6118776530759543275, guid: 49519f242ea0e4545a87956268c680e8, type: 3}
+--- !u!114 &8583502550552858583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492170686719893561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a670d174df41443beb69682f2f420a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TurnObject
+  turnSpeed: 180
+  toAngle: {x: -0.5865727, y: 0.5865727, z: 0.39488283, w: 0.39488277}
+  halfwayToAngle: {x: -0.58657295, y: -0.58657295, z: -0.39488247, w: 0.39488253}
+  halfwayFromAngle: {x: -0.000000024410546, y: -0.8295394, z: -0.5584482, w: 0.00000003626032}
+  isRotating: 0
+  currentAngle: {x: 0, y: 0, z: 0, w: 0}
+  startAngle: {x: 0, y: 0, z: 0, w: 0}
+  targetAngle: {x: 0, y: 0, z: 0, w: 0}
 --- !u!23 &8641622816786839480
 MeshRenderer:
   m_ObjectHideFlags: 0
