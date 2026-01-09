@@ -2354,7 +2354,7 @@ Transform:
   m_GameObject: {fileID: 392462687}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.004886923, w: 0.9999881}
-  m_LocalPosition: {x: 8.389825, y: 1.0820515, z: 0}
+  m_LocalPosition: {x: 8, y: 1, z: 0}
   m_LocalScale: {x: 0.2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2863,7 +2863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
   m_SerializedVersion: 0
   m_AgentTypeID: 0
-  m_CollectObjects: 0
+  m_CollectObjects: 3
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
@@ -2879,7 +2879,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 0c8687eb9c8adac4487d7529ec81ea45, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 83ae103fb98cb9843a61b0a3e65ae38c, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &498921280
 Transform:
@@ -2913,6 +2913,7 @@ GameObject:
   - component: {fileID: 524389451}
   - component: {fileID: 524389450}
   - component: {fileID: 524389449}
+  - component: {fileID: 524389452}
   m_Layer: 5
   m_Name: RightUpBtn
   m_TagString: Untagged
@@ -2995,18 +2996,6 @@ MonoBehaviour:
           m_StringArgument: RightUp
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1141018827}
-        m_TargetAssemblyTypeName: PlayerButtonMovement, Assembly-CSharp
-        m_MethodName: MovePlayer
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: RightUp
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &524389450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3045,6 +3034,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524389447}
   m_CullTransparentMesh: 1
+--- !u!114 &524389452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524389447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1141018827}
+          m_TargetAssemblyTypeName: PlayerButtonMovement, Assembly-CSharp
+          m_MethodName: onPressMove
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: RightUp
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1141018827}
+          m_TargetAssemblyTypeName: PlayerButtonMovement, Assembly-CSharp
+          m_MethodName: onReleaseMove
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &535705359
 GameObject:
   m_ObjectHideFlags: 0
@@ -3360,6 +3394,7 @@ GameObject:
   - component: {fileID: 550273384}
   - component: {fileID: 550273383}
   - component: {fileID: 550273382}
+  - component: {fileID: 550273385}
   m_Layer: 5
   m_Name: LeftDownbtn
   m_TagString: Untagged
@@ -3442,18 +3477,6 @@ MonoBehaviour:
           m_StringArgument: LeftDown
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1141018827}
-        m_TargetAssemblyTypeName: PlayerButtonMovement, Assembly-CSharp
-        m_MethodName: MovePlayer
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: LeftDown
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &550273383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3492,6 +3515,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550273380}
   m_CullTransparentMesh: 1
+--- !u!114 &550273385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550273380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1141018827}
+          m_TargetAssemblyTypeName: PlayerButtonMovement, Assembly-CSharp
+          m_MethodName: onPressMove
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: LeftDown
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1141018827}
+          m_TargetAssemblyTypeName: PlayerButtonMovement, Assembly-CSharp
+          m_MethodName: onReleaseMove
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &566760488
 GameObject:
   m_ObjectHideFlags: 0
@@ -3660,6 +3728,8 @@ MonoBehaviour:
   PlayerObject: {fileID: 1141018828}
   playerMaterial: {fileID: 2100000, guid: 11166b03de170cf47b5c84d20842362f, type: 2}
   Yoffset: 0.36
+  Xoffset: 0
+  Zoffset: 0
   playerMovement: {fileID: 0}
 --- !u!64 &572955905
 MeshCollider:
@@ -3768,6 +3838,7 @@ GameObject:
   - component: {fileID: 579411415}
   - component: {fileID: 579411414}
   - component: {fileID: 579411413}
+  - component: {fileID: 579411416}
   m_Layer: 5
   m_Name: LeftUpbtn
   m_TagString: Untagged
@@ -3850,18 +3921,6 @@ MonoBehaviour:
           m_StringArgument: LeftUp
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1141018827}
-        m_TargetAssemblyTypeName: PlayerButtonMovement, Assembly-CSharp
-        m_MethodName: MovePlayer
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: LeftUp
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &579411414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3900,6 +3959,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579411411}
   m_CullTransparentMesh: 1
+--- !u!114 &579411416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579411411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1141018827}
+          m_TargetAssemblyTypeName: PlayerButtonMovement, Assembly-CSharp
+          m_MethodName: onPressMove
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: LeftUp
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1141018827}
+          m_TargetAssemblyTypeName: PlayerButtonMovement, Assembly-CSharp
+          m_MethodName: onReleaseMove
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &635548919
 GameObject:
   m_ObjectHideFlags: 0
@@ -5041,29 +5145,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5522039252469031677, guid: c7693e403587bd24fa1219c62e1aa1c9, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 5629271068403363178, guid: c7693e403587bd24fa1219c62e1aa1c9, type: 3}
-      propertyPath: 'm_Materials.Array.data[4]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0e8073b41e309d64687889a0da58d6a8, type: 2}
-    - target: {fileID: 7773327486410296347, guid: c7693e403587bd24fa1219c62e1aa1c9, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
     - target: {fileID: 8478745244818864262, guid: c7693e403587bd24fa1219c62e1aa1c9, type: 3}
       propertyPath: m_Name
       value: MusicPuzzleEnvironment
-      objectReference: {fileID: 0}
-    - target: {fileID: 8478745244818864262, guid: c7693e403587bd24fa1219c62e1aa1c9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8478745244818864262, guid: c7693e403587bd24fa1219c62e1aa1c9, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6209,6 +6293,7 @@ GameObject:
   - component: {fileID: 1057676361}
   - component: {fileID: 1057676360}
   - component: {fileID: 1057676359}
+  - component: {fileID: 1057676364}
   m_Layer: 3
   m_Name: FloorCollider
   m_TagString: Untagged
@@ -6292,7 +6377,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.25, y: 1, z: 7.25}
+  m_Size: {x: 7.75, y: 1, z: 6.75}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1057676362
 MeshRenderer:
@@ -6350,6 +6435,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057676357}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1057676364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057676357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1065720189
 GameObject:
   m_ObjectHideFlags: 0
@@ -7007,6 +7112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 8530306509875577040, guid: ddac4bb7431784d4dbed892e238cbc5f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7382,6 +7491,7 @@ GameObject:
   - component: {fileID: 1244118419}
   - component: {fileID: 1244118418}
   - component: {fileID: 1244118417}
+  - component: {fileID: 1244118421}
   m_Layer: 5
   m_Name: RightDownBtn
   m_TagString: Untagged
@@ -7436,18 +7546,6 @@ MonoBehaviour:
       - m_Target: {fileID: 237183706}
         m_TargetAssemblyTypeName: UIToggles, Assembly-CSharp
         m_MethodName: PressedPushBtn
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: RightDown
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1141018827}
-        m_TargetAssemblyTypeName: PlayerButtonMovement, Assembly-CSharp
-        m_MethodName: MovePlayer
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7514,6 +7612,51 @@ RectTransform:
   m_AnchoredPosition: {x: 1.91, y: -1.74}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1244118421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244118416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1141018827}
+          m_TargetAssemblyTypeName: PlayerButtonMovement, Assembly-CSharp
+          m_MethodName: onPressMove
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: RightDown
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1141018827}
+          m_TargetAssemblyTypeName: PlayerButtonMovement, Assembly-CSharp
+          m_MethodName: onReleaseMove
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1244450130
 GameObject:
   m_ObjectHideFlags: 0

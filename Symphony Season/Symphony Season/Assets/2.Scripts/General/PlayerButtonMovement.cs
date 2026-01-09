@@ -3,14 +3,20 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerButtonMovement : MonoBehaviour
 {
+    [Header("-------------- Required Objects")]
     private PlayerMouseMovement pMovement;
     private BlockPuzzleManager manager;
     private UIToggles UIToggles;
     private Vector3 playerDestination, currentPosition;
     private Transform globalRoot;
 
+    [Header("-------------- Changeble Values")]
     public int layer;
     private int layerAsLayerMask;
+
+    [Header("-------------- Background Values (do not change)")]
+    [SerializeField] private bool isPressingMove;
+    private string moveDirection;
 
     private void Awake()
     {
@@ -26,13 +32,21 @@ public class PlayerButtonMovement : MonoBehaviour
         CheckPlayerDirections();
     }
 
-    public void MovePlayer(string direction)
+    private void Update()
+    {
+        if(isPressingMove) 
+        {
+            MovePlayer();
+        }
+    }
+
+    public void MovePlayer()
     {
         if (manager.currentSelectedBlock == null && !pMovement.isMoving && !pMovement.isMouseMovement)
         {
             Vector3 temp = new Vector3(0f, 0f, 0f);
             currentPosition = transform.position;
-            switch (direction)
+            switch (moveDirection)
             {
                 case "LeftUp":
                     temp = new Vector3(0f, 0f, 1f);
@@ -50,6 +64,17 @@ public class PlayerButtonMovement : MonoBehaviour
             playerDestination = currentPosition + temp;
             pMovement.MoveOutsideScript(playerDestination);   
         }
+    }
+
+    public void onPressMove(string direction)
+    {
+        moveDirection = direction;
+        isPressingMove = true;
+    }
+
+    public void onReleaseMove()
+    {
+        isPressingMove = false;
     }
 
     public void CheckPlayerDirections()

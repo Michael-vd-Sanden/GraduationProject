@@ -43,9 +43,9 @@ public class PlayerMouseMovement : MonoBehaviour
                 && (currentPos.z - targetMargin.z < destination.z && currentPos.z + targetMargin.z > destination.z))
             {
                 transform.position = new Vector3(destination.x, currentPos.y, destination.z);
-                isMoving = false;
                 if(isInMaze) { allowedToMove= true; }
                 if (!isMouseMovement && !isInMaze) { playerButtonMove.CheckPlayerDirections();}
+                isMoving = false;
             }
         }
     }
@@ -95,15 +95,16 @@ public class PlayerMouseMovement : MonoBehaviour
         switch (path.status)
         {
             case NavMeshPathStatus.PathComplete:
+                isMoving = true;
                 agent.SetDestination(destination);
                 currentPos = transform.position;
+                
                 if(destination.x < currentPos.x || destination.z > currentPos.z)
                 { isMovingLeft = true; }
                 else { isMovingLeft = false; }
-                isMoving = true;
                 break;
             default:
-                //Debug.Log("Can't move there");
+                Debug.Log("Can't move there");
                 break;
         }
     }
@@ -120,8 +121,11 @@ public class PlayerMouseMovement : MonoBehaviour
 
     public void MoveOutsideScript(Vector3 pos) 
     {
-        destination = pos;
-        CheckIfCanReachDestination();
+        if (!isMoving)
+        {
+            destination = pos;
+            CheckIfCanReachDestination();
+        }
     }
 
     private void Move(InputAction.CallbackContext obj)
