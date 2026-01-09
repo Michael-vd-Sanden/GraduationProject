@@ -568,7 +568,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 72847424}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1315587692}
+        m_TargetAssemblyTypeName: LevelStorage, Assembly-CSharp
+        m_MethodName: ScenePlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &77969213
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,6 +802,18 @@ MonoBehaviour:
           m_StringArgument: FloorShiftDown
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1163901859}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Rotator
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1315587691}
         m_TargetAssemblyTypeName: LevelIndex, Assembly-CSharp
         m_MethodName: LevelShift
@@ -798,18 +822,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: -1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1163901859}
-        m_TargetAssemblyTypeName: TurnObject, Assembly-CSharp
-        m_MethodName: StartRotation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2867,16 +2879,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
+      - m_Target: {fileID: 8583502550552858583}
+        m_TargetAssemblyTypeName: TextureChanger, Assembly-CSharp
+        m_MethodName: HardModeShift
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Rotator
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 744160283}
@@ -2891,21 +2903,33 @@ MonoBehaviour:
           m_StringArgument: Rotator
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1264631461}
-        m_TargetAssemblyTypeName: TurnObject, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1163901859}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Rotator
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1163901859}
-        m_TargetAssemblyTypeName: TurnObject, Assembly-CSharp
-        m_MethodName: StartRotation
+      - m_Target: {fileID: 1264631461}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Rotator
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1315587692}
+        m_TargetAssemblyTypeName: LevelStorage, Assembly-CSharp
+        m_MethodName: HardModeShift
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3036,7 +3060,7 @@ Transform:
   m_GameObject: {fileID: 1023690406}
   serializedVersion: 2
   m_LocalRotation: {x: -0.6965249, y: 0.018939821, z: 0.020240678, w: 0.716997}
-  m_LocalPosition: {x: -0.35220802, y: -0.37655133, z: 0.2873782}
+  m_LocalPosition: {x: -0.359, y: -0.315, z: 0.178}
   m_LocalScale: {x: 27.028076, y: 23.013824, z: 25.439524}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3067,7 +3091,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 65b1a945cb586ff448d2d2e67b14679f, type: 2}
+  - {fileID: 2100000, guid: 75ed6717178c8ab48aeb2316ab22f77a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3294,6 +3318,18 @@ MonoBehaviour:
           m_StringArgument: FloorShiftUp
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1163901859}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Rotator
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1315587691}
         m_TargetAssemblyTypeName: LevelIndex, Assembly-CSharp
         m_MethodName: LevelShift
@@ -3302,18 +3338,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1163901859}
-        m_TargetAssemblyTypeName: TurnObject, Assembly-CSharp
-        m_MethodName: StartRotation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3763,34 +3787,36 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163901857}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2983820439862096996}
-  m_Father: {fileID: 5396162381311165752}
+  m_Father: {fileID: 1931070590}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1163901859
-MonoBehaviour:
+--- !u!95 &1163901859
+Animator:
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163901857}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94a670d174df41443beb69682f2f420a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TurnObject
-  turnSpeed: 180
-  toAngle: {x: 0, y: 0, z: 1, w: -0.00000004371139}
-  halfwayToAngle: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
-  halfwayFromAngle: {x: 0, y: 0, z: 0.70710677, w: -0.70710677}
-  isRotating: 0
-  currentAngle: {x: 0, y: 0, z: 0, w: 0}
-  startAngle: {x: 0, y: 0, z: 0, w: 0}
-  targetAngle: {x: 0, y: 0, z: 0, w: 0}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bcf45e92522d2214080bc1823b4a45e8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1190872308
 GameObject:
   m_ObjectHideFlags: 0
@@ -3818,7 +3844,7 @@ Transform:
   m_GameObject: {fileID: 1190872308}
   serializedVersion: 2
   m_LocalRotation: {x: -0.6965249, y: 0.018939821, z: 0.020240678, w: 0.716997}
-  m_LocalPosition: {x: -0.30758208, y: -0.43298632, z: 0.06703318}
+  m_LocalPosition: {x: -0.314, y: -0.333, z: -0.041}
   m_LocalScale: {x: 27.028076, y: 23.013824, z: 25.439524}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3849,7 +3875,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 65b1a945cb586ff448d2d2e67b14679f, type: 2}
+  - {fileID: 2100000, guid: 75ed6717178c8ab48aeb2316ab22f77a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4317,26 +4343,28 @@ Transform:
   - {fileID: 1101599018}
   m_Father: {fileID: 1250913171}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1264631461
-MonoBehaviour:
+--- !u!95 &1264631461
+Animator:
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264631458}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94a670d174df41443beb69682f2f420a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TurnObject
-  turnSpeed: 240
-  toAngle: {x: 0, y: 1, z: 0, w: -0.00000004371139}
-  halfwayToAngle: {x: 0, y: 0.70710677, z: 0, w: -0.70710677}
-  halfwayFromAngle: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
-  isRotating: 0
-  currentAngle: {x: 0, y: 0, z: 0, w: 0}
-  startAngle: {x: 0, y: 0, z: 0, w: 0}
-  targetAngle: {x: 0, y: 0, z: 0, w: 0}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bcf45e92522d2214080bc1823b4a45e8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1315587688
 GameObject:
   m_ObjectHideFlags: 0
@@ -4348,6 +4376,7 @@ GameObject:
   - component: {fileID: 1315587690}
   - component: {fileID: 1315587689}
   - component: {fileID: 1315587691}
+  - component: {fileID: 1315587692}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -4398,11 +4427,28 @@ MonoBehaviour:
   FloorIndex: 0
   FloorMaximum: 3
   FloorText: {fileID: 8611797}
+  LevelTextures: {fileID: 0}
   DioramaAnimators:
   - {fileID: 755762585}
   - {fileID: 1362332105}
   - {fileID: 1018234937}
   - {fileID: 852440915}
+--- !u!114 &1315587692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315587688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6866ddfe5eb35824ab89c6b23fb44c06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelStorage
+  HardMode: 0
+  Levels: []
+  HardModeLevels: []
+  LevelIndex: {fileID: 1315587691}
 --- !u!1 &1362332103
 GameObject:
   m_ObjectHideFlags: 0
@@ -4486,7 +4532,7 @@ Transform:
   m_GameObject: {fileID: 1492967236}
   serializedVersion: 2
   m_LocalRotation: {x: -0.6965249, y: 0.018939821, z: 0.020240678, w: 0.716997}
-  m_LocalPosition: {x: -0.33059937, y: -0.40264907, z: 0.17370853}
+  m_LocalPosition: {x: -0.337, y: -0.3, z: 0.066}
   m_LocalScale: {x: 27.028076, y: 23.013824, z: 25.439524}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4517,7 +4563,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 65b1a945cb586ff448d2d2e67b14679f, type: 2}
+  - {fileID: 2100000, guid: 75ed6717178c8ab48aeb2316ab22f77a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5411,6 +5457,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924416524}
   m_CullTransparentMesh: 1
+--- !u!1 &1931070589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1931070590}
+  m_Layer: 0
+  m_Name: ScreenshotOffset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1931070590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931070589}
+  serializedVersion: 2
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
+  m_LocalPosition: {x: -0, y: 0.01, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1163901858}
+  m_Father: {fileID: 7075032027090273784}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!1 &1966796294
 GameObject:
   m_ObjectHideFlags: 0
@@ -5942,6 +6020,7 @@ GameObject:
   - component: {fileID: 2983820439862096996}
   - component: {fileID: 8583502550552858582}
   - component: {fileID: 4793124213938947268}
+  - component: {fileID: 8583502550552858583}
   m_Layer: 0
   m_Name: ScreenshotBoard
   m_TagString: Untagged
@@ -6529,13 +6608,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492170686719893561}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1163901858}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &3075878528328516735
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6893,7 +6972,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5bfc684caff7b21459dfab7ae3775291, type: 2}
+  - {fileID: 2100000, guid: 3b27b6e1eb95cc74593c3418de08dc8b, type: 2}
+  - {fileID: 2100000, guid: 9b25f011b52c89d4d846d2f746ab6f92, type: 2}
   - {fileID: 2100000, guid: 1414aa05962e6a946ac09881eb2d3491, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -7019,8 +7099,7 @@ Transform:
   m_LocalPosition: {x: -0, y: 0.008, z: 0.001}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1163901858}
+  m_Children: []
   m_Father: {fileID: 7075032027090273784}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5798455108249505788
@@ -7364,6 +7443,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1931070590}
   - {fileID: 5396162381311165752}
   - {fileID: 1833882792}
   - {fileID: 6022798325949850467}
@@ -7608,6 +7688,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492170686719893561}
   m_Mesh: {fileID: -6118776530759543275, guid: 49519f242ea0e4545a87956268c680e8, type: 3}
+--- !u!114 &8583502550552858583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492170686719893561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2877b871131d94bb34947162d6195f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextureChanger
+  ChangeBackMat: 0
+  HardMode: 0
+  FrontMat: {fileID: 2100000, guid: 9b25f011b52c89d4d846d2f746ab6f92, type: 2}
+  BackMat: {fileID: 2100000, guid: 3b27b6e1eb95cc74593c3418de08dc8b, type: 2}
+  LevelScreenshotsFront: []
+  LevelScreenshotsHardMode: []
+  NextOne: []
 --- !u!23 &8641622816786839480
 MeshRenderer:
   m_ObjectHideFlags: 0
