@@ -11,9 +11,6 @@ public class LevelIndex : MonoBehaviour
     //By reading this number, animators for each level will know if they are closed or open.
     //Will be changed by the up / down buttons in the UI.
 
-    //public float SelectionDelay;
-    //SelectionDelay will make sure levels can't be selected before the animation is fully (or almost) complete.
-
     public Animator[] DioramaAnimators;
     //public void Awake()
     //{
