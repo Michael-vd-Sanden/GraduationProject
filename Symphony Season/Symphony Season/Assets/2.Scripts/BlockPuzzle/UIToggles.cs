@@ -79,10 +79,27 @@ public class UIToggles : MonoBehaviour
             { pushRightDownControl.SetActive(true); }
         }
 
+        switch(block.moveDirection)
+        {
+            case "RightUp":
+                if(block.isRightDirection && !block.upAllowed) { block.isPressingBlockMove = false; }
+                break;
+            case "LeftUp":
+                if(!block.isRightDirection && !block.upAllowed) { block.isPressingBlockMove = false; }
+                break;
+            case "RightDown":
+                if(!block.isRightDirection && !block.downAllowed) { block.isPressingBlockMove = false;}
+                break;
+            case "LeftDown":
+                if(block.isRightDirection && !block.downAllowed) { block.isPressingBlockMove = false;}
+                break;
+        }
+
         if (manager.enteredBlocks.Count > 1)
         { switchControl.SetActive(true); }
         else
         { switchControl.SetActive(false); }
+        manager.currentSelectedBlock.checkedDirections = true;
     }
 
     public void ActivatePlayerDirections(string direction, bool active)
@@ -106,12 +123,6 @@ public class UIToggles : MonoBehaviour
                 else { pushRightDownControl.SetActive(false); }
                 break;
         }   
-    }
-
-    public void PressedPushBtn(string direction) //miss geen button, maar een drag?
-    {
-        if (manager.currentSelectedBlock != null)
-        { manager.currentSelectedBlock.MoveBlock(direction); }
     }
 
     public void PressedSwitchBtn()

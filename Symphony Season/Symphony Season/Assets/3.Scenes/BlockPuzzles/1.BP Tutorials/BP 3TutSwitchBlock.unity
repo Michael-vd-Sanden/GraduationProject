@@ -2983,19 +2983,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 524389450}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 237183706}
-        m_TargetAssemblyTypeName: UIToggles, Assembly-CSharp
-        m_MethodName: PressedPushBtn
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: RightUp
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &524389450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3011,7 +2999,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 1.2, y: 1.2, z: 1.2, w: 1.2}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3047,7 +3035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
   m_Delegates:
-  - eventID: 2
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -3063,7 +3051,7 @@ MonoBehaviour:
             m_StringArgument: RightUp
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 3
+  - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -3464,19 +3452,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 550273383}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 237183706}
-        m_TargetAssemblyTypeName: UIToggles, Assembly-CSharp
-        m_MethodName: PressedPushBtn
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: LeftDown
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &550273383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3492,7 +3468,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 1.2, y: 1.2, z: 1.2, w: 1.2}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3528,7 +3504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
   m_Delegates:
-  - eventID: 2
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -3544,7 +3520,7 @@ MonoBehaviour:
             m_StringArgument: LeftDown
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 3
+  - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -3728,7 +3704,7 @@ MonoBehaviour:
   PlayerObject: {fileID: 1141018828}
   playerMaterial: {fileID: 2100000, guid: 11166b03de170cf47b5c84d20842362f, type: 2}
   Yoffset: 0.36
-  Xoffset: 0
+  Xoffset: -0.15
   Zoffset: 0
   playerMovement: {fileID: 0}
 --- !u!64 &572955905
@@ -3908,19 +3884,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 579411414}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 237183706}
-        m_TargetAssemblyTypeName: UIToggles, Assembly-CSharp
-        m_MethodName: PressedPushBtn
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: LeftUp
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &579411414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3936,7 +3900,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 1.2, y: 1.2, z: 1.2, w: 1.2}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3972,7 +3936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
   m_Delegates:
-  - eventID: 2
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -3988,7 +3952,7 @@ MonoBehaviour:
             m_StringArgument: LeftUp
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 3
+  - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -7429,19 +7393,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1244118418}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 237183706}
-        m_TargetAssemblyTypeName: UIToggles, Assembly-CSharp
-        m_MethodName: PressedPushBtn
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: RightDown
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1244118418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7457,7 +7409,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 1.2, y: 1.2, z: 1.2, w: 1.2}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7512,7 +7464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
   m_Delegates:
-  - eventID: 2
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -7528,7 +7480,7 @@ MonoBehaviour:
             m_StringArgument: RightDown
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 3
+  - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:

@@ -429,7 +429,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   stepHeight: 0
-  stepDuration: 0.45
+  stepDuration: 0.5
+  moveDirection: 
+  isPressingBlockMove: 0
+  checkedDirections: 0
 --- !u!23 &1679103908646072422
 MeshRenderer:
   m_ObjectHideFlags: 0

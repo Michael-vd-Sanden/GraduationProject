@@ -36,6 +36,8 @@ public class MoveBlockScript : MonoBehaviour
     [SerializeField] float stepHeight = 0.3f;
     [SerializeField] float stepDuration = 0.3f;
     private float stepTime;
+    public string moveDirection;
+    public bool isPressingBlockMove = false, checkedDirections;
 
     private void Awake()
     {
@@ -48,7 +50,11 @@ public class MoveBlockScript : MonoBehaviour
 
     private void Update()
     {
-        if (isMoving) 
+        if (isPressingBlockMove && checkedDirections) 
+        {
+            SetTargetPos();
+        }
+        if(isMoving)
         {
             Move();
         }
@@ -67,15 +73,17 @@ public class MoveBlockScript : MonoBehaviour
         manager.ExitedTrigger(this);
     }
 
-    public void MoveBlock(string direction)
+    public void SetTargetPos()
     {//move 1 space
         //Debug.Log("pushed " + direction.ToString());
-        objectCurrentPos = this.gameObject.transform.position;
-        playerCurrentPos = playerMovement.transform.position;
         if (objectAbleToMove && !isMoving)
         {
+            checkedDirections = false;
+            objectCurrentPos = this.gameObject.transform.position;
+            playerCurrentPos = playerMovement.transform.position;
+
             stepTime = 0f;
-            switch (direction)
+            switch (moveDirection)
             {
                 case "RightUp":
                     objectTargetPos = objectCurrentPos + new Vector3(1f, 0f, 0f);

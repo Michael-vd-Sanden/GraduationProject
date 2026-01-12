@@ -68,13 +68,28 @@ public class PlayerButtonMovement : MonoBehaviour
 
     public void onPressMove(string direction)
     {
-        moveDirection = direction;
-        isPressingMove = true;
+        if (manager.currentSelectedBlock == null)
+        {
+            moveDirection = direction;
+            isPressingMove = true;
+        }
+        else
+        {
+            manager.currentSelectedBlock.moveDirection = direction;
+            manager.currentSelectedBlock.isPressingBlockMove = true;
+        }
     }
 
     public void onReleaseMove()
     {
-        isPressingMove = false;
+        if (manager.currentSelectedBlock == null)
+        {
+            isPressingMove = false;
+        }
+        else
+        {
+            manager.currentSelectedBlock.isPressingBlockMove = false;
+        }
     }
 
     public void CheckPlayerDirections()
