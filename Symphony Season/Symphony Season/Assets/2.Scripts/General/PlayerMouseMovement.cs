@@ -104,7 +104,7 @@ public class PlayerMouseMovement : MonoBehaviour
                 else { isMovingLeft = false; }
                 break;
             default:
-                Debug.Log("Can't move there");
+                //Debug.Log("Can't move there");
                 break;
         }
     }
