@@ -3,9 +3,13 @@ using UnityEngine;
 
 public class LevelTextChanger : MonoBehaviour
 {
-    public GameObject ThisObject;
+    private TMP_Text ThisText;
+    public void Awake()
+    {
+        ThisText = GetComponent<TMP_Text>();
+    }
     public void LevelTextShift(int LevelIndex)
     {
-        TextMeshPro.print("Floor " + LevelIndex);
+        ThisText.text = "FLOOR " + LevelIndex;
     }
 }

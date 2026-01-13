@@ -6,13 +6,11 @@ public class LevelIndex : MonoBehaviour
     public int FloorIndex = 0;
     public int FloorMaximum = 3;
     public LevelTextChanger FloorText;
+    public TextureChanger LevelTextures;
     //This variable will determine which level is currently selectable.
     //Selectable levels have open dioramas, unselectable levels have closed walls.
     //By reading this number, animators for each level will know if they are closed or open.
     //Will be changed by the up / down buttons in the UI.
-
-    //public float SelectionDelay;
-    //SelectionDelay will make sure levels can't be selected before the animation is fully (or almost) complete.
 
     public Animator[] DioramaAnimators;
     //public void Awake()
@@ -41,6 +39,7 @@ public class LevelIndex : MonoBehaviour
             FloorText.LevelTextShift(FloorIndex);
             DioramaAnimators[FloorIndex].SetTrigger("Pulsing");
             DioramaAnimators[PrevFloorIndex].SetTrigger("NotPulsing");
+            LevelTextures.TextureChange(FloorIndex);
         }
     }
 }
