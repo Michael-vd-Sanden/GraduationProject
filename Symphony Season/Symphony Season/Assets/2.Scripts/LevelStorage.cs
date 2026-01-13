@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class LevelStorage : MonoBehaviour
 {
     public bool HardMode = false;
-    public Scene TestScene;
     public string[] Levels;
     public string[] HardModeLevels;
     public LevelIndex LevelIndex;

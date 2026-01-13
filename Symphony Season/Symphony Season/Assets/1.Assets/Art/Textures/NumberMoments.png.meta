@@ -151,8 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96e8eaf5e181fd44dbe280a79da7c783
-      internalID: -1582035437
+      spriteID: 77a6e422515cc7d48931b06014917b27
+      internalID: -1209168569
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d69af2478abbdbc4a8abb92271d0f17d
-      internalID: -512478868
+      spriteID: fc2c694e536ef984bbc2dc5552a6b341
+      internalID: 841739748
       vertices: []
       indices: 
       edges: []
@@ -195,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 808b1715fdd78044f8297fceeb30f382
-      internalID: -1843384118
+      spriteID: a29bf212bd5bec7439e7a020910b3b82
+      internalID: -1489625
       vertices: []
       indices: 
       edges: []
@@ -217,8 +217,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a4ec07077dc29c4d9bcfab34c2996bb
-      internalID: 980275661
+      spriteID: 240cc77533b05a34fa35240838bd3feb
+      internalID: 2063158961
       vertices: []
       indices: 
       edges: []
@@ -239,8 +239,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03376756a2d5af140aae55ba7d9465ca
-      internalID: 986132317
+      spriteID: c1047a4814b956f47a0c2239a3a04735
+      internalID: 1396855212
       vertices: []
       indices: 
       edges: []
@@ -261,8 +261,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85877c08305785142846babb9c5fed96
-      internalID: 1571272784
+      spriteID: 34cce0c3fb5c8a34ba1750b5c78cb427
+      internalID: -817788341
       vertices: []
       indices: 
       edges: []
@@ -283,8 +283,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60a7d5f4623718f4d8ab59ffb366ca3c
-      internalID: -927174982
+      spriteID: 6b269ac8ed866294488d46a9fda2e0cd
+      internalID: 1788968523
       vertices: []
       indices: 
       edges: []
@@ -305,8 +305,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81e88a8e59da70443b45484b0aa869a9
-      internalID: -2014297326
+      spriteID: d1d2b77cd6fa4a249826a67041585bd8
+      internalID: -207937475
       vertices: []
       indices: 
       edges: []
@@ -327,8 +327,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7620ff0e86bcfab49a97af3a8939fa01
-      internalID: -131813730
+      spriteID: 83f95f0f8bc92a1488459277a7c460df
+      internalID: -511544782
       vertices: []
       indices: 
       edges: []
@@ -349,8 +349,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e722a6677e0b7de419a18d1956e4e1e8
-      internalID: 828796553
+      spriteID: a08eb5e981300b245b9cb96e95b4ebbf
+      internalID: -1206577694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberMoments_10
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629ccb2e29977444ebd4638b294f4dd7
+      internalID: -1181148456
       vertices: []
       indices: 
       edges: []
@@ -359,7 +381,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 685a5d3949327b541b9bdf56857aeea2
+    spriteID: 08ab1491bf70e2244a3441c00ddc7870
     internalID: 0
     vertices: []
     indices: 
@@ -371,22 +393,22 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":512.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      NumberMoments_0: -1582035437
-      NumberMoments_1: -512478868
-      NumberMoments_10: 1498046186
-      NumberMoments_11: 721094555
-      NumberMoments_12: -899638296
-      NumberMoments_13: -1918580972
-      NumberMoments_14: 2095451933
-      NumberMoments_15: 2070420898
-      NumberMoments_2: -1843384118
-      NumberMoments_3: 980275661
-      NumberMoments_4: 986132317
-      NumberMoments_5: 1571272784
-      NumberMoments_6: -927174982
-      NumberMoments_7: -2014297326
-      NumberMoments_8: -131813730
-      NumberMoments_9: 828796553
+      NumberMoments_0: -1209168569
+      NumberMoments_1: 841739748
+      NumberMoments_10: -1181148456
+      NumberMoments_11: 1798349824
+      NumberMoments_12: 980584621
+      NumberMoments_13: -779302563
+      NumberMoments_14: 57313398
+      NumberMoments_15: 1389303623
+      NumberMoments_2: -1489625
+      NumberMoments_3: 2063158961
+      NumberMoments_4: 1396855212
+      NumberMoments_5: -817788341
+      NumberMoments_6: 1788968523
+      NumberMoments_7: -207937475
+      NumberMoments_8: -511544782
+      NumberMoments_9: -1206577694
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
