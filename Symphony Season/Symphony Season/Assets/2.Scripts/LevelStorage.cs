@@ -3,21 +3,26 @@ using UnityEngine.SceneManagement;
 
 public class LevelStorage : MonoBehaviour
 {
-    public bool HardMode;
-    public Scene[] Levels;
-    public Scene[] HardModeLevels;
+    public bool HardMode = false;
+    public Scene TestScene;
+    public string[] Levels;
+    public string[] HardModeLevels;
     public LevelIndex LevelIndex;
-
+    
     public void HardModeShift()
     {
         if (!HardMode) { HardMode = true; }
-        else { HardMode = false; }
+        else if (HardMode) { HardMode = false; }
     }
 
-    public void ScenePlay()
+    public void NextScene()
     {
-        string LevelName = Levels[LevelIndex.FloorIndex].name;
-            SceneManager.LoadScene(LevelName);
-
+        if (!HardMode)
+        {
+            SceneManager.LoadScene(Levels[LevelIndex.FloorIndex]);
+        } else if (HardMode)
+        {
+            SceneManager.LoadScene(HardModeLevels[LevelIndex.FloorIndex]);
+        }
     }
 }
