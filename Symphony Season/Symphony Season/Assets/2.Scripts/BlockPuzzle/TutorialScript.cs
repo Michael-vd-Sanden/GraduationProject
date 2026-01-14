@@ -9,7 +9,9 @@ public class TutorialScript : MonoBehaviour
     [SerializeField] private BlockPuzzleManager manager;
     private PlayerMouseMovement playerMove;
     [SerializeField] private UIToggles uiToggle;
-    [SerializeField] private GameObject cross;
+
+    [Header("-------- Lv 1 & 2")]
+    [SerializeField] private Animator cross;
     
     [Header("-------------- Changeble Values")]
     public int tutorialLevel;
@@ -28,18 +30,12 @@ public class TutorialScript : MonoBehaviour
         switch (tutorialLevel) 
         {
             case 1:
-                StartCoroutine(TutMovement());
+                cross.SetBool("Pulsing", true);
                 break;
             case 2:
+                cross.SetBool("Pulsing", true);
                 break;
         }
-    }
-
-    private IEnumerator TutMovement()
-    {//arrow points to exit
-        //cross.SetActive(true);
-        yield return new WaitForSecondsRealtime(5f);
-        //cross.SetActive(false);
     }
 
     public void PressedHoldWithoutNotes()

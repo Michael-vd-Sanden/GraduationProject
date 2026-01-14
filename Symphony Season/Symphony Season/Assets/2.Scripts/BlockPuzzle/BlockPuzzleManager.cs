@@ -9,6 +9,7 @@ public class BlockPuzzleManager : MonoBehaviour
     [SerializeField] private AudioPlayer audioPlayer;
     [SerializeField] private PlayerFollower playerFollow;
     public PlayerButtonMovement playerBtnMove;
+    private NotePulser notePulse;
 
     [Header("-------------- Changeble Values")]
     public int hitLayer;
@@ -27,6 +28,7 @@ public class BlockPuzzleManager : MonoBehaviour
     private void Awake()
     {
         layerAsLayerMask = (1 << hitLayer);
+        notePulse = FindFirstObjectByType<NotePulser>();
     }
 
     private void Update()
@@ -43,7 +45,7 @@ public class BlockPuzzleManager : MonoBehaviour
             {
                 //play some sort of sound
                 audioPlayer.PlayEffect("Wrong");
-                Debug.Log("fout");
+                //Debug.Log("fout");
                 noteSelected = null;
             }
         }
@@ -60,6 +62,7 @@ public class BlockPuzzleManager : MonoBehaviour
         noteSelected = null;
         uiToggle.DeactivateNoteBtns();
         isCheckingForNotes = false;
+        if (!isTutorial) { notePulse.NoNotes(); }
         return;
     }
 
@@ -90,12 +93,14 @@ public class BlockPuzzleManager : MonoBehaviour
     {
         if(enteredBlocks.Count > 0) 
         {
+            uiToggle.TurnOffDirections();
             currentSelectedBlock = enteredBlocks[selectedBlockIndex];
             currentBlockNote = currentSelectedBlock.blockNote;
             currentSelectedBlock.questionNotification.SetActive(true);
             isCheckingForNotes = true;
             noteSelected = null;
             playerFollow.ToggleHolding(1f);
+            if (!isTutorial) { notePulse.NoteShift(); }
             if(isTutorial) 
             { 
                 isCheckingForNotes=false;
@@ -128,6 +133,7 @@ public class BlockPuzzleManager : MonoBehaviour
             currentSelectedBlock.objectAbleToMove = false;
             currentSelectedBlock = null;
             playerFollow.ToggleHolding(0f);
+            if (!isTutorial) { notePulse.NoNotes(); }
         }
         currentBlockNote = null;
         playerMovement.allowedToMove = true;
