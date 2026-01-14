@@ -26,14 +26,16 @@ public class LevelStorage : MonoBehaviour
     private IEnumerator NextScene()
     {
         hasStarted = true;
-        CurtainCloser.SetTrigger();
-        yield return new WaitForSecondsRealtime(2.2f);
         if (!HardMode)
         {
+            CurtainCloser.SetTrigger();
+            yield return new WaitForSecondsRealtime(2.2f);
             SceneManager.LoadScene(Levels[LevelIndex.FloorIndex]);
         }
-        else if (HardMode)
+        else if (HardMode && HardModeLevels[LevelIndex.FloorIndex] != "-")
         {
+            CurtainCloser.SetTrigger();
+            yield return new WaitForSecondsRealtime(2.2f);
             SceneManager.LoadScene(HardModeLevels[LevelIndex.FloorIndex]);
         }
         hasStarted = false;

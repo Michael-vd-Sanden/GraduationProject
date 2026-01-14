@@ -1206,18 +1206,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: FloorShiftDown
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1163901859}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
@@ -2712,7 +2700,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493402524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.18}
   m_LocalScale: {x: 0.23963383, y: 0.23963383, z: 0.23963383}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3688,7 +3676,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f9fa5a28682447444afba6aa91f821a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cab9a239a64ee2943939a6dfb58a0cd6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4500,7 +4488,7 @@ Transform:
   m_GameObject: {fileID: 782645773}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.23000017, y: -1.0900002, z: -0.0631509}
+  m_LocalPosition: {x: 0.23, y: -1.25, z: -0.0631509}
   m_LocalScale: {x: 0.08879572, y: 0.08879572, z: 0.08879575}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4553,8 +4541,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 200ec6ab1f01bee4f84fa21b77a1e184, type: 3}
-  m_Color: {r: 1, g: 0.8989217, b: 0.8989217, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 15d15ce630314724bbd2f0f16a67177c, type: 3}
+  m_Color: {r: 0.800539, g: 0.7153064, b: 0.7153064, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5390,6 +5378,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1315587691}
+        m_TargetAssemblyTypeName: LevelIndex, Assembly-CSharp
+        m_MethodName: LevelShift
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 744160283}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
@@ -5488,7 +5488,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976484148}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.113}
+  m_LocalPosition: {x: 0, y: 0, z: 0.17}
   m_LocalScale: {x: 0.9408169, y: 0.9408169, z: 0.9408169}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5497,7 +5497,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.05, y: 0.037000004}
+  m_AnchoredPosition: {x: -0.05, y: 0.04}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &989341794
@@ -5955,7 +5955,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 25e00a664fd0dbd43ba6dfc862c29327, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3620117a143450e40a61337a1c1c0ff6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6256,18 +6256,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: FloorShiftUp
-          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1163901859}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
@@ -8509,7 +8497,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 25e00a664fd0dbd43ba6dfc862c29327, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3620117a143450e40a61337a1c1c0ff6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -8578,6 +8566,8 @@ MonoBehaviour:
   - {fileID: 989341795}
   - {fileID: 1927089860}
   - {fileID: 2022671660}
+  UpButton: {fileID: 1055916490}
+  DownButton: {fileID: 109884892}
 --- !u!114 &1315587692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8592,12 +8582,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelStorage
   HardMode: 0
   Levels:
-  - ArtTestScene2
-  - BP 2TutBlockMovement
-  - BP 3 TutSwitchBlock
-  - BP 4TutAdvancedBlockMovement
-  - BP 5TutNoteG
-  - BP 6TutNoteGAB
+  - BP Tut1
+  - BP Tut2
+  - BP Tut3
+  - BP Tut4
+  - BP Tut5
+  - BP Tut6
   - BP 1_Easy
   - BP 2_Easy
   HardModeLevels:
@@ -13596,14 +13586,25 @@ MonoBehaviour:
   FrontMat: {fileID: 2100000, guid: 9b25f011b52c89d4d846d2f746ab6f92, type: 2}
   BackMat: {fileID: 2100000, guid: 3b27b6e1eb95cc74593c3418de08dc8b, type: 2}
   LevelScreenshotsFront:
-  - {fileID: 2800000, guid: cc2ca49c033f0b04aa1365a32224280f, type: 3}
-  - {fileID: 2800000, guid: 18f6463b7e562844590c34d5fc429634, type: 3}
-  - {fileID: 2800000, guid: c2f4c30930eef1842aef45aa42a0b959, type: 3}
-  - {fileID: 2800000, guid: fc951a7ef7174e74fb5c228f44d48905, type: 3}
-  - {fileID: 2800000, guid: ad9e21d318a177f46b410e792f26afa8, type: 3}
-  - {fileID: 2800000, guid: 81f4d0a76a3da944eaccf31c79e86be6, type: 3}
-  LevelScreenshotsHardMode: []
+  - {fileID: 2800000, guid: d0a2dbe760371914e8d59aa969ebcde7, type: 3}
+  - {fileID: 2800000, guid: 7b087e3e04c1df74b8947624dd0062a9, type: 3}
+  - {fileID: 2800000, guid: c6dc421d20e990741a0927f5326ac8aa, type: 3}
+  - {fileID: 2800000, guid: bb92b00935bf8a345bbc113c2d065fb2, type: 3}
+  - {fileID: 2800000, guid: 3030dfd0512b3e44eb6aca0867d2b359, type: 3}
+  - {fileID: 2800000, guid: 80801640a472bfd4e8add5a21cc0ee26, type: 3}
+  - {fileID: 2800000, guid: a8f3e8af7018dc140bc04a4b62e25cbf, type: 3}
+  - {fileID: 2800000, guid: fd894417e46a7034198d59c8a900b3a5, type: 3}
+  LevelScreenshotsHardMode:
+  - {fileID: 2800000, guid: 414b697f9f056134abe5c5e9f1af5a07, type: 3}
+  - {fileID: 2800000, guid: 414b697f9f056134abe5c5e9f1af5a07, type: 3}
+  - {fileID: 2800000, guid: 414b697f9f056134abe5c5e9f1af5a07, type: 3}
+  - {fileID: 2800000, guid: 414b697f9f056134abe5c5e9f1af5a07, type: 3}
+  - {fileID: 2800000, guid: 414b697f9f056134abe5c5e9f1af5a07, type: 3}
+  - {fileID: 2800000, guid: 414b697f9f056134abe5c5e9f1af5a07, type: 3}
+  - {fileID: 2800000, guid: b25db66dc1416bf479fbc67466e2da81, type: 3}
+  - {fileID: 2800000, guid: 124cd2b02d1c7da438a6d1aaf676f561, type: 3}
   NextOne: []
+  LevelIndexer: {fileID: 1315587691}
 --- !u!23 &8641622816786839480
 MeshRenderer:
   m_ObjectHideFlags: 0

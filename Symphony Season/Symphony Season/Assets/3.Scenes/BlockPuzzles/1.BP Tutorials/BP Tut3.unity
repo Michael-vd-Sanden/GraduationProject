@@ -500,9 +500,10 @@ MonoBehaviour:
   pushLeftDownControl: {fileID: 1295569964}
   pushRightUpControl: {fileID: 118737909}
   pushRightDownControl: {fileID: 605574539}
-  nextLevelScreen: {fileID: 1583264644}
+  nextLevelScreen: {fileID: 5266637749159060437}
   btnsSharp: {fileID: 1059837082}
   btnsFlat: {fileID: 1475408188}
+  btnSwitchFlSH: {fileID: 0}
   noteBtnsCanvas: {fileID: 1977511095}
   holdControl: {fileID: 1271404303}
   releaseControl: {fileID: 495814791}
@@ -1193,6 +1194,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VictoryTrigger
   uiToggles: {fileID: 155493026}
+  CurtainCloser: {fileID: 5266637749159060436}
+  PlayerMover: {fileID: 1383415164}
+  PlayerMat: {fileID: 1315900517}
 --- !u!65 &257234687
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6326,6 +6330,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81bd26e50295cb04fbea0a15016ca94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerButtonMovement
+--- !u!114 &1383415164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3409114782354985354, guid: ddac4bb7431784d4dbed892e238cbc5f, type: 3}
+  m_PrefabInstance: {fileID: 1383415159}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383415160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea1119de77dce54bba4bcc7e43bd1d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveObject
 --- !u!95 &1386484661 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4214457028469814695, guid: 2cafe51ccabca78408e06e9fca099d4a, type: 3}
@@ -11167,6 +11182,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2415044591477283282, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 155493027}
+    - target: {fileID: 2415044591477283282, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240250273015448915, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 155493027}
+    - target: {fileID: 3240250273015448915, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 155493027}
+    - target: {fileID: 3240250273015448915, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeSceneName
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240250273015448915, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: NextScene
+      objectReference: {fileID: 0}
     - target: {fileID: 3248287343648061380, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
       propertyPath: m_Name
       value: Orthographic Camera
@@ -11179,6 +11218,22 @@ PrefabInstance:
 --- !u!4 &5266637749159060435 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 88441312803881057, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+  m_PrefabInstance: {fileID: 5266637749159060434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5266637749159060436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2467586131348452812, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+  m_PrefabInstance: {fileID: 5266637749159060434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c230922381828a4b9f82f356bfeb320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerSetter
+--- !u!1 &5266637749159060437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4451381785199087921, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
   m_PrefabInstance: {fileID: 5266637749159060434}
   m_PrefabAsset: {fileID: 0}
 --- !u!20 &5266637749159060438 stripped
