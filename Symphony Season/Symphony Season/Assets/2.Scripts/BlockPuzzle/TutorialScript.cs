@@ -8,7 +8,6 @@ public class TutorialScript : MonoBehaviour
     [SerializeField] private UIToggles UiToggles;
     [SerializeField] private BlockPuzzleManager manager;
     private PlayerMouseMovement playerMove;
-    [SerializeField] private UIToggles uiToggle;
 
     [Header("-------- Lv 1 & 2")]
     [SerializeField] private Animator cross;

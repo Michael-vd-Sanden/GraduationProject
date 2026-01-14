@@ -32,8 +32,6 @@ public class PlayerFollower : MonoBehaviour
             else if (!playerMovement.isMovingLeft) { ToggleLeft(0f); }
         }
         else if(!playerMovement.isMoving) { ToggleMoving(0f); }
-
-
     }
 
     public void ToggleLeft(float toggle)
