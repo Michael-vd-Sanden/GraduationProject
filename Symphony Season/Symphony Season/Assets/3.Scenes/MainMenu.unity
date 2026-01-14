@@ -790,18 +790,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 537813172}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &77969213
 GameObject:
   m_ObjectHideFlags: 0
@@ -8592,12 +8580,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelStorage
   HardMode: 0
   Levels:
-  - ArtTestScene2
-  - BP 2TutBlockMovement
-  - BP 3 TutSwitchBlock
-  - BP 4TutAdvancedBlockMovement
-  - BP 5TutNoteG
-  - BP 6TutNoteGAB
+  - BP Tut1
+  - BP Tut2
+  - BP Tut3
+  - BP Tut4
+  - BP Tut5
+  - BP Tut6
   - BP 1_Easy
   - BP 2_Easy
   HardModeLevels:
@@ -8611,6 +8599,7 @@ MonoBehaviour:
   - BP 2_Hard
   LevelIndex: {fileID: 1315587691}
   CurtainCloser: {fileID: 4317550454937060798}
+  levelButtons: {fileID: 537813172}
 --- !u!1 &1343804476
 GameObject:
   m_ObjectHideFlags: 0
