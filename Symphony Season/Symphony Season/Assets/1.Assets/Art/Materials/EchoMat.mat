@@ -142,7 +142,7 @@ Material:
     - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Contrast: 1.06
+    - _Contrast: 1.01
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -166,7 +166,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _SampleGI: 0
-    - _Saturation: 1.01
+    - _Saturation: 1.09
     - _ShadingCutoff: 0.95
     - _ShadingOpacity: 0.5
     - _Smoothness: 0.5

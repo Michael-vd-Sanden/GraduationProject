@@ -1288,6 +1288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VictoryTrigger
   uiToggles: {fileID: 155493026}
   CurtainCloser: {fileID: 259391357}
+  PlayerMover: {fileID: 1383415164}
+  PlayerMat: {fileID: 1315900517}
 --- !u!65 &257234687
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5747,7 +5749,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8530306509875577040, guid: ddac4bb7431784d4dbed892e238cbc5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1383415164}
   m_SourcePrefab: {fileID: 100100000, guid: ddac4bb7431784d4dbed892e238cbc5f, type: 3}
 --- !u!1 &1383415160 stripped
 GameObject:
@@ -5781,6 +5786,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81bd26e50295cb04fbea0a15016ca94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerButtonMovement
+--- !u!114 &1383415164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383415160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea1119de77dce54bba4bcc7e43bd1d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveObject
+  moveSpeed: 1
+  positions:
+  - {x: 15, y: 1, z: 0}
+  isMoving: 0
+  pos: 0
+  currentPos: {x: 0, y: 0, z: 0}
+  targetPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1392007794
 GameObject:
   m_ObjectHideFlags: 0
