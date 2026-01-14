@@ -44,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/3.Scenes/MazeScene.unity
     guid: 67889f3008942c54bba1949d0231702f
+  - enabled: 1
+    path: Assets/3.Scenes/BlockPuzzles/PuzzleArtTestScene/ArtTestScene2.unity
+    guid: 64fbc3a3d6aa5ba4c9aaa23fc64b2347
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 34bbc23a37b4a3a4b8cf384479f2a8d5, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: d0023cf99f94471429399f8a2f79c4ab, type: 2}
