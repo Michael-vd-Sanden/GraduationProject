@@ -8,7 +8,7 @@ public class UIToggles : MonoBehaviour
     [SerializeField] private SceneSwitching sceneSwitching;
     [SerializeField]
     private GameObject pushLeftUpControl, pushLeftDownControl, pushRightUpControl, pushRightDownControl, nextLevelScreen,
-        btnsSharp, btnsFlat, noteBtnsCanvas;
+        btnsSharp, btnsFlat, btnSwitchFlSH, noteBtnsCanvas;
     public GameObject holdControl, releaseControl, switchControl;
     [SerializeField] private GameObject[] noteBtnsObjects;
 
@@ -47,6 +47,7 @@ public class UIToggles : MonoBehaviour
     public void PressedHoldBtn()
     {
         TurnOffDirections();
+        if (btnSwitchFlSH != null) { btnSwitchFlSH.SetActive(true); }
         holdControl.SetActive(false);
         releaseControl.SetActive(true);
         noteBtnsCanvas.SetActive(true);
@@ -139,6 +140,7 @@ public class UIToggles : MonoBehaviour
 
     public void PressedReleaseBtn()
     {
+        if (btnSwitchFlSH != null) { btnSwitchFlSH.SetActive(false); }
         pushLeftUpControl.SetActive(false);
         pushLeftDownControl.SetActive(false);
         pushRightDownControl.SetActive(false);

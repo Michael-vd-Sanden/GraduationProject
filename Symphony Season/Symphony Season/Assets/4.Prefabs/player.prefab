@@ -120,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8530306509875577040}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   offset: {x: 0.5, y: 0, z: 0.5}
   targetMargin: {x: 0.01, y: 0, z: 0.01}
   isInMaze: 0
-  isMouseMovement: 1
+  isMouseMovement: 0
   allowedToMove: 1
   canBeOverUI: 0
   isMoving: 0
@@ -285,3 +285,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerButtonMovement
   layer: 6
+  isPressingMove: 0

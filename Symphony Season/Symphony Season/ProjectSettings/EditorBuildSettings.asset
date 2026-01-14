@@ -24,29 +24,26 @@ EditorBuildSettings:
     path: Assets/3.Scenes/BlockPuzzles/BP 2_Hard.unity
     guid: e981e90571a38c842a45a5676887d03c
   - enabled: 1
-    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP 1TutMovement.unity
-    guid: 7fbc0c60d236ac14d99295e6cc9133d6
-  - enabled: 1
-    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP 2TutBlockMovement.unity
-    guid: 862ab45f1a7c6da438443da22d117f36
-  - enabled: 1
-    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP 3TutSwitchBlock.unity
-    guid: 8cd7af6430cc8a0489e5f812dd12bf2c
-  - enabled: 1
-    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP 4TutAdvancedBlockMovement.unity
-    guid: cc22cd624c5496c46930d5e0c3c35e9b
-  - enabled: 1
-    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP 5TutNoteG.unity
-    guid: a0833e0f6cd4e9048abf0529f6c096a1
-  - enabled: 1
-    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP 6TutNoteGAB.unity
-    guid: 051a90e35d80db84cb18169675c28539
-  - enabled: 1
     path: Assets/3.Scenes/MazeScene.unity
     guid: 67889f3008942c54bba1949d0231702f
   - enabled: 1
-    path: Assets/3.Scenes/BlockPuzzles/PuzzleArtTestScene/ArtTestScene2.unity
-    guid: 64fbc3a3d6aa5ba4c9aaa23fc64b2347
+    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP Tut1.unity
+    guid: 7831d32b1584f1a4eb53d4fd0190fcce
+  - enabled: 1
+    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP Tut2.unity
+    guid: 5bcb10a7e9d9dd44f90f65f05a8f94e2
+  - enabled: 1
+    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP Tut3.unity
+    guid: f670fb5274e1632429c33c8f17ccef69
+  - enabled: 1
+    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP Tut4.unity
+    guid: 5617f3b2c68a6cb49a730ed5c5e727f4
+  - enabled: 1
+    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP Tut5.unity
+    guid: d034efc0c31352543a9472bac6386f8c
+  - enabled: 1
+    path: Assets/3.Scenes/BlockPuzzles/1.BP Tutorials/BP Tut6.unity
+    guid: db9584a7fbad86e4fbb76727162d4c3d
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 34bbc23a37b4a3a4b8cf384479f2a8d5, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: d0023cf99f94471429399f8a2f79c4ab, type: 2}
