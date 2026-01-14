@@ -9,6 +9,7 @@ public class LevelStorage : MonoBehaviour
     public string[] HardModeLevels;
     public LevelIndex LevelIndex;
     public TriggerSetter CurtainCloser;
+    [SerializeField] private GameObject levelButtons;
 
     private bool hasStarted;
 
@@ -26,14 +27,18 @@ public class LevelStorage : MonoBehaviour
     private IEnumerator NextScene()
     {
         hasStarted = true;
-        CurtainCloser.SetTrigger();
-        yield return new WaitForSecondsRealtime(2.2f);
-        if (!HardMode)
+        if (!HardMode && Levels[LevelIndex.FloorIndex].ToString() != "-")
         {
+            levelButtons.SetActive(false);
+            CurtainCloser.SetTrigger();
+            yield return new WaitForSecondsRealtime(2.2f);
             SceneManager.LoadScene(Levels[LevelIndex.FloorIndex]);
         }
-        else if (HardMode)
+        else if (HardMode && HardModeLevels[LevelIndex.FloorIndex].ToString() != "-")
         {
+            levelButtons.SetActive(false);
+            CurtainCloser.SetTrigger();
+            yield return new WaitForSecondsRealtime(2.2f);
             SceneManager.LoadScene(HardModeLevels[LevelIndex.FloorIndex]);
         }
         hasStarted = false;

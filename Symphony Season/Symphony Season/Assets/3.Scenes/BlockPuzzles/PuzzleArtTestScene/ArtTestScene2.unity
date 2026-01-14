@@ -562,6 +562,7 @@ MonoBehaviour:
   nextLevelScreen: {fileID: 1583264644}
   btnsSharp: {fileID: 1059837082}
   btnsFlat: {fileID: 1475408188}
+  btnSwitchFlSH: {fileID: 0}
   noteBtnsCanvas: {fileID: 1977511095}
   holdControl: {fileID: 1271404303}
   releaseControl: {fileID: 495814791}
@@ -1369,7 +1370,7 @@ MeshFilter:
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &259391357 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2467586131348452812, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8687328446132434579, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
   m_PrefabInstance: {fileID: 5266637749159060434}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -5570,10 +5571,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8530306509875577040, guid: ddac4bb7431784d4dbed892e238cbc5f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1383415164}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddac4bb7431784d4dbed892e238cbc5f, type: 3}
 --- !u!1 &1383415160 stripped
 GameObject:
@@ -5607,11 +5605,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81bd26e50295cb04fbea0a15016ca94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerButtonMovement
---- !u!114 &1383415164
+--- !u!114 &1383415164 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4039488726755253705, guid: ddac4bb7431784d4dbed892e238cbc5f, type: 3}
+  m_PrefabInstance: {fileID: 1383415159}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383415160}
   m_Enabled: 1
@@ -5619,13 +5616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ea1119de77dce54bba4bcc7e43bd1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveObject
-  moveSpeed: 1
-  positions:
-  - {x: 15, y: 1, z: 0}
-  isMoving: 0
-  pos: 0
-  currentPos: {x: 0, y: 0, z: 0}
-  targetPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1392007794
 GameObject:
   m_ObjectHideFlags: 0
@@ -6580,7 +6570,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1583264644 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4451381785199087921, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7455510810232967790, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
   m_PrefabInstance: {fileID: 5266637749159060434}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1586252447
@@ -10632,22 +10622,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2415044591477283282, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 155493027}
-    - target: {fileID: 3240250273015448915, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 155493027}
-    - target: {fileID: 3240250273015448915, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 155493027}
     - target: {fileID: 3248287343648061380, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
       propertyPath: m_Name
       value: Orthographic Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 3248287343648061380, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332176809413988991, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8522668421317920268, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 155493027}
+    - target: {fileID: 8522668421317920268, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 155493027}
+    - target: {fileID: 8877371052755360397, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 155493027}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
