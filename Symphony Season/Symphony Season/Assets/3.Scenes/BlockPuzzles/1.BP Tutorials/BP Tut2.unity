@@ -1196,6 +1196,7 @@ MonoBehaviour:
   CurtainCloser: {fileID: 797868552}
   PlayerMover: {fileID: 1383415165}
   PlayerMat: {fileID: 1315900517}
+  playerObject: {fileID: 1383415160}
 --- !u!65 &257234687
 BoxCollider:
   m_ObjectHideFlags: 0

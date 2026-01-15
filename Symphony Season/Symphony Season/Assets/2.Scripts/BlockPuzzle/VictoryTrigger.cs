@@ -7,7 +7,7 @@ public class VictoryTrigger : MonoBehaviour
     public UIToggles uiToggles;
     public TriggerSetter CurtainCloser;
     public MoveObject PlayerMover;
-    public GameObject PlayerMat;
+    public GameObject PlayerMat, playerObject;
 
     private PlayerInput PlayerInput;
     private NavMeshAgent NavMeshAgent;
@@ -16,9 +16,9 @@ public class VictoryTrigger : MonoBehaviour
 
     private void Awake()
     {
-        PlayerInput = PlayerMat.GetComponent<PlayerInput>();
-        NavMeshAgent = PlayerMat.GetComponent<NavMeshAgent>();
-        PMM = PlayerMat.GetComponent<PlayerMouseMovement>();
+        PlayerInput = playerObject.GetComponent<PlayerInput>();
+        NavMeshAgent = playerObject.GetComponent<NavMeshAgent>();
+        PMM = playerObject.GetComponent<PlayerMouseMovement>();
     }
     private void OnTriggerEnter(Collider other)
     {

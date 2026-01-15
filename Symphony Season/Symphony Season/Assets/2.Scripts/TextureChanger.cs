@@ -10,6 +10,12 @@ public class TextureChanger : MonoBehaviour
     public Texture2D[] LevelScreenshotsHardMode;
     public Texture2D[] NextOne;
     public LevelIndex LevelIndexer;
+
+    private void Awake()
+    {
+        NextTexture(FrontMat, LevelScreenshotsFront[LevelIndexer.FloorIndex]);
+    }
+
     public void TextureChange()
     {
         if (ChangeBackMat && !HardMode)

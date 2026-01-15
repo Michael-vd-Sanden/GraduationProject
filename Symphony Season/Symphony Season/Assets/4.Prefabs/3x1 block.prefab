@@ -361,7 +361,7 @@ MonoBehaviour:
   questionNotification: {fileID: 419376767644873355}
   noteNotification: {fileID: 5243409297223215601}
   playerDistance: 3
-  wallDistance: 1.5
+  wallDistance: 2
   isRightDirection: 0
   blockNote: 
   materialInArray: 1
