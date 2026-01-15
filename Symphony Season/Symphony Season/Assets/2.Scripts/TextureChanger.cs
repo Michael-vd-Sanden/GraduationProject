@@ -9,26 +9,27 @@ public class TextureChanger : MonoBehaviour
     public Texture2D[] LevelScreenshotsFront;
     public Texture2D[] LevelScreenshotsHardMode;
     public Texture2D[] NextOne;
-    public void TextureChange(int LevelIndex)
+    public LevelIndex LevelIndexer;
+    public void TextureChange()
     {
-        if (ChangeBackMat)
+        if (ChangeBackMat && !HardMode)
         {
-            NextTexture(BackMat, LevelScreenshotsFront[LevelIndex]);
+            NextTexture(BackMat, LevelScreenshotsFront[LevelIndexer.FloorIndex]);
             ChangeBackMat = false;
         }
-        else if (!ChangeBackMat)
+        else if (!ChangeBackMat && !HardMode)
         {
-            NextTexture(FrontMat, LevelScreenshotsFront[LevelIndex]);
+            NextTexture(FrontMat, LevelScreenshotsFront[LevelIndexer.FloorIndex]);
             ChangeBackMat = true;
         }
         else if (ChangeBackMat && HardMode)
         {
-            NextTexture(BackMat, LevelScreenshotsHardMode[LevelIndex]);
+            NextTexture(BackMat, LevelScreenshotsHardMode[LevelIndexer.FloorIndex]);
             ChangeBackMat = false;
         }
         else if (!ChangeBackMat && HardMode)
         {
-            NextTexture(FrontMat, LevelScreenshotsHardMode[LevelIndex]);
+            NextTexture(FrontMat, LevelScreenshotsHardMode[LevelIndexer.FloorIndex]);
             ChangeBackMat = true;
         }
 
@@ -43,4 +44,5 @@ public class TextureChanger : MonoBehaviour
     {
         MatToUse.mainTexture = TextureToUse;
     }
+
 }

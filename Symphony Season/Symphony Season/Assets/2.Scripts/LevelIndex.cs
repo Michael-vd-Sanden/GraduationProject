@@ -19,9 +19,26 @@ public class LevelIndex : MonoBehaviour
     //should probably fix something in the animator to do that too
     //maybe use an integer in the animator to change the starting Idle position when the player returns to the level select.
     //}
+    public GameObject UpButton;
+    public GameObject DownButton;
     public void Awake()
     {
         DioramaAnimators[FloorIndex].SetTrigger("Pulsing");
+    }
+    public void Update()
+    {
+        if (FloorIndex > -1 && FloorIndex <1)
+        {
+            DownButton.SetActive(false);
+        } else if (FloorIndex < FloorMaximum +1 && FloorIndex > FloorMaximum -1)
+        {
+            UpButton.SetActive(false);
+        }
+        else
+        {
+            DownButton.SetActive(true);
+            UpButton.SetActive(true);
+        }
     }
     public void LevelShift(int IndexShift)
     {
@@ -39,7 +56,7 @@ public class LevelIndex : MonoBehaviour
             FloorText.LevelTextShift(FloorIndex);
             DioramaAnimators[FloorIndex].SetTrigger("Pulsing");
             DioramaAnimators[PrevFloorIndex].SetTrigger("NotPulsing");
-            LevelTextures.TextureChange(FloorIndex);
+            LevelTextures.TextureChange();
         }
     }
 }
