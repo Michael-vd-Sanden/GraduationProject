@@ -835,7 +835,7 @@ RectTransform:
   m_Children:
   - {fileID: 788640290}
   - {fileID: 1977511096}
-  - {fileID: 1413726093}
+  - {fileID: 8583915757880716387}
   m_Father: {fileID: 2110356443}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5575,11 +5575,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5290498166350692458, guid: 2cafe51ccabca78408e06e9fca099d4a, type: 3}
   m_PrefabInstance: {fileID: 555245877}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &1413726093 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7964005367771902099, guid: 30742c081af4ec142b6a7ac524fa05ef, type: 3}
-  m_PrefabInstance: {fileID: 1848135324555975920}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1415968207
 GameObject:
   m_ObjectHideFlags: 0
@@ -9939,7 +9934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7964005367771902099, guid: 30742c081af4ec142b6a7ac524fa05ef, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7964005367771902099, guid: 30742c081af4ec142b6a7ac524fa05ef, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -10204,6 +10199,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7455510810232967790, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8522668421317920268, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10378,6 +10377,11 @@ GameObject:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2139139053179341927, guid: 346cf8737d807194789e3f7606944a5e, type: 3}
   m_PrefabInstance: {fileID: 1171162389121032097}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &8583915757880716387 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7964005367771902099, guid: 30742c081af4ec142b6a7ac524fa05ef, type: 3}
+  m_PrefabInstance: {fileID: 1848135324555975920}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8604606646671049638 stripped
 GameObject:
