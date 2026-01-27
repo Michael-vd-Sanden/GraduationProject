@@ -28,4 +28,10 @@ public class SceneSwitching : MonoBehaviour
     {
         SceneManager.LoadScene(nextScene);
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+        Debug.Log("Quit");
+    }
 }

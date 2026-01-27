@@ -21,9 +21,12 @@ public class LevelIndex : MonoBehaviour
     //}
     public GameObject UpButton;
     public GameObject DownButton;
+    private bool isRunning;
+
     public void Awake()
     {
         DioramaAnimators[FloorIndex].SetTrigger("Pulsing");
+        isRunning = false;
     }
     public void Update()
     {
@@ -42,21 +45,27 @@ public class LevelIndex : MonoBehaviour
     }
     public void LevelShift(int IndexShift)
     {
-        var PrevFloorIndex = FloorIndex;
-        FloorIndex += IndexShift;
-        if(FloorIndex < 0)
+        if (!isRunning)
         {
-            FloorIndex = 0;
-        }else if (FloorIndex > FloorMaximum)
-        {
-            FloorIndex = FloorMaximum;
-        }
-        else
-        {
-            FloorText.LevelTextShift(FloorIndex);
-            DioramaAnimators[FloorIndex].SetTrigger("Pulsing");
-            DioramaAnimators[PrevFloorIndex].SetTrigger("NotPulsing");
-            LevelTextures.TextureChange();
+            isRunning = true;
+            var PrevFloorIndex = FloorIndex;
+            FloorIndex += IndexShift;
+            if (FloorIndex < 0)
+            {
+                FloorIndex = 0;
+            }
+            else if (FloorIndex > FloorMaximum)
+            {
+                FloorIndex = FloorMaximum;
+            }
+            else
+            {
+                FloorText.LevelTextShift(FloorIndex);
+                DioramaAnimators[FloorIndex].SetTrigger("Pulsing");
+                DioramaAnimators[PrevFloorIndex].SetTrigger("NotPulsing");
+                LevelTextures.TextureChange();
+            }
+            isRunning = false;
         }
     }
 }

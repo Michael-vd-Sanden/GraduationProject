@@ -10582,9 +10582,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1860590249386966509, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860590249386966509, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 254
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915525564056968853, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3248287343648061380, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
       propertyPath: m_Name
       value: Orthographic Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016853514174572672, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580853699975922952, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_text
+      value: "TUTORIAL \nLEVELS COMPLETED!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580853699975922952, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_fontSize
+      value: 20.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455510810232967790, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8522668421317920268, guid: 5d0ed2c74149987428ef0141db609d45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
