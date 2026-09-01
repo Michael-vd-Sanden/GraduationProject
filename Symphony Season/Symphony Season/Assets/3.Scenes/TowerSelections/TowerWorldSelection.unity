@@ -376,6 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldRotator
   deltaAction: {fileID: 8726472292400282784, guid: 6876523846f0dd14b8c2c75c1f2926e8, type: 3}
+  boat: {fileID: 1640375261}
 --- !u!54 &384973262
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -386,7 +387,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 5
+  m_AngularDamping: 2
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 0, y: 0, z: 0}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1622,6 +1623,10 @@ PrefabInstance:
       objectReference: {fileID: 384973259}
     - target: {fileID: 5794892701128648277, guid: a4c9945ef9e4a7a4ea043ad181f0b527, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7820718951166740543, guid: a4c9945ef9e4a7a4ea043ad181f0b527, type: 3}
+      propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

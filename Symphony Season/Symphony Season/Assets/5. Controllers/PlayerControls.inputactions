@@ -90,17 +90,6 @@
                 },
                 {
                     "name": "",
-                    "id": "9371c72d-530d-451a-9b1e-db6668bd40ab",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard",
-                    "action": "MoveGlobe",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "616e5d8b-cc13-4e3d-bc72-0e0ca5bfc780",
                     "path": "<Touchscreen>/delta",
                     "interactions": "",
