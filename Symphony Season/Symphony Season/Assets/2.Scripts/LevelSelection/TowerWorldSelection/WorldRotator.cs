@@ -21,7 +21,6 @@ public class WorldRotator : MonoBehaviour
     void Update()
     {
         var rb = gameObject.GetComponent<Rigidbody>();
-        Debug.Log("Ang vel " + rb.angularVelocity.ToString());
         var dir = rb.angularVelocity.normalized;
         float ang = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         var boatRotation = Quaternion.Lerp(boat.transform.rotation, Quaternion.Euler(0, (ang*1)-0, 0), Time.deltaTime * 5);
