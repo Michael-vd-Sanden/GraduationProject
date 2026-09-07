@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using NUnit.Framework.Constraints;
 using Unity.VisualScripting;
 using System.Linq;
+using System.Threading.Tasks;
 
 public class SSeasonJSONData
 {
@@ -87,7 +88,7 @@ public class JSONHandler : MonoBehaviour
 
     public void AddScore(string levelName, DateTime date, int score)
     {
-        SSeasonJSONLevelData lvlScore;
+       /* SSeasonJSONLevelData lvlScore;
         if (!JsonData.ScoresPerLevel.TryGetValue(levelName, out lvlScore))
         {
             lvlScore = new SSeasonJSONLevelData();
@@ -97,7 +98,7 @@ public class JSONHandler : MonoBehaviour
         if (lvlScore.LastSavedScoreIndex > 5)
         {
             lvlScore.LastSavedScoreIndex = 0;
-        }
+        }*/
     }
 
     public void WriteJSON(SSeasonJSONData data)

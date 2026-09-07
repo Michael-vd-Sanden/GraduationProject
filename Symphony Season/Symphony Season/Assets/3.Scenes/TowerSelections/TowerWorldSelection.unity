@@ -148,17 +148,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 402436093}
-  - {fileID: 2128301016}
   - {fileID: 189111486}
-  - {fileID: 370780957}
-  - {fileID: 775589522}
   - {fileID: 459194004}
-  - {fileID: 1862865934}
   - {fileID: 1071739083}
   - {fileID: 545485948}
   - {fileID: 1916853372}
-  - {fileID: 1315162993}
   m_Father: {fileID: 384973260}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &189111485
@@ -330,11 +324,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!4 &402436093 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4116083722518111679, guid: 9fb8e43df7bcf4d43a4ea6a9c41ce0ab, type: 3}
-  m_PrefabInstance: {fileID: 8877882432961757085}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &459194003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -475,17 +464,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d7835b8a6f1f04d8d39957bad0bb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerSelectionManager
---- !u!114 &728644930 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4662651218897835951, guid: 9f51557b41f8e134f88046b7e97963ca, type: 3}
-  m_PrefabInstance: {fileID: 4694894444251478622}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09b26d8d8a1e5a04ea6f29e701742928, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneSwitching
 --- !u!1 &815957296
 GameObject:
   m_ObjectHideFlags: 0
