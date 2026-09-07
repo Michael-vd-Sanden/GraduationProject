@@ -33,6 +33,9 @@ public class VictoryTrigger : MonoBehaviour
             curtainCloser.SetTrigger();          //close curtain
             bpUIToggles.Victory();               //victory screen active
 
+            // TODO: 
+            // Save the player score with JSONHandler
+
             isMoving = true;
 
             playerMovement.enabled = false;     //so it doesn't try to calculate position on navmesh
