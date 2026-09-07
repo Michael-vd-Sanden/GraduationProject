@@ -32,6 +32,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MoveGlobe",
+                    "type": "Value",
+                    "id": "d215940c-1fce-4b89-8e66-161b5be64e4e",
+                    "expectedControlType": "Delta",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -76,6 +85,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "HoldBtn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "616e5d8b-cc13-4e3d-bc72-0e0ca5bfc780",
+                    "path": "<Touchscreen>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Mobile",
+                    "action": "MoveGlobe",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -30,6 +30,9 @@ public class VictoryTrigger : MonoBehaviour
             curtainCloser.SetTrigger();          //close curtain
             nextLevelScreen.SetActive(true);
 
+            // TODO: 
+            // Save the player score with JSONHandler
+
             isMoving = true;
 
             playerData.allowedToMove = false;      //so it doesn't try to calculate position on navmesh
